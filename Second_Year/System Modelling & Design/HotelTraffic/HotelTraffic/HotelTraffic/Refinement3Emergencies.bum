@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="Refinement2AddLogic"/>
+<org.eventb.core.seesContext name="(" org.eventb.core.target="PedLightColor"/>
+<org.eventb.core.seesContext name=")" org.eventb.core.target="TrafficLightColor"/>
+<org.eventb.core.seesContext name="*" org.eventb.core.target="Directions"/>
+<org.eventb.core.variable name="var1" org.eventb.core.comment="" org.eventb.core.identifier="trafficLight"/>
+<org.eventb.core.variable name="var2" org.eventb.core.identifier="pedLight"/>
+<org.eventb.core.variable name="var5" org.eventb.core.identifier="ORIGIN"/>
+<org.eventb.core.variable name="var3" org.eventb.core.identifier="trafficCoil"/>
+<org.eventb.core.variable name="var4" org.eventb.core.identifier="pedSensor"/>
+<org.eventb.core.variable name="var?" org.eventb.core.identifier="coilTime"/>
+<org.eventb.core.variable name="varB" org.eventb.core.identifier="pedTime"/>
+<org.eventb.core.event name="varC" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="emergencyHere ≔ {(NW ↦ NORTHSOUTH ↦ FALSE),(NW ↦ EASTWEST ↦ FALSE),&#10;(SW ↦ NORTHSOUTH ↦ FALSE),(SW ↦ EASTWEST ↦ FALSE),&#10;(NE ↦ NORTHSOUTH ↦ FALSE),(NE ↦ EASTWEST ↦ FALSE),&#10;(SE ↦ NORTHSOUTH ↦ FALSE),(SE ↦ EASTWEST ↦ FALSE),&#10;(PARK ↦ NORTHSOUTH ↦ FALSE),(PARK ↦ EASTWEST ↦ FALSE)}" org.eventb.core.label="act8"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="emergencyOccur ≔ FALSE" org.eventb.core.label="act9"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="varD" org.eventb.core.comment="NO SENSOR NEEDED (COME IN HANDY IN LATER REFINEMENT)&#10;THIS EVENT DOES THE SAME AS THE OTHER THREE EVENTS&#10;changeTrafficToGreen&#10;changeTrafficToAmber&#10;changeTrafficToRed" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="changeTrafficCycle">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="changeTrafficCycle"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd13" org.eventb.core.predicate="emergencyOccur = FALSE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="varE" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="changePedToGreen">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="changePedToGreen"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd9" org.eventb.core.predicate="emergencyOccur = FALSE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="varF" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="changePedToRed">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="changePedToRed"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd4" org.eventb.core.predicate="emergencyOccur = FALSE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="varG" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="triggerPedSensorNoPriorityUpdate">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="triggerPedSensorNoPriorityUpdate"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd8" org.eventb.core.predicate="emergencyOccur = FALSE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="varH" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="triggerPedSensorPriorityUpdate">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="triggerPedSensorPriorityUpdate"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd8" org.eventb.core.predicate="emergencyOccur = FALSE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="varI" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="triggerTrafficCoilNoPriorityUpdate">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="triggerTrafficCoilNoPriorityUpdate"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd8" org.eventb.core.predicate="emergencyOccur = FALSE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="varJ" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="triggerTrafficCoilPriorityUpdate">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="triggerTrafficCoilPriorityUpdate"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd8" org.eventb.core.predicate="emergencyOccur = FALSE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="varK" org.eventb.core.comment="SENSOR NEEDED (COME IN HANDY IN LATER REFINEMENT)" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="changeTrafficToGreenTrafficDoubleTrigger">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="changeTrafficToGreenTrafficDoubleTrigger"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd16" org.eventb.core.predicate="emergencyOccur = FALSE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="varL" org.eventb.core.comment="SENSOR NEEDED (COME IN HANDY IN LATER REFINEMENT)" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="changeTrafficToGreenTrafficSingleTrigger">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="changeTrafficToGreenTrafficSingleTrigger"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd16" org.eventb.core.predicate="emergencyOccur = FALSE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="varM" org.eventb.core.comment="SENSOR NEEDED (COME IN HANDY IN LATER REFINEMENT)" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="changeTrafficToGreenPedDoubleTrigger">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="changeTrafficToGreenPedDoubleTrigger"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd16" org.eventb.core.predicate="emergencyOccur = FALSE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt1" org.eventb.core.comment="SENSOR NEEDED (COME IN HANDY IN LATER REFINEMENT)" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="changeTrafficToGreenPedSingleTrigger">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="changeTrafficToGreenPedSingleTrigger"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd16" org.eventb.core.predicate="emergencyOccur = FALSE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="varN" org.eventb.core.comment="SENSOR NEEDED (COME IN HANDY IN LATER REFINEMENT)" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="changeTrafficToAMBER">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="changeTrafficToAMBER"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd10" org.eventb.core.predicate="emergencyOccur = FALSE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="varO" org.eventb.core.comment="SENSOR NEEDED (COME IN HANDY IN LATER REFINEMENT)" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="changeTrafficToRED">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="changeTrafficToRED"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd10" org.eventb.core.predicate="emergencyOccur = FALSE"/>
+</org.eventb.core.event>
+<org.eventb.core.seesContext name="varP" org.eventb.core.target="Road"/>
+<org.eventb.core.variable name="varQ" org.eventb.core.identifier="emergencyHere"/>
+<org.eventb.core.invariant name="varR" org.eventb.core.label="inv1" org.eventb.core.predicate="emergencyHere ∈ (INTERSECTION × DIRECTION) → BOOL"/>
+<org.eventb.core.event name="varS" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="InitEmergency">
+<org.eventb.core.action name="4" org.eventb.core.assignment="emergencyHere(intersection ↦ direction) ≔ TRUE" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="6" org.eventb.core.assignment="emergencyOccur ≔ TRUE" org.eventb.core.label="act5"/>
+<org.eventb.core.refinesEvent name="7" org.eventb.core.target="roadToOPPOSITERed"/>
+<org.eventb.core.guard name="grd11" org.eventb.core.label="grd1" org.eventb.core.predicate="direction ∈ DIRECTION"/>
+<org.eventb.core.guard name="grd12" org.eventb.core.label="grd2" org.eventb.core.predicate="intersection ∈ INTERSECTION"/>
+<org.eventb.core.parameter name="grd11" org.eventb.core.identifier="intersection"/>
+<org.eventb.core.parameter name="grd12" org.eventb.core.identifier="direction"/>
+<org.eventb.core.guard name="grd10" org.eventb.core.label="grd3" org.eventb.core.predicate="(intersection ↦ direction) ∈ dom(emergencyHere)"/>
+<org.eventb.core.guard name="grd13" org.eventb.core.label="grd4" org.eventb.core.predicate="emergencyOccur = FALSE"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="varT" org.eventb.core.identifier="emergencyOccur"/>
+<org.eventb.core.invariant name="varU" org.eventb.core.label="inv2" org.eventb.core.predicate="emergencyOccur ∈ BOOL"/>
+<org.eventb.core.event name="varV" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="SetEmergency">
+<org.eventb.core.refinesEvent name="(" org.eventb.core.target="roadToGreen"/>
+<org.eventb.core.action name="act1" org.eventb.core.assignment="emergencyHere(intersection ↦ direction) ≔ FALSE" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="act2" org.eventb.core.assignment="emergencyOccur ≔ FALSE" org.eventb.core.label="act5"/>
+<org.eventb.core.guard name="grd5" org.eventb.core.label="grd16" org.eventb.core.predicate="(intersection ↦ direction) ∈ dom(emergencyHere)"/>
+<org.eventb.core.guard name="grd7" org.eventb.core.label="grd17" org.eventb.core.predicate="emergencyHere(intersection ↦ direction) = TRUE"/>
+<org.eventb.core.guard name="grd6" org.eventb.core.label="grd18" org.eventb.core.predicate="emergencyOccur = TRUE"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

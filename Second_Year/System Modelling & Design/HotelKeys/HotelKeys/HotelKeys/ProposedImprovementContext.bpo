@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="ALLHUMAN" org.eventb.core.type="ℙ(ALLHUMAN)"/>
+<org.eventb.core.poIdentifier name="ROOMS" org.eventb.core.type="ℙ(ROOMS)"/>
+<org.eventb.core.poIdentifier name="People" org.eventb.core.type="ℙ(ALLHUMAN)"/>
+<org.eventb.core.poPredicate name="ALLHUMAO" org.eventb.core.predicate="finite(ALLHUMAN)" org.eventb.core.source="/HotelKeys/AbstractModelContext.buc|org.eventb.core.contextFile#AbstractModelContext|org.eventb.core.axiom#)"/>
+<org.eventb.core.poPredicate name="ALLHUMAP" org.eventb.core.predicate="finite(ROOMS)" org.eventb.core.source="/HotelKeys/AbstractModelContext.buc|org.eventb.core.contextFile#AbstractModelContext|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="ALLHUMAQ" org.eventb.core.predicate="ROOMS≠(∅ ⦂ ℙ(ROOMS))" org.eventb.core.source="/HotelKeys/AbstractModelContext.buc|org.eventb.core.contextFile#AbstractModelContext|org.eventb.core.axiom#+"/>
+<org.eventb.core.poPredicate name="ALLHUMAR" org.eventb.core.predicate="People⊂ALLHUMAN" org.eventb.core.source="/HotelKeys/AbstractModelContext.buc|org.eventb.core.contextFile#AbstractModelContext|org.eventb.core.axiom#."/>
+<org.eventb.core.poPredicate name="ALLHUMAS" org.eventb.core.predicate="People≠(∅ ⦂ ℙ(ALLHUMAN))" org.eventb.core.source="/HotelKeys/AbstractModelContext.buc|org.eventb.core.contextFile#AbstractModelContext|org.eventb.core.axiom#\/"/>
+<org.eventb.core.poIdentifier name="Keys" org.eventb.core.type="ℙ(Keys)"/>
+<org.eventb.core.poIdentifier name="GuestKeys" org.eventb.core.type="ℙ(Keys)"/>
+<org.eventb.core.poIdentifier name="MasterKey1" org.eventb.core.type="Keys"/>
+<org.eventb.core.poIdentifier name="MasterKey2" org.eventb.core.type="Keys"/>
+<org.eventb.core.poIdentifier name="cleaners" org.eventb.core.type="ℙ(ALLHUMAN)"/>
+<org.eventb.core.poIdentifier name="initRoomKeys" org.eventb.core.type="ℙ(Keys)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="axm7/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelKeys/ProposedImprovementContext.bpo|org.eventb.core.poFile#ProposedImprovementContext|org.eventb.core.poPredicateSet#HYPAbstractModelContexz"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(initRoomKeys)∧finite(ROOMS)" org.eventb.core.source="/HotelKeys/ProposedImprovementContext.buc|org.eventb.core.contextFile#ProposedImprovementContext|org.eventb.core.axiom#1"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelKeys/ProposedImprovementContext.buc|org.eventb.core.contextFile#ProposedImprovementContext|org.eventb.core.axiom#1"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/HotelKeys/ProposedImprovementContext.bpo|org.eventb.core.poFile#ProposedImprovementContext|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/HotelKeys/ProposedImprovementContext.bpo|org.eventb.core.poFile#ProposedImprovementContext|org.eventb.core.poPredicateSet#HYPAbstractModelContexz"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="axm8/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelKeys/ProposedImprovementContext.bpo|org.eventb.core.poFile#ProposedImprovementContext|org.eventb.core.poPredicateSet#HYPAbstractModelContex{"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(GuestKeys)∧finite(ROOMS)" org.eventb.core.source="/HotelKeys/ProposedImprovementContext.buc|org.eventb.core.contextFile#ProposedImprovementContext|org.eventb.core.axiom#6"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelKeys/ProposedImprovementContext.buc|org.eventb.core.contextFile#ProposedImprovementContext|org.eventb.core.axiom#6"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/HotelKeys/ProposedImprovementContext.bpo|org.eventb.core.poFile#ProposedImprovementContext|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/HotelKeys/ProposedImprovementContext.bpo|org.eventb.core.poFile#ProposedImprovementContext|org.eventb.core.poPredicateSet#HYPAbstractModelContex{"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="axm9/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelKeys/ProposedImprovementContext.bpo|org.eventb.core.poFile#ProposedImprovementContext|org.eventb.core.poPredicateSet#HYPAbstractModelContex\|"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(Keys)" org.eventb.core.source="/HotelKeys/ProposedImprovementContext.buc|org.eventb.core.contextFile#ProposedImprovementContext|org.eventb.core.axiom#7"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelKeys/ProposedImprovementContext.buc|org.eventb.core.contextFile#ProposedImprovementContext|org.eventb.core.axiom#7"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/HotelKeys/ProposedImprovementContext.bpo|org.eventb.core.poFile#ProposedImprovementContext|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/HotelKeys/ProposedImprovementContext.bpo|org.eventb.core.poFile#ProposedImprovementContext|org.eventb.core.poPredicateSet#HYPAbstractModelContex\|"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="axm10/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelKeys/ProposedImprovementContext.bpo|org.eventb.core.poFile#ProposedImprovementContext|org.eventb.core.poPredicateSet#HYPAbstractModelContex}"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(ROOMS)" org.eventb.core.source="/HotelKeys/ProposedImprovementContext.buc|org.eventb.core.contextFile#ProposedImprovementContext|org.eventb.core.axiom#8"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelKeys/ProposedImprovementContext.buc|org.eventb.core.contextFile#ProposedImprovementContext|org.eventb.core.axiom#8"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/HotelKeys/ProposedImprovementContext.bpo|org.eventb.core.poFile#ProposedImprovementContext|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/HotelKeys/ProposedImprovementContext.bpo|org.eventb.core.poFile#ProposedImprovementContext|org.eventb.core.poPredicateSet#HYPAbstractModelContex}"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="axm11/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelKeys/ProposedImprovementContext.bpo|org.eventb.core.poFile#ProposedImprovementContext|org.eventb.core.poPredicateSet#HYPAbstractModelContex~"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(ALLHUMAN)" org.eventb.core.source="/HotelKeys/ProposedImprovementContext.buc|org.eventb.core.contextFile#ProposedImprovementContext|org.eventb.core.axiom#;"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelKeys/ProposedImprovementContext.buc|org.eventb.core.contextFile#ProposedImprovementContext|org.eventb.core.axiom#;"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/HotelKeys/ProposedImprovementContext.bpo|org.eventb.core.poFile#ProposedImprovementContext|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/HotelKeys/ProposedImprovementContext.bpo|org.eventb.core.poFile#ProposedImprovementContext|org.eventb.core.poPredicateSet#HYPAbstractModelContex~"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="axm12/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelKeys/ProposedImprovementContext.bpo|org.eventb.core.poFile#ProposedImprovementContext|org.eventb.core.poPredicateSet#HYPAbstractModelContey'"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(People)" org.eventb.core.source="/HotelKeys/ProposedImprovementContext.buc|org.eventb.core.contextFile#ProposedImprovementContext|org.eventb.core.axiom#="/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelKeys/ProposedImprovementContext.buc|org.eventb.core.contextFile#ProposedImprovementContext|org.eventb.core.axiom#="/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/HotelKeys/ProposedImprovementContext.bpo|org.eventb.core.poFile#ProposedImprovementContext|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/HotelKeys/ProposedImprovementContext.bpo|org.eventb.core.poFile#ProposedImprovementContext|org.eventb.core.poPredicateSet#HYPAbstractModelContey'"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="HYPAbstractModelContexz" org.eventb.core.parentSet="/HotelKeys/ProposedImprovementContext.bpo|org.eventb.core.poFile#ProposedImprovementContext|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="finite(Keys)" org.eventb.core.source="/HotelKeys/ProposedImprovementContext.buc|org.eventb.core.contextFile#ProposedImprovementContext|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="initRoomKeys⊂Keys" org.eventb.core.source="/HotelKeys/ProposedImprovementContext.buc|org.eventb.core.contextFile#ProposedImprovementContext|org.eventb.core.axiom#5"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="GuestKeys⊂Keys" org.eventb.core.source="/HotelKeys/ProposedImprovementContext.buc|org.eventb.core.contextFile#ProposedImprovementContext|org.eventb.core.axiom#,"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="partition(Keys,{MasterKey1},{MasterKey2},GuestKeys,initRoomKeys)" org.eventb.core.source="/HotelKeys/ProposedImprovementContext.buc|org.eventb.core.contextFile#ProposedImprovementContext|org.eventb.core.axiom#."/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="Keys≠(∅ ⦂ ℙ(Keys))" org.eventb.core.source="/HotelKeys/ProposedImprovementContext.buc|org.eventb.core.contextFile#ProposedImprovementContext|org.eventb.core.axiom#4"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="cleaners⊆ALLHUMAN ∖ People" org.eventb.core.source="/HotelKeys/ProposedImprovementContext.buc|org.eventb.core.contextFile#ProposedImprovementContext|org.eventb.core.axiom#0"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPAbstractModelContex{" org.eventb.core.parentSet="/HotelKeys/ProposedImprovementContext.bpo|org.eventb.core.poFile#ProposedImprovementContext|org.eventb.core.poPredicateSet#HYPAbstractModelContexz" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="card(initRoomKeys)=card(ROOMS)" org.eventb.core.source="/HotelKeys/ProposedImprovementContext.buc|org.eventb.core.contextFile#ProposedImprovementContext|org.eventb.core.axiom#1"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPAbstractModelContex|" org.eventb.core.parentSet="/HotelKeys/ProposedImprovementContext.bpo|org.eventb.core.poFile#ProposedImprovementContext|org.eventb.core.poPredicateSet#HYPAbstractModelContex{" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="card(GuestKeys)&gt;card(ROOMS)" org.eventb.core.source="/HotelKeys/ProposedImprovementContext.buc|org.eventb.core.contextFile#ProposedImprovementContext|org.eventb.core.axiom#6"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPAbstractModelContex}" org.eventb.core.parentSet="/HotelKeys/ProposedImprovementContext.bpo|org.eventb.core.poFile#ProposedImprovementContext|org.eventb.core.poPredicateSet#HYPAbstractModelContex\|" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="card(Keys)=12" org.eventb.core.source="/HotelKeys/ProposedImprovementContext.buc|org.eventb.core.contextFile#ProposedImprovementContext|org.eventb.core.axiom#7"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPAbstractModelContex~" org.eventb.core.parentSet="/HotelKeys/ProposedImprovementContext.bpo|org.eventb.core.poFile#ProposedImprovementContext|org.eventb.core.poPredicateSet#HYPAbstractModelContex}" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="card(ROOMS)=3" org.eventb.core.source="/HotelKeys/ProposedImprovementContext.buc|org.eventb.core.contextFile#ProposedImprovementContext|org.eventb.core.axiom#8"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPAbstractModelContey'" org.eventb.core.parentSet="/HotelKeys/ProposedImprovementContext.bpo|org.eventb.core.poFile#ProposedImprovementContext|org.eventb.core.poPredicateSet#HYPAbstractModelContex~" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="card(ALLHUMAN)=5" org.eventb.core.source="/HotelKeys/ProposedImprovementContext.buc|org.eventb.core.contextFile#ProposedImprovementContext|org.eventb.core.axiom#;"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/HotelKeys/ProposedImprovementContext.bpo|org.eventb.core.poFile#ProposedImprovementContext|org.eventb.core.poPredicateSet#HYPAbstractModelContey'" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="card(People)=3" org.eventb.core.source="/HotelKeys/ProposedImprovementContext.buc|org.eventb.core.contextFile#ProposedImprovementContext|org.eventb.core.axiom#="/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

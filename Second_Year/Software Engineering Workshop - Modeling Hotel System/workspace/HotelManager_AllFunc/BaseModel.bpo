@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="CUSTOMERSTATUS" org.eventb.core.type="ℙ(CUSTOMERSTATUS)"/>
+<org.eventb.core.poIdentifier name="PEOPLE" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.poIdentifier name="ROOMS" org.eventb.core.type="ℙ(ROOMS)"/>
+<org.eventb.core.poIdentifier name="SERVICES" org.eventb.core.type="ℙ(SERVICES)"/>
+<org.eventb.core.poIdentifier name="DOWNGRADE" org.eventb.core.type="ℙ(CUSTOMERSTATUS×CUSTOMERSTATUS)"/>
+<org.eventb.core.poIdentifier name="LEASTFINANCE" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="LOYAL" org.eventb.core.type="CUSTOMERSTATUS"/>
+<org.eventb.core.poIdentifier name="MANAGER" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.poIdentifier name="NORMAL" org.eventb.core.type="CUSTOMERSTATUS"/>
+<org.eventb.core.poIdentifier name="PASSIVE" org.eventb.core.type="CUSTOMERSTATUS"/>
+<org.eventb.core.poIdentifier name="RESTOREFEE" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="axm8/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/BaseModel.bpo|org.eventb.core.poFile#BaseModel|org.eventb.core.poPredicateSet#HYP-"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(CUSTOMERSTATUS)" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#6"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#6"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/BaseModel.bpo|org.eventb.core.poFile#BaseModel|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/HotelManager_AllFunc/BaseModel.bpo|org.eventb.core.poFile#BaseModel|org.eventb.core.poPredicateSet#HYP-"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="axm9/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/BaseModel.bpo|org.eventb.core.poFile#BaseModel|org.eventb.core.poPredicateSet#HYP."/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(PEOPLE)" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#7"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#7"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/BaseModel.bpo|org.eventb.core.poFile#BaseModel|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/HotelManager_AllFunc/BaseModel.bpo|org.eventb.core.poFile#BaseModel|org.eventb.core.poPredicateSet#HYP."/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="axm11/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/BaseModel.bpo|org.eventb.core.poFile#BaseModel|org.eventb.core.poPredicateSet#HYP0"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="LOYAL∈dom(DOWNGRADE)∧DOWNGRADE∈CUSTOMERSTATUS ⇸ CUSTOMERSTATUS∧(DOWNGRADE(LOYAL)=NORMAL⇒NORMAL∈dom(DOWNGRADE)∧(DOWNGRADE(NORMAL)=PASSIVE⇒PASSIVE∈dom(DOWNGRADE)))" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#;"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#;"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/BaseModel.bpo|org.eventb.core.poFile#BaseModel|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/HotelManager_AllFunc/BaseModel.bpo|org.eventb.core.poFile#BaseModel|org.eventb.core.poPredicateSet#HYP0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="HYP-" org.eventb.core.parentSet="/HotelManager_AllFunc/BaseModel.bpo|org.eventb.core.poFile#BaseModel|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="finite(ROOMS)" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="finite(PEOPLE)" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="finite(SERVICES)" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#,"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="finite(CUSTOMERSTATUS)" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#@"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="LEASTFINANCE∈ℕ" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#."/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="LEASTFINANCE=0" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#1"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="partition(CUSTOMERSTATUS,{LOYAL},{NORMAL},{PASSIVE})" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#5"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYP." org.eventb.core.parentSet="/HotelManager_AllFunc/BaseModel.bpo|org.eventb.core.poFile#BaseModel|org.eventb.core.poPredicateSet#HYP-" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="card(CUSTOMERSTATUS)=3" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#6"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYP0" org.eventb.core.parentSet="/HotelManager_AllFunc/BaseModel.bpo|org.eventb.core.poFile#BaseModel|org.eventb.core.poPredicateSet#HYP." org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="card(PEOPLE)=20" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#7"/>
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="DOWNGRADE∈CUSTOMERSTATUS → CUSTOMERSTATUS" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#:"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/BaseModel.bpo|org.eventb.core.poFile#BaseModel|org.eventb.core.poPredicateSet#HYP0" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="DOWNGRADE(LOYAL)=NORMAL∧DOWNGRADE(NORMAL)=PASSIVE∧DOWNGRADE(PASSIVE)=PASSIVE" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#;"/>
+<org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="MANAGER∈PEOPLE" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#?"/>
+<org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="RESTOREFEE∈ℕ1" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#B"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

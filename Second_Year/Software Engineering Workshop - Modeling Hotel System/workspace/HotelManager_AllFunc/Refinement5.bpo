@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="CLEANERS" org.eventb.core.type="ℙ(CLEANERS)"/>
+<org.eventb.core.poIdentifier name="ROOM" org.eventb.core.type="ℙ(ROOM)"/>
+<org.eventb.core.poIdentifier name="DATETIME" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.poPredicate name="DATETIMF" org.eventb.core.predicate="finite(ROOM)" org.eventb.core.source="/HotelManager_AllFunc/Refinement5CleaningScheduleAndDailyCleaning.buc|org.eventb.core.contextFile#Refinement5CleaningScheduleAndDailyCleaning|org.eventb.core.axiom#)"/>
+<org.eventb.core.poPredicate name="DATETIMG" org.eventb.core.predicate="finite(CLEANERS)" org.eventb.core.source="/HotelManager_AllFunc/Refinement5CleaningScheduleAndDailyCleaning.buc|org.eventb.core.contextFile#Refinement5CleaningScheduleAndDailyCleaning|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="DATETIMH" org.eventb.core.predicate="DATETIME=ℕ1" org.eventb.core.source="/HotelManager_AllFunc/Refinement5CleaningScheduleAndDailyCleaning.buc|org.eventb.core.contextFile#Refinement5CleaningScheduleAndDailyCleaning|org.eventb.core.axiom#,"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="dailyClean" org.eventb.core.type="ℙ(ROOM×BOOL)"/>
+<org.eventb.core.poIdentifier name="scheduleClean" org.eventb.core.type="ℙ(ROOM×CLEANERS)"/>
+<org.eventb.core.poIdentifier name="today" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="INITIALISATION/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTALLHYPRefinement5CleaningScheduleAndDailyCleanink"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(ROOM×CLEANERS))∈ROOM ⇸ CLEANERS" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.invariant#*"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.invariant#*"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poSequent#INITIALISATION\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTALLHYPRefinement5CleaningScheduleAndDailyCleanink"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="1∈DATETIME" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poSequent#INITIALISATION\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTALLHYPRefinement5CleaningScheduleAndDailyCleanink"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(λroom⦂ROOM·room∈ROOM ∣ FALSE)∈ROOM → BOOL" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.invariant#evt4"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.invariant#evt4"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poSequent#INITIALISATION\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTRefinement5CleaningScheduleAndDailyCleanink" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="dailyClean'" org.eventb.core.type="ℙ(ROOM×BOOL)"/>
+<org.eventb.core.poIdentifier name="today'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="scheduleClean'" org.eventb.core.type="ℙ(ROOM×CLEANERS)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPRefinement5CleaningScheduleAndDailyCleanink" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTIDENTRefinement5CleaningScheduleAndDailyCleanink" org.eventb.core.poStamp="1"/>
+<org.eventb.core.poSequent name="dayPass/grd1/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTIDENTRefinement5CleaningScheduleAndDailyCleaninl"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀room⦂ROOM·room∈ROOM⇒room∈dom(dailyClean)∧dailyClean∈ROOM ⇸ BOOL" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#evt2|org.eventb.core.guard#*"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#evt2|org.eventb.core.guard#*"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTIDENTRefinement5CleaningScheduleAndDailyCleaninl"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="dayPass/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTALLHYPRefinement5CleaningScheduleAndDailyCleaninl"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(ROOM×CLEANERS))∈ROOM ⇸ CLEANERS" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.invariant#*"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#evt2"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.invariant#*"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poSequent#dayPass\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="dayPass/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTALLHYPRefinement5CleaningScheduleAndDailyCleaninl"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="today+1∈DATETIME" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#evt2"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poSequent#dayPass\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="dayPass/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTALLHYPRefinement5CleaningScheduleAndDailyCleaninl"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(λroom⦂ROOM·room∈ROOM ∣ FALSE)∈ROOM → BOOL" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.invariant#evt4"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#evt2"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.invariant#evt4"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poSequent#dayPass\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTRefinement5CleaningScheduleAndDailyCleaninl" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="dailyClean'" org.eventb.core.type="ℙ(ROOM×BOOL)"/>
+<org.eventb.core.poIdentifier name="today'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="scheduleClean'" org.eventb.core.type="ℙ(ROOM×CLEANERS)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPRefinement5CleaningScheduleAndDailyCleaninl" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTIDENTRefinement5CleaningScheduleAndDailyCleaninl" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="∀room⦂ROOM·room∈ROOM⇒dailyClean(room)=TRUE" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#evt2|org.eventb.core.guard#*"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="NewSchedule/grd4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTHYPRefinement5CleaningScheduleAndDailyCleaninm)"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="room∈dom(dailyClean)∧dailyClean∈ROOM ⇸ BOOL" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#+|org.eventb.core.guard#-"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#+|org.eventb.core.guard#-"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTHYPRefinement5CleaningScheduleAndDailyCleaninm)"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="NewSchedule/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTALLHYPRefinement5CleaningScheduleAndDailyCleaninm"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="scheduleClean{room ↦ cleaner}∈ROOM ⇸ CLEANERS" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.invariant#*"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#+"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.invariant#*"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poSequent#NewSchedule\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTRefinement5CleaningScheduleAndDailyCleaninm" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="room" org.eventb.core.type="ROOM"/>
+<org.eventb.core.poIdentifier name="cleaner" org.eventb.core.type="CLEANERS"/>
+<org.eventb.core.poIdentifier name="scheduleClean'" org.eventb.core.type="ℙ(ROOM×CLEANERS)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPRefinement5CleaningScheduleAndDailyCleaninm)" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTIDENTRefinement5CleaningScheduleAndDailyCleaninm" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="room∈ROOM" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#+|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="cleaner∈CLEANERS" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#+|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="room∉dom(scheduleClean)" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#+|org.eventb.core.guard#+"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPRefinement5CleaningScheduleAndDailyCleaninm" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTHYPRefinement5CleaningScheduleAndDailyCleaninm)" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="dailyClean(room)=FALSE" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#+|org.eventb.core.guard#-"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="ModifySchedule/grd4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTHYPRefinement5CleaningScheduleAndDailyCleaninn)"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="room∈dom(scheduleClean)∧scheduleClean∈ROOM ⇸ CLEANERS" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#evt1|org.eventb.core.guard#."/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#evt1|org.eventb.core.guard#."/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTHYPRefinement5CleaningScheduleAndDailyCleaninn)"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="ModifySchedule/grd5/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTHYPRefinement5CleaningScheduleAndDailyCleaninn*"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="room∈dom(dailyClean)∧dailyClean∈ROOM ⇸ BOOL" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#evt1|org.eventb.core.guard#\/"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#evt1|org.eventb.core.guard#\/"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTHYPRefinement5CleaningScheduleAndDailyCleaninn*"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="ModifySchedule/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTALLHYPRefinement5CleaningScheduleAndDailyCleaninn"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="scheduleClean{room ↦ cleaner}∈ROOM ⇸ CLEANERS" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.invariant#*"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#evt1"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.invariant#*"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poSequent#ModifySchedule\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTRefinement5CleaningScheduleAndDailyCleaninn" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="room" org.eventb.core.type="ROOM"/>
+<org.eventb.core.poIdentifier name="cleaner" org.eventb.core.type="CLEANERS"/>
+<org.eventb.core.poIdentifier name="scheduleClean'" org.eventb.core.type="ℙ(ROOM×CLEANERS)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPRefinement5CleaningScheduleAndDailyCleaninn)" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTIDENTRefinement5CleaningScheduleAndDailyCleaninn" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="room∈ROOM" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#evt1|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="cleaner∈CLEANERS" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#evt1|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="room∈dom(scheduleClean)" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#evt1|org.eventb.core.guard#-"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPRefinement5CleaningScheduleAndDailyCleaninn*" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTHYPRefinement5CleaningScheduleAndDailyCleaninn)" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="scheduleClean(room)≠cleaner" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#evt1|org.eventb.core.guard#."/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPRefinement5CleaningScheduleAndDailyCleaninn" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTHYPRefinement5CleaningScheduleAndDailyCleaninn*" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="dailyClean(room)=FALSE" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#evt1|org.eventb.core.guard#\/"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="dailyCleaning/grd4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTHYPRefinement5CleaningScheduleAndDailyCleanino)"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="room∈dom(scheduleClean)∧scheduleClean∈ROOM ⇸ CLEANERS" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#evt5|org.eventb.core.guard#grd5"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#evt5|org.eventb.core.guard#grd5"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTHYPRefinement5CleaningScheduleAndDailyCleanino)"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="dailyCleaning/grd5/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTHYPRefinement5CleaningScheduleAndDailyCleanino*"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="room∈dom(dailyClean)∧dailyClean∈ROOM ⇸ BOOL" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#evt5|org.eventb.core.guard#grd6"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#evt5|org.eventb.core.guard#grd6"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTHYPRefinement5CleaningScheduleAndDailyCleanino*"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="dailyCleaning/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTALLHYPRefinement5CleaningScheduleAndDailyCleanino"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="dailyClean{room ↦ TRUE}∈ROOM → BOOL" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.invariant#evt4"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#evt5"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.invariant#evt4"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poSequent#dailyCleaning\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTRefinement5CleaningScheduleAndDailyCleanino" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="dailyClean'" org.eventb.core.type="ℙ(ROOM×BOOL)"/>
+<org.eventb.core.poIdentifier name="room" org.eventb.core.type="ROOM"/>
+<org.eventb.core.poIdentifier name="cleaner" org.eventb.core.type="CLEANERS"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPRefinement5CleaningScheduleAndDailyCleanino)" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTIDENTRefinement5CleaningScheduleAndDailyCleanino" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="room∈ROOM" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#evt5|org.eventb.core.guard#grd1"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="cleaner∈CLEANERS" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#evt5|org.eventb.core.guard#grd2"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="room∈dom(scheduleClean)" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#evt5|org.eventb.core.guard#grd3"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPRefinement5CleaningScheduleAndDailyCleanino*" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTHYPRefinement5CleaningScheduleAndDailyCleanino)" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="scheduleClean(room)=cleaner" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#evt5|org.eventb.core.guard#grd5"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPRefinement5CleaningScheduleAndDailyCleanino" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#EVTHYPRefinement5CleaningScheduleAndDailyCleanino*" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="dailyClean(room)=FALSE" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.event#evt5|org.eventb.core.guard#grd6"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement5.bpo|org.eventb.core.poFile#Refinement5|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="scheduleClean∈ROOM ⇸ CLEANERS" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.invariant#*"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="today∈DATETIME" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.invariant#-"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="dailyClean∈ROOM → BOOL" org.eventb.core.source="/HotelManager_AllFunc/Refinement5.bum|org.eventb.core.machineFile#Refinement5|org.eventb.core.invariant#evt4"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

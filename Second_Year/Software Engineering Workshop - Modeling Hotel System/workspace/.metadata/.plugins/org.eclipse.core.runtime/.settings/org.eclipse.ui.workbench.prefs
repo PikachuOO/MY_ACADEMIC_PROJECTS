@@ -1,0 +1,4 @@
+//org.eclipse.ui.commands/state/de.prob.ui.doubleclickbehaviour/org.eclipse.ui.commands.radioState=NORMAL
+PLUGINS_NOT_ACTIVATED_ON_STARTUP=
+eclipse.preferences.version=1
+org.eclipse.ui.commands=<?xml version\="1.0" encoding\="UTF-8"?>\n<org.eclipse.ui.commands>\n<keyBinding contextId\="org.eclipse.ui.contexts.window" keyConfigurationId\="org.eclipse.ui.defaultAcceleratorConfiguration" keySequence\="DEL"/>\n<keyBinding contextId\="org.eclipse.ui.contexts.window" keyConfigurationId\="org.eclipse.ui.defaultAcceleratorConfiguration" keySequence\="DEL"/>\n<keyBinding commandId\="org.eclipse.ui.edit.delete" contextId\="org.eclipse.ui.contexts.window" keyConfigurationId\="org.eclipse.ui.defaultAcceleratorConfiguration" keySequence\="COMMAND+BS"/>\n</org.eclipse.ui.commands>

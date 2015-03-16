@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+<org.eventb.core.carrierSet name="'" org.eventb.core.identifier="ROOMS"/>
+<org.eventb.core.axiom name="(" org.eventb.core.comment="there can only be finite number of rooms in the hotel" org.eventb.core.label="axm1" org.eventb.core.predicate="finite(ROOMS)"/>
+<org.eventb.core.carrierSet name=")" org.eventb.core.identifier="PEOPLE"/>
+<org.eventb.core.axiom name="*" org.eventb.core.comment="there are only finite people in the world" org.eventb.core.label="axm2" org.eventb.core.predicate="finite(PEOPLE)"/>
+<org.eventb.core.carrierSet name="+" org.eventb.core.identifier="SERVICES"/>
+<org.eventb.core.axiom name="," org.eventb.core.comment="there are only finite number of service that the hotel can provide" org.eventb.core.label="axm3" org.eventb.core.predicate="finite(SERVICES)"/>
+<org.eventb.core.constant name="-" org.eventb.core.identifier="LEASTFINANCE"/>
+<org.eventb.core.axiom name="@" org.eventb.core.comment="there are only finite number of status for customers" org.eventb.core.label="axm4" org.eventb.core.predicate="finite(CUSTOMERSTATUS)"/>
+<org.eventb.core.axiom name="." org.eventb.core.comment="LEASTFINANCE is a natural number" org.eventb.core.label="axm5" org.eventb.core.predicate="LEASTFINANCE ∈ ℕ"/>
+<org.eventb.core.axiom name="1" org.eventb.core.comment="The hotel must maintain a financial balance above 0" org.eventb.core.label="axm6" org.eventb.core.predicate="LEASTFINANCE = 0"/>
+<org.eventb.core.carrierSet name="2" org.eventb.core.identifier="CUSTOMERSTATUS"/>
+<org.eventb.core.constant name="3" org.eventb.core.identifier="LOYAL"/>
+<org.eventb.core.constant name="4" org.eventb.core.identifier="PASSIVE"/>
+<org.eventb.core.axiom name="5" org.eventb.core.comment="Customers of the hotel are divided into 3 status categories&#13;&#10; based on their reliability of completing the reservation&#13;&#10;Loyal : A customer who never cancelled his reservation. New customer belongs to here&#13;&#10;Good:A customer who has canceled his reservation once.&#13;&#10;Passive:A customer who has cancelled his reservation more than once, in which case he is blacklisted from the hotel " org.eventb.core.label="axm7" org.eventb.core.predicate="partition(CUSTOMERSTATUS, {LOYAL}, {NORMAL}, {PASSIVE})"/>
+<org.eventb.core.axiom name="6" org.eventb.core.comment="there are only 3 customer status in the hotel" org.eventb.core.label="axm8" org.eventb.core.predicate="card(CUSTOMERSTATUS) = 3"/>
+<org.eventb.core.axiom name="7" org.eventb.core.comment="axiom used for ProB animation" org.eventb.core.label="axm9" org.eventb.core.predicate="card(PEOPLE) = 20"/>
+<org.eventb.core.constant name="8" org.eventb.core.identifier="NORMAL"/>
+<org.eventb.core.constant name="9" org.eventb.core.identifier="DOWNGRADE"/>
+<org.eventb.core.axiom name=":" org.eventb.core.comment="downgrader is a total function mapping from CUSTOMERSTATUS to it self" org.eventb.core.label="axm10" org.eventb.core.predicate="DOWNGRADE ∈ CUSTOMERSTATUS → CUSTOMERSTATUS"/>
+<org.eventb.core.axiom name=";" org.eventb.core.comment="When a loyal customer is downgraded, he becomes a normal customer.&#13;&#10;When a normal customer is downgraded, he becomes a passive customer." org.eventb.core.label="axm11" org.eventb.core.predicate="DOWNGRADE(LOYAL) = NORMAL ∧ DOWNGRADE(NORMAL) = PASSIVE ∧ DOWNGRADE(PASSIVE) = PASSIVE"/>
+<org.eventb.core.constant name="&gt;" org.eventb.core.identifier="MANAGER"/>
+<org.eventb.core.axiom name="?" org.eventb.core.comment="manager is an element of PEOPLE" org.eventb.core.label="axm12" org.eventb.core.predicate="MANAGER ∈ PEOPLE"/>
+<org.eventb.core.constant name="A" org.eventb.core.identifier="RESTOREFEE"/>
+<org.eventb.core.axiom name="B" org.eventb.core.label="axm13" org.eventb.core.predicate="RESTOREFEE ∈ ℕ1"/>
+</org.eventb.core.contextFile>

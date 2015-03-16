@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="ALLHUMAN" org.eventb.core.type="ℙ(ALLHUMAN)"/>
+<org.eventb.core.poIdentifier name="ROOMS" org.eventb.core.type="ℙ(ROOMS)"/>
+<org.eventb.core.poIdentifier name="People" org.eventb.core.type="ℙ(ALLHUMAN)"/>
+<org.eventb.core.poPredicate name="ALLHUMAO" org.eventb.core.predicate="finite(ALLHUMAN)" org.eventb.core.source="/keyCard/AbstractModelContext.buc|org.eventb.core.contextFile#AbstractModelContext|org.eventb.core.axiom#)"/>
+<org.eventb.core.poPredicate name="ALLHUMAP" org.eventb.core.predicate="finite(ROOMS)" org.eventb.core.source="/keyCard/AbstractModelContext.buc|org.eventb.core.contextFile#AbstractModelContext|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="ALLHUMAQ" org.eventb.core.predicate="ROOMS≠(∅ ⦂ ℙ(ROOMS))" org.eventb.core.source="/keyCard/AbstractModelContext.buc|org.eventb.core.contextFile#AbstractModelContext|org.eventb.core.axiom#+"/>
+<org.eventb.core.poPredicate name="ALLHUMAR" org.eventb.core.predicate="People⊂ALLHUMAN" org.eventb.core.source="/keyCard/AbstractModelContext.buc|org.eventb.core.contextFile#AbstractModelContext|org.eventb.core.axiom#."/>
+<org.eventb.core.poPredicate name="ALLHUMAS" org.eventb.core.predicate="People≠(∅ ⦂ ℙ(ALLHUMAN))" org.eventb.core.source="/keyCard/AbstractModelContext.buc|org.eventb.core.contextFile#AbstractModelContext|org.eventb.core.axiom#\/"/>
+<org.eventb.core.poIdentifier name="Keys" org.eventb.core.type="ℙ(Keys)"/>
+<org.eventb.core.poIdentifier name="GuestKeys" org.eventb.core.type="ℙ(Keys)"/>
+<org.eventb.core.poIdentifier name="MasterKey" org.eventb.core.type="Keys"/>
+<org.eventb.core.poIdentifier name="initRoomKeys" org.eventb.core.type="ℙ(Keys)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="axm5/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/keyCard/OriginalModelContext.bpo|org.eventb.core.poFile#OriginalModelContext|org.eventb.core.poPredicateSet#HYPAbstractModelContexx"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(initRoomKeys)∧finite(ROOMS)" org.eventb.core.source="/keyCard/OriginalModelContext.buc|org.eventb.core.contextFile#OriginalModelContext|org.eventb.core.axiom#;"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/keyCard/OriginalModelContext.buc|org.eventb.core.contextFile#OriginalModelContext|org.eventb.core.axiom#;"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/keyCard/OriginalModelContext.bpo|org.eventb.core.poFile#OriginalModelContext|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/keyCard/OriginalModelContext.bpo|org.eventb.core.poFile#OriginalModelContext|org.eventb.core.poPredicateSet#HYPAbstractModelContexx"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="axm7/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/keyCard/OriginalModelContext.bpo|org.eventb.core.poFile#OriginalModelContext|org.eventb.core.poPredicateSet#HYPAbstractModelContexy"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(GuestKeys)∧finite(ROOMS)" org.eventb.core.source="/keyCard/OriginalModelContext.buc|org.eventb.core.contextFile#OriginalModelContext|org.eventb.core.axiom#="/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/keyCard/OriginalModelContext.buc|org.eventb.core.contextFile#OriginalModelContext|org.eventb.core.axiom#="/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/keyCard/OriginalModelContext.bpo|org.eventb.core.poFile#OriginalModelContext|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/keyCard/OriginalModelContext.bpo|org.eventb.core.poFile#OriginalModelContext|org.eventb.core.poPredicateSet#HYPAbstractModelContexy"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="axm9/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/keyCard/OriginalModelContext.bpo|org.eventb.core.poFile#OriginalModelContext|org.eventb.core.poPredicateSet#HYPAbstractModelContex{"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(Keys)" org.eventb.core.source="/keyCard/OriginalModelContext.buc|org.eventb.core.contextFile#OriginalModelContext|org.eventb.core.axiom#@"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/keyCard/OriginalModelContext.buc|org.eventb.core.contextFile#OriginalModelContext|org.eventb.core.axiom#@"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/keyCard/OriginalModelContext.bpo|org.eventb.core.poFile#OriginalModelContext|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/keyCard/OriginalModelContext.bpo|org.eventb.core.poFile#OriginalModelContext|org.eventb.core.poPredicateSet#HYPAbstractModelContex{"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="axm10/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/keyCard/OriginalModelContext.bpo|org.eventb.core.poFile#OriginalModelContext|org.eventb.core.poPredicateSet#HYPAbstractModelContex\|"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(ROOMS)" org.eventb.core.source="/keyCard/OriginalModelContext.buc|org.eventb.core.contextFile#OriginalModelContext|org.eventb.core.axiom#A"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/keyCard/OriginalModelContext.buc|org.eventb.core.contextFile#OriginalModelContext|org.eventb.core.axiom#A"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/keyCard/OriginalModelContext.bpo|org.eventb.core.poFile#OriginalModelContext|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/keyCard/OriginalModelContext.bpo|org.eventb.core.poFile#OriginalModelContext|org.eventb.core.poPredicateSet#HYPAbstractModelContex\|"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="HYPAbstractModelContexx" org.eventb.core.parentSet="/keyCard/OriginalModelContext.bpo|org.eventb.core.poFile#OriginalModelContext|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="finite(Keys)" org.eventb.core.source="/keyCard/OriginalModelContext.buc|org.eventb.core.contextFile#OriginalModelContext|org.eventb.core.axiom#)"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="GuestKeys⊂Keys" org.eventb.core.source="/keyCard/OriginalModelContext.buc|org.eventb.core.contextFile#OriginalModelContext|org.eventb.core.axiom#7"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="initRoomKeys⊂Keys" org.eventb.core.source="/keyCard/OriginalModelContext.buc|org.eventb.core.contextFile#OriginalModelContext|org.eventb.core.axiom#:"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="partition(Keys,{MasterKey},GuestKeys,initRoomKeys)" org.eventb.core.source="/keyCard/OriginalModelContext.buc|org.eventb.core.contextFile#OriginalModelContext|org.eventb.core.axiom#6"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPAbstractModelContexy" org.eventb.core.parentSet="/keyCard/OriginalModelContext.bpo|org.eventb.core.poFile#OriginalModelContext|org.eventb.core.poPredicateSet#HYPAbstractModelContexx" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="card(initRoomKeys)=card(ROOMS)" org.eventb.core.source="/keyCard/OriginalModelContext.buc|org.eventb.core.contextFile#OriginalModelContext|org.eventb.core.axiom#;"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPAbstractModelContex{" org.eventb.core.parentSet="/keyCard/OriginalModelContext.bpo|org.eventb.core.poFile#OriginalModelContext|org.eventb.core.poPredicateSet#HYPAbstractModelContexy" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="card(GuestKeys)&gt;card(ROOMS)" org.eventb.core.source="/keyCard/OriginalModelContext.buc|org.eventb.core.contextFile#OriginalModelContext|org.eventb.core.axiom#="/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="Keys≠(∅ ⦂ ℙ(Keys))" org.eventb.core.source="/keyCard/OriginalModelContext.buc|org.eventb.core.contextFile#OriginalModelContext|org.eventb.core.axiom#&gt;"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPAbstractModelContex|" org.eventb.core.parentSet="/keyCard/OriginalModelContext.bpo|org.eventb.core.poFile#OriginalModelContext|org.eventb.core.poPredicateSet#HYPAbstractModelContex{" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="card(Keys)=10" org.eventb.core.source="/keyCard/OriginalModelContext.buc|org.eventb.core.contextFile#OriginalModelContext|org.eventb.core.axiom#@"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/keyCard/OriginalModelContext.bpo|org.eventb.core.poFile#OriginalModelContext|org.eventb.core.poPredicateSet#HYPAbstractModelContex\|" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="card(ROOMS)=3" org.eventb.core.source="/keyCard/OriginalModelContext.buc|org.eventb.core.contextFile#OriginalModelContext|org.eventb.core.axiom#A"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

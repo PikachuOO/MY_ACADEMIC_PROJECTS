@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+<org.eventb.core.extendsContext name="'" org.eventb.core.target="IntersectionAndLightAndDirection"/>
+<org.eventb.core.constant name="(" org.eventb.core.identifier="nextPedColor"/>
+<org.eventb.core.axiom name=")" org.eventb.core.label="axm1" org.eventb.core.predicate="nextPedColor ∈ COLOR → COLOR"/>
+<org.eventb.core.axiom name="*" org.eventb.core.label="axm2" org.eventb.core.predicate="nextPedColor(RED) = GREEN"/>
+<org.eventb.core.axiom name="+" org.eventb.core.label="axm3" org.eventb.core.predicate="nextPedColor(GREEN) = RED"/>
+<org.eventb.core.axiom name="," org.eventb.core.label="axm4" org.eventb.core.predicate="∀c · c ∈ {RED,GREEN} ⇒ nextPedColor(nextPedColor(c)) = c" org.eventb.core.theorem="true"/>
+</org.eventb.core.contextFile>

@@ -1,0 +1,61 @@
+Notation
+PK: Primary Key
+FK: Foreign Key
+##:Comments
+
+People
+EmailAddress(PK)
+##This is designed base on the assumption on each email address can only have one onwer.
+##Also this assume that every contacts are 'associated' with the site
+Given Name
+Family Name
+
+User (Subclass of People)
+LoginDetails
+DateOfRegistration
+PhotoCollections
+PersonalWebsite
+Gender
+DateOfBirth
+PersonalWebsite
+ProfilePhoto
+ContactsList
+##A list of Email Address
+
+Contacts(Subclass of People)
+
+Photo
+Title
+DescriptiveText
+FileSize
+DateTaken
+DateUploaded
+Optional(Technical)Description
+Thumbnail
+Rate
+SafetyLevel
+
+
+
+Collection
+CollectionID
+UserID (FK)
+Name
+Description
+
+Photo Collection (Composite)
+PhotoID 
+CollectionID
+
+User Comments (Composite)
+UserID
+CommentID
+ThreadCommentID (Optional) 
+
+
+Relations
+
+User n-n Contacts
+
+Photo 1-n Comments
+Each Photo is visible by Private, Friends, Family, Friends+Family, Public

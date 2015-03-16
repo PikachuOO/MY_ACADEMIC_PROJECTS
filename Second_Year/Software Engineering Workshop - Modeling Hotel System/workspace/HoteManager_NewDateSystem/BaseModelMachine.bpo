@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="CUSTOMERSTATUS" org.eventb.core.type="ℙ(CUSTOMERSTATUS)"/>
+<org.eventb.core.poIdentifier name="PEOPLE" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.poIdentifier name="ROOMS" org.eventb.core.type="ℙ(ROOMS)"/>
+<org.eventb.core.poIdentifier name="SERVICES" org.eventb.core.type="ℙ(SERVICES)"/>
+<org.eventb.core.poIdentifier name="DOWNGRADE" org.eventb.core.type="ℙ(CUSTOMERSTATUS×CUSTOMERSTATUS)"/>
+<org.eventb.core.poIdentifier name="LEASTFINANCE" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="LOYAL" org.eventb.core.type="CUSTOMERSTATUS"/>
+<org.eventb.core.poIdentifier name="MANAGER" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.poIdentifier name="NORMAL" org.eventb.core.type="CUSTOMERSTATUS"/>
+<org.eventb.core.poIdentifier name="PASSIVE" org.eventb.core.type="CUSTOMERSTATUS"/>
+<org.eventb.core.poIdentifier name="RESTOREFEE" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATUT" org.eventb.core.predicate="finite(ROOMS)" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#("/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATUU" org.eventb.core.predicate="finite(PEOPLE)" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATUV" org.eventb.core.predicate="finite(SERVICES)" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#,"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATUW" org.eventb.core.predicate="finite(CUSTOMERSTATUS)" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#@"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATUX" org.eventb.core.predicate="LEASTFINANCE∈ℕ" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#."/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATUY" org.eventb.core.predicate="LEASTFINANCE=0" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#1"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATUZ" org.eventb.core.predicate="partition(CUSTOMERSTATUS,{LOYAL},{NORMAL},{PASSIVE})" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#5"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATU[" org.eventb.core.predicate="card(CUSTOMERSTATUS)=3" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#6"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATU\" org.eventb.core.predicate="card(PEOPLE)=20" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#7"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATU]" org.eventb.core.predicate="DOWNGRADE∈CUSTOMERSTATUS → CUSTOMERSTATUS" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#:"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATU^" org.eventb.core.predicate="DOWNGRADE(LOYAL)=NORMAL∧DOWNGRADE(NORMAL)=PASSIVE∧DOWNGRADE(PASSIVE)=PASSIVE" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#;"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATU_" org.eventb.core.predicate="MANAGER∈PEOPLE" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#?"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATU`" org.eventb.core.predicate="RESTOREFEE∈ℕ1" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#B"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="addedRooms" org.eventb.core.type="ℙ(ROOMS)"/>
+<org.eventb.core.poIdentifier name="customerStatus" org.eventb.core.type="ℙ(PEOPLE×CUSTOMERSTATUS)"/>
+<org.eventb.core.poIdentifier name="customers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.poIdentifier name="employees" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.poIdentifier name="hotelFinance" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="importedServices" org.eventb.core.type="ℙ(SERVICES)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="INITIALISATION/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTALLHYPimportedServicet"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(PEOPLE))⊆PEOPLE ∖ {MANAGER}" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#)"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#)"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poSequent#INITIALISATION\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTALLHYPimportedServicet"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{MANAGER}∩(∅ ⦂ ℙ(PEOPLE))=(∅ ⦂ ℙ(PEOPLE))" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poSequent#INITIALISATION\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTALLHYPimportedServicet"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="0∈ℕ" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#8"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#8"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poSequent#INITIALISATION\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTALLHYPimportedServicet"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(PEOPLE×CUSTOMERSTATUS))∈(∅ ⦂ ℙ(PEOPLE)) → CUSTOMERSTATUS" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#?"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#?"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poSequent#INITIALISATION\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTALLHYPimportedServicet"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="MANAGER∈{MANAGER}" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#A"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#A"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poSequent#INITIALISATION\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTimportedServicet" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="employees'" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.poIdentifier name="addedRooms'" org.eventb.core.type="ℙ(ROOMS)"/>
+<org.eventb.core.poIdentifier name="customerStatus'" org.eventb.core.type="ℙ(PEOPLE×CUSTOMERSTATUS)"/>
+<org.eventb.core.poIdentifier name="customers'" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.poIdentifier name="importedServices'" org.eventb.core.type="ℙ(SERVICES)"/>
+<org.eventb.core.poIdentifier name="hotelFinance'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPimportedServicet" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTIDENTimportedServicet" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poSequent name="AddEmployee/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTALLHYPimportedServiceu"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(employees∪{employee})∩customers=(∅ ⦂ ℙ(PEOPLE))" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#9"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poSequent#AddEmployee\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="AddEmployee/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTALLHYPimportedServiceu"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="MANAGER∈employees∪{employee}" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#A"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#9"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#A"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poSequent#AddEmployee\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTimportedServiceu" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="employees'" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.poIdentifier name="employee" org.eventb.core.type="PEOPLE"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPimportedServiceu" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTIDENTimportedServiceu" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="employee∈PEOPLE ∖ (customers∪employees)" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#9|org.eventb.core.guard#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="EmployeeQuits/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTALLHYPimportedServicev"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(employees ∖ {employee})∩customers=(∅ ⦂ ℙ(PEOPLE))" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#:"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poSequent#EmployeeQuits\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="EmployeeQuits/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTALLHYPimportedServicev"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="MANAGER∈employees ∖ {employee}" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#A"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#:"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#A"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poSequent#EmployeeQuits\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTimportedServicev" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="employees'" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.poIdentifier name="employee" org.eventb.core.type="PEOPLE"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPimportedServicev" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTIDENTimportedServicev" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="employee∈employees ∖ {MANAGER}" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#:|org.eventb.core.guard#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTimportedServicew" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="addedRooms'" org.eventb.core.type="ℙ(ROOMS)"/>
+<org.eventb.core.poIdentifier name="room" org.eventb.core.type="ROOMS"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPimportedServicew" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTIDENTimportedServicew" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="room∈ROOMS ∖ addedRooms" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#.|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="employees≠(∅ ⦂ ℙ(PEOPLE))" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#.|org.eventb.core.guard#*"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTimportedServicex" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="addedRooms'" org.eventb.core.type="ℙ(ROOMS)"/>
+<org.eventb.core.poIdentifier name="room" org.eventb.core.type="ROOMS"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPimportedServicex" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTIDENTimportedServicex" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="room∈addedRooms" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#1|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="employees≠(∅ ⦂ ℙ(PEOPLE))" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#1|org.eventb.core.guard#*"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTimportedServicey" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="importedServices'" org.eventb.core.type="ℙ(SERVICES)"/>
+<org.eventb.core.poIdentifier name="service" org.eventb.core.type="SERVICES"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPimportedServicey" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTIDENTimportedServicey" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="service∈SERVICES ∖ importedServices" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#4|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="employees≠(∅ ⦂ ℙ(PEOPLE))" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#4|org.eventb.core.guard#*"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTimportedServicez" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="importedServices'" org.eventb.core.type="ℙ(SERVICES)"/>
+<org.eventb.core.poIdentifier name="service" org.eventb.core.type="SERVICES"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPimportedServicez" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTIDENTimportedServicez" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="service∈importedServices" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#5|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="employees≠(∅ ⦂ ℙ(PEOPLE))" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#5|org.eventb.core.guard#*"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="AddCustomer/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTALLHYPimportedService{"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="customers∪{customer}⊆PEOPLE ∖ {MANAGER}" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#)"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#6"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#)"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poSequent#AddCustomer\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="AddCustomer/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTALLHYPimportedService{"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="employees∩(customers∪{customer})=(∅ ⦂ ℙ(PEOPLE))" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#6"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poSequent#AddCustomer\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="AddCustomer/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTALLHYPimportedService{"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="customerStatus{customer ↦ LOYAL}∈customers∪{customer} → CUSTOMERSTATUS" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#?"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#6"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#?"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poSequent#AddCustomer\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTimportedService{" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="customerStatus'" org.eventb.core.type="ℙ(PEOPLE×CUSTOMERSTATUS)"/>
+<org.eventb.core.poIdentifier name="customers'" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.poIdentifier name="customer" org.eventb.core.type="PEOPLE"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPimportedService{" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTIDENTimportedService{" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="customer∈PEOPLE ∖ (customers∪employees∪{MANAGER})" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#6|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="employees ∖ {MANAGER}≠(∅ ⦂ ℙ(PEOPLE))" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#6|org.eventb.core.guard#*"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="downgradeCustomer/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTALLHYPimportedService\|"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="customerStatus{customer ↦ DOWNGRADE(customerStatus(customer))}∈customers → CUSTOMERSTATUS" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#?"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#@"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#?"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poSequent#downgradeCustomer\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="downgradeCustomer/act1/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTALLHYPimportedService\|"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="customer∈dom(customerStatus)∧customerStatus∈PEOPLE ⇸ CUSTOMERSTATUS∧customerStatus(customer)∈dom(DOWNGRADE)∧DOWNGRADE∈CUSTOMERSTATUS ⇸ CUSTOMERSTATUS" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#@|org.eventb.core.action#)"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#@|org.eventb.core.action#)"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTALLHYPimportedService\|"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTimportedService|" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="customerStatus'" org.eventb.core.type="ℙ(PEOPLE×CUSTOMERSTATUS)"/>
+<org.eventb.core.poIdentifier name="customer" org.eventb.core.type="PEOPLE"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPimportedService|" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTIDENTimportedService\|" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="customer∈customers" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#@|org.eventb.core.guard#+"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="employees ∖ {MANAGER}≠(∅ ⦂ ℙ(PEOPLE))" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#@|org.eventb.core.guard#*"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="RestoreCustomer/grd3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTHYPimportedService}("/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="customer∈dom(customerStatus)∧customerStatus∈PEOPLE ⇸ CUSTOMERSTATUS" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#B|org.eventb.core.guard#*"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#B|org.eventb.core.guard#*"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTHYPimportedService}("/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="RestoreCustomer/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTALLHYPimportedService}"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="hotelFinance+RESTOREFEE∈ℕ" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#8"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#B"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#8"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poSequent#RestoreCustomer\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="RestoreCustomer/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTALLHYPimportedService}"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="customerStatus{customer ↦ LOYAL}∈customers → CUSTOMERSTATUS" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#?"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#B"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#?"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poSequent#RestoreCustomer\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTimportedService}" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="customerStatus'" org.eventb.core.type="ℙ(PEOPLE×CUSTOMERSTATUS)"/>
+<org.eventb.core.poIdentifier name="hotelFinance'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="customer" org.eventb.core.type="PEOPLE"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPimportedService}(" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTIDENTimportedService}" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="customer∈customers" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#B|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="employees ∖ {MANAGER}≠(∅ ⦂ ℙ(PEOPLE))" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#B|org.eventb.core.guard#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPimportedService}" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTHYPimportedService}(" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="customerStatus(customer)≠LOYAL" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#B|org.eventb.core.guard#*"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="AddFinance/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTALLHYPimportedService~"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="hotelFinance+sales∈ℕ" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#8"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#;"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#8"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poSequent#AddFinance\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTimportedService~" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="hotelFinance'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="sales" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPimportedService~" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTIDENTimportedService~" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="sales∈ℕ1" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#;|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="employees ∖ {MANAGER}≠(∅ ⦂ ℙ(PEOPLE))" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#;|org.eventb.core.guard#+"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="RobFinance/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTALLHYPimportedServicf'"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="hotelFinance − purchase∈ℕ" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#8"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#="/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#8"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poSequent#RobFinance\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTimportedServicf'" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="purchase" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="hotelFinance'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPimportedServicf'" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#EVTIDENTimportedServicf'" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="purchase∈ℕ1" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#=|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="hotelFinance − purchase≥LEASTFINANCE" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#=|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="employees ∖ {MANAGER}≠(∅ ⦂ ℙ(PEOPLE))" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.event#=|org.eventb.core.guard#+"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/HoteManager_NewDateSystem/BaseModelMachine.bpo|org.eventb.core.poFile#BaseModelMachine|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="customers⊆PEOPLE ∖ {MANAGER}" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#)"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="employees⊆PEOPLE" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#,"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="employees∩customers=(∅ ⦂ ℙ(PEOPLE))" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#-"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="addedRooms⊆ROOMS" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#0"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="importedServices⊆SERVICES" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#3"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="hotelFinance∈ℕ" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#8"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="customerStatus∈customers → CUSTOMERSTATUS" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#?"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="MANAGER∈employees" org.eventb.core.source="/HoteManager_NewDateSystem/BaseModelMachine.bum|org.eventb.core.machineFile#BaseModelMachine|org.eventb.core.invariant#A"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

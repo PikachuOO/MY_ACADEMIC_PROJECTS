@@ -1,0 +1,23 @@
+Room 20 A7
+Room 30 K5
+Room 100 Z8
+Book Watson 10 6 Jan 2 20 4 ClubMeetig
+Print A7
+Print K5
+Book Tim 10 6 Jan 2 20 4 CSESOC
+Print A7
+Print K5
+Book Rob 10 6 Jan 2 20 4 MedSOC
+Print A7
+Print K5
+Print Z8
+Book Roy 10 3 Jan 2 20 4 MathSOC
+Print A7
+Print K5
+Print Z8
+Change Jackie Z8 6 Jan 2 20 12 Sep 1 7 3 NewMedSOC
+Print A7
+Print K5
+Book Joe 99 1 May 5 12 2 BoardMeeting
+Print Z8
+Book Joe 102 1 May 5 12 2 BoardMeeting

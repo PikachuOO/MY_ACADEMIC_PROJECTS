@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.psFile>
+<org.eventb.core.psStatus name="inv3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="inv4/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="inv5/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="inv6/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="inv7/THM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficCycle/grd5/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficCycle/grd6/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficCycle/grd7/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficCycle/grd8/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficCycle/grd9/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficCycle/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficCycle/inv3/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="116" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="changeTrafficCycle/inv4/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="116" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="changeTrafficCycle/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficCycle/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficCycle/act1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changePedToGreen/grd5/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changePedToGreen/grd6/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changePedToGreen/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changePedToGreen/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changePedToGreen/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changePedToGreen/act1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changePedToRed/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changePedToRed/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changePedToRed/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changePedToRed/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changePedToRed/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changePedToRed/act1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficToGreen/grd5/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficToGreen/grd6/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficToGreen/grd7/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficToGreen/grd8/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficToGreen/grd9/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficToGreen/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficToGreen/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficToGreen/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficToGreen/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficToGreen/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficToAMBER/grd5/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficToAMBER/grd6/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficToAMBER/grd7/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficToAMBER/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficToAMBER/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficToAMBER/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficToAMBER/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficToAMBER/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficToRED/grd5/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficToRED/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficToRED/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficToRED/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficToRED/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="changeTrafficToRED/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="roadToGreen/grd6/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="117" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="roadToGreen/grd7/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="117" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="roadToGreen/grd8/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="117" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="roadToGreen/grd11/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="117" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="roadToGreen/grd11/THM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="117" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="roadToGreen/grd12/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="117" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="roadToGreen/grd12/THM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="117" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="roadToGreen/grd14/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="117" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="roadToGreen/grd15/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="117" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="roadToGreen/inv1/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="117" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="roadToGreen/inv2/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="117" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="roadToGreen/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="117" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="roadToGreen/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="117" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="roadToGreen/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="117" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="roadToGreen/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="117" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="roadToGreen/act1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="117" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="roadToGreen/act2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="117" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="roadToOPPOSITERed/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="roadToOPPOSITERed/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="roadToOPPOSITERed/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="roadToOPPOSITERed/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="roadToOPPOSITERed/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="roadToOPPOSITERed/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="116" org.eventb.core.psManual="false"/>
+</org.eventb.core.psFile>

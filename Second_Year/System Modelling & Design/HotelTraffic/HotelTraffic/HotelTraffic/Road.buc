@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+<org.eventb.core.extendsContext name="'" org.eventb.core.target="IntersectionAndLightAndDirection"/>
+<org.eventb.core.constant name="(" org.eventb.core.identifier="ROAD"/>
+<org.eventb.core.axiom name=")" org.eventb.core.label="axm1" org.eventb.core.predicate="ROAD ∈ INTERSECTION × DIRECTION → ℙ(INTERSECTION × DIRECTION)"/>
+<org.eventb.core.axiom name="*" org.eventb.core.label="axm2" org.eventb.core.predicate="ROAD(NW ↦ EASTWEST) = {NW ↦ EASTWEST, PARK ↦ EASTWEST, NE ↦ EASTWEST}"/>
+<org.eventb.core.axiom name="+" org.eventb.core.label="axm3" org.eventb.core.predicate="ROAD(NW ↦ NORTHSOUTH) = {NW ↦ NORTHSOUTH, SW ↦ NORTHSOUTH}"/>
+<org.eventb.core.axiom name="," org.eventb.core.label="axm4" org.eventb.core.predicate="ROAD(SW ↦ EASTWEST) = {SW ↦ EASTWEST, SE ↦ EASTWEST}"/>
+<org.eventb.core.axiom name="-" org.eventb.core.label="axm5" org.eventb.core.predicate="ROAD(SW ↦ NORTHSOUTH) = {SW ↦ NORTHSOUTH, NW ↦ NORTHSOUTH}"/>
+<org.eventb.core.axiom name="." org.eventb.core.label="axm6" org.eventb.core.predicate="ROAD(NE ↦ EASTWEST) = {NW ↦ EASTWEST, PARK ↦ EASTWEST, NE ↦ EASTWEST}"/>
+<org.eventb.core.axiom name="/" org.eventb.core.label="axm7" org.eventb.core.predicate="ROAD(NE ↦ NORTHSOUTH) = {NE ↦ NORTHSOUTH, SE ↦ NORTHSOUTH}"/>
+<org.eventb.core.axiom name="0" org.eventb.core.label="axm8" org.eventb.core.predicate="ROAD(SE ↦ EASTWEST) = {SW ↦ EASTWEST, SE ↦ EASTWEST}"/>
+<org.eventb.core.axiom name="1" org.eventb.core.label="axm9" org.eventb.core.predicate="ROAD(SE ↦ NORTHSOUTH) = {SE ↦ NORTHSOUTH, NE ↦ NORTHSOUTH}"/>
+<org.eventb.core.axiom name="2" org.eventb.core.label="axm10" org.eventb.core.predicate="ROAD(PARK ↦ EASTWEST) = {PARK ↦ EASTWEST, NW ↦ EASTWEST, NE ↦ EASTWEST}"/>
+<org.eventb.core.axiom name="3" org.eventb.core.label="axm11" org.eventb.core.predicate="ROAD(PARK ↦ NORTHSOUTH) = {PARK ↦ NORTHSOUTH}"/>
+</org.eventb.core.contextFile>

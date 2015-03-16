@@ -1,0 +1,93 @@
+Room A7 assigned
+A7
+Watson Jan 2 20 4 ClubMeetig
+Watson Jan 9 20 4 ClubMeetig
+Watson Jan 16 20 4 ClubMeetig
+Watson Jan 23 20 4 ClubMeetig
+Watson Jan 30 20 4 ClubMeetig
+Watson Feb 6 20 4 ClubMeetig
+K5
+Room K5 assigned
+A7
+Watson Jan 2 20 4 ClubMeetig
+Watson Jan 9 20 4 ClubMeetig
+Watson Jan 16 20 4 ClubMeetig
+Watson Jan 23 20 4 ClubMeetig
+Watson Jan 30 20 4 ClubMeetig
+Watson Feb 6 20 4 ClubMeetig
+K5
+Tim Jan 2 20 4 CSESOC
+Tim Jan 9 20 4 CSESOC
+Tim Jan 16 20 4 CSESOC
+Tim Jan 23 20 4 CSESOC
+Tim Jan 30 20 4 CSESOC
+Tim Feb 6 20 4 CSESOC
+Room Z8 assigned
+A7
+Watson Jan 2 20 4 ClubMeetig
+Watson Jan 9 20 4 ClubMeetig
+Watson Jan 16 20 4 ClubMeetig
+Watson Jan 23 20 4 ClubMeetig
+Watson Jan 30 20 4 ClubMeetig
+Watson Feb 6 20 4 ClubMeetig
+K5
+Tim Jan 2 20 4 CSESOC
+Tim Jan 9 20 4 CSESOC
+Tim Jan 16 20 4 CSESOC
+Tim Jan 23 20 4 CSESOC
+Tim Jan 30 20 4 CSESOC
+Tim Feb 6 20 4 CSESOC
+Z8
+Rob Jan 2 20 4 MedSOC
+Rob Jan 9 20 4 MedSOC
+Rob Jan 16 20 4 MedSOC
+Rob Jan 23 20 4 MedSOC
+Rob Jan 30 20 4 MedSOC
+Rob Feb 6 20 4 MedSOC
+Booking rejected
+A7
+Watson Jan 2 20 4 ClubMeetig
+Watson Jan 9 20 4 ClubMeetig
+Watson Jan 16 20 4 ClubMeetig
+Watson Jan 23 20 4 ClubMeetig
+Watson Jan 30 20 4 ClubMeetig
+Watson Feb 6 20 4 ClubMeetig
+K5
+Tim Jan 2 20 4 CSESOC
+Tim Jan 9 20 4 CSESOC
+Tim Jan 16 20 4 CSESOC
+Tim Jan 23 20 4 CSESOC
+Tim Jan 30 20 4 CSESOC
+Tim Feb 6 20 4 CSESOC
+Z8
+Rob Jan 2 20 4 MedSOC
+Rob Jan 9 20 4 MedSOC
+Rob Jan 16 20 4 MedSOC
+Rob Jan 23 20 4 MedSOC
+Rob Jan 30 20 4 MedSOC
+Rob Feb 6 20 4 MedSOC
+Change Rejected
+A7
+Watson Jan 2 20 4 ClubMeetig
+Watson Jan 9 20 4 ClubMeetig
+Watson Jan 16 20 4 ClubMeetig
+Watson Jan 23 20 4 ClubMeetig
+Watson Jan 30 20 4 ClubMeetig
+Watson Feb 6 20 4 ClubMeetig
+K5
+Tim Jan 2 20 4 CSESOC
+Tim Jan 9 20 4 CSESOC
+Tim Jan 16 20 4 CSESOC
+Tim Jan 23 20 4 CSESOC
+Tim Jan 30 20 4 CSESOC
+Tim Feb 6 20 4 CSESOC
+Room Z8 assigned
+Z8
+Rob Jan 2 20 4 MedSOC
+Rob Jan 9 20 4 MedSOC
+Rob Jan 16 20 4 MedSOC
+Rob Jan 23 20 4 MedSOC
+Rob Jan 30 20 4 MedSOC
+Rob Feb 6 20 4 MedSOC
+Joe May 5 12 2 BoardMeeting
+Booking rejected

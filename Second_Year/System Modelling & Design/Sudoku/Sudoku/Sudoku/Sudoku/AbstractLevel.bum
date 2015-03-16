@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="sudokuGrid ≔ ∅" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="(" org.eventb.core.identifier="sudokuGrid"/>
+<org.eventb.core.invariant name=")" org.eventb.core.label="inv1" org.eventb.core.predicate="sudokuGrid ∈ (ROW × COL) ⇸ NUM"/>
+<org.eventb.core.seesContext name="*" org.eventb.core.target="SudokuGrid"/>
+<org.eventb.core.invariant name="inv8" org.eventb.core.label="inv2" org.eventb.core.predicate="dom(sudokuGrid) ⊆ dom(BOX)" org.eventb.core.theorem="true"/>
+<org.eventb.core.invariant name="inv9" org.eventb.core.label="inv3" org.eventb.core.predicate="sudokuGrid ∈ dom(BOX) ⇸ NUM" org.eventb.core.theorem="true"/>
+<org.eventb.core.invariant name="inv&gt;" org.eventb.core.label="inv4" org.eventb.core.predicate="finite(sudokuGrid)"/>
+<org.eventb.core.invariant name="inv=" org.eventb.core.label="inv5" org.eventb.core.predicate="card(sudokuGrid) ≤ 81"/>
+<org.eventb.core.invariant name="inv:" org.eventb.core.label="inv6" org.eventb.core.predicate="∀row, col, num · row ↦ col ↦ num ∈ sudokuGrid ∧ row ↦ col ∈ dom(sudokuGrid) ⇒&#10;(∀rowX · rowX ↦ col ∈ dom(sudokuGrid)∖{row ↦ col} ∧ rowX ≠ row ⇒ sudokuGrid(rowX ↦ col) ≠ num) ∧ &#10;(∀colX · row ↦ colX ∈ dom(sudokuGrid)∖{row ↦ col} ∧ colX ≠ col ⇒ sudokuGrid(row ↦ colX) ≠ num)"/>
+<org.eventb.core.event name="inv4" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="setUp">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="initGrid"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="initGrid ∈ ROW × COL ⇸ NUM"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="sudokuGrid ≔ initGrid" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="sudokuGrid = ∅"/>
+<org.eventb.core.guard name="/" org.eventb.core.label="grd3" org.eventb.core.predicate="∀row, col, num · row ↦ col ↦ num ∈ initGrid ∧ row ↦ col ∈ dom(initGrid) ⇒&#10;(∀rowX · rowX ↦ col ∈ dom(initGrid)∖{row ↦ col} ⇒ initGrid(rowX ↦ col) ≠ num) ∧ &#10;(∀colX · row ↦ colX ∈ dom(initGrid)∖{row ↦ col} ⇒ initGrid(row ↦ colX) ≠ num)"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd4" org.eventb.core.predicate="∀rowa, cola , num · rowa ↦ cola ↦ num ∈ initGrid ∧ rowa ↦ cola ∈ dom(initGrid) ⇒&#10;(∀rowb, colb · rowb ↦ colb ↦ num ∈ initGrid∖{rowa ↦ cola ↦ num} ∧ rowb ↦ colb ∈ dom(initGrid) ⇒&#10;BOX(rowa ↦ cola) ≠ BOX(rowb ↦ colb))"/>
+<org.eventb.core.guard name="0" org.eventb.core.label="grd5" org.eventb.core.predicate="finite(initGrid) ∧ card(initGrid) &lt; 81"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="inv3" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="fill">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="row"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="col"/>
+<org.eventb.core.parameter name=")" org.eventb.core.comment="" org.eventb.core.identifier="num"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="row ∈ ROW"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="col ∈ COL"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="num ∈ NUM"/>
+<org.eventb.core.guard name="7" org.eventb.core.label="grd4" org.eventb.core.predicate="fillGrid = sudokuGrid ∪ {row ↦ col ↦ num}"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd5" org.eventb.core.predicate="row ↦ col ∉ dom(sudokuGrid)"/>
+<org.eventb.core.guard name="5" org.eventb.core.label="grd6" org.eventb.core.predicate="row ↦ col ∈ dom(BOX)"/>
+<org.eventb.core.guard name="4" org.eventb.core.label="grd7" org.eventb.core.predicate="card(sudokuGrid) &lt; 81"/>
+<org.eventb.core.guard name="9" org.eventb.core.label="grd8" org.eventb.core.predicate="card(fillGrid) ≤ 81"/>
+<org.eventb.core.guard name="8" org.eventb.core.label="grd9" org.eventb.core.predicate="dom(fillGrid) ⊆ dom(BOX)"/>
+<org.eventb.core.guard name="/" org.eventb.core.label="grd10" org.eventb.core.predicate="∀row, col, num · row ↦ col ↦ num ∈ fillGrid ∧ row ↦ col ∈ dom(fillGrid) ⇒&#10;(∀rowX · rowX ↦ col ∈ dom(fillGrid)∖{row ↦ col} ∧ rowX ≠ row ⇒ fillGrid(rowX ↦ col) ≠ num) ∧ &#10;(∀colX · row ↦ colX ∈ dom(fillGrid)∖{row ↦ col} ∧ colX ≠ col ⇒ fillGrid(row ↦ colX) ≠ num)"/>
+<org.eventb.core.guard name="0" org.eventb.core.label="grd11" org.eventb.core.predicate="∀rowa, cola , num · rowa ↦ cola ↦ num ∈ fillGrid ∧ rowa ↦ cola ∈ dom(fillGrid) ⇒&#10;(∀rowb, colb · rowb ↦ colb ↦ num ∈ fillGrid∖{rowa ↦ cola ↦ num} ∧ rowb ↦ colb ∈ dom(fillGrid) ⇒&#10;BOX(rowa ↦ cola) ≠ BOX(rowb ↦ colb))"/>
+<org.eventb.core.action name="1" org.eventb.core.assignment="sudokuGrid ≔ fillGrid" org.eventb.core.label="act1"/>
+<org.eventb.core.parameter name="6" org.eventb.core.identifier="fillGrid"/>
+</org.eventb.core.event>
+<org.eventb.core.invariant name="inv7" org.eventb.core.comment="make sure things go the right way" org.eventb.core.label="inv7" org.eventb.core.predicate="∀rowa, cola, num · rowa ↦ cola ↦ num ∈ sudokuGrid ⇒&#10;(∀rowb, colb · rowb ↦ colb ↦ num ∈ sudokuGrid∖{rowa ↦ cola ↦ num} ⇒&#10; rowa ≠ rowb ∨ cola ≠ colb) " org.eventb.core.theorem="true"/>
+<org.eventb.core.invariant name="inv2" org.eventb.core.label="inv8" org.eventb.core.predicate="∀rowa, cola , num · rowa ↦ cola ↦ num ∈ sudokuGrid ∧ rowa ↦ cola ∈ dom(sudokuGrid) ⇒&#10;(∀rowb, colb · rowb ↦ colb ↦ num ∈ sudokuGrid∖{rowa ↦ cola ↦ num} ∧ rowb ↦ colb ∈ dom(sudokuGrid) ⇒&#10;BOX(rowa ↦ cola) ≠ BOX(rowb ↦ colb))"/>
+<org.eventb.core.invariant name="inv;" org.eventb.core.comment="make sure things go the right way" org.eventb.core.label="inv9" org.eventb.core.predicate="∀rowa, cola, rowb, colb · (rowa ↦ cola) ∈ dom(sudokuGrid) ∧ (rowb ↦ colb) ∈ dom(sudokuGrid) ∧ &#10;sudokuGrid(rowa ↦ cola) ≠ sudokuGrid(rowb ↦ colb) ∧ BOX(rowa ↦ cola) = BOX(rowb ↦ colb) ⇒&#10;rowa ≠ rowb ∨ cola ≠ colb" org.eventb.core.theorem="true"/>
+<org.eventb.core.event name="evt1" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="digCell">
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="row"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="col"/>
+<org.eventb.core.parameter name="element1" org.eventb.core.comment="" org.eventb.core.identifier="num"/>
+<org.eventb.core.parameter name="element2" org.eventb.core.identifier="digCell"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="sudokuGrid ≔ digCell" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd1" org.eventb.core.predicate="row ∈ ROW"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.label="grd2" org.eventb.core.predicate="col ∈ COL"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.label="grd3" org.eventb.core.predicate="num ∈ NUM"/>
+<org.eventb.core.guard name="grd4" org.eventb.core.label="grd4" org.eventb.core.predicate="digCell = sudokuGrid ∖ {row ↦ col ↦ num}"/>
+<org.eventb.core.guard name="grd5" org.eventb.core.label="grd5" org.eventb.core.predicate="row ↦ col ∈ dom(sudokuGrid)"/>
+<org.eventb.core.guard name="grd7" org.eventb.core.label="grd6" org.eventb.core.predicate="row ↦ col ∈ dom(BOX)"/>
+<org.eventb.core.guard name="grd8" org.eventb.core.label="grd7" org.eventb.core.predicate="card(sudokuGrid) &lt; 81"/>
+<org.eventb.core.guard name="grd9" org.eventb.core.label="grd8" org.eventb.core.predicate="card(digCell) ≤ 81"/>
+<org.eventb.core.guard name="grd10" org.eventb.core.label="grd9" org.eventb.core.predicate="dom(digCell) ⊆ dom(BOX)"/>
+<org.eventb.core.guard name="element4" org.eventb.core.label="grd10" org.eventb.core.predicate="num = sudokuGrid(row ↦ col)"/>
+<org.eventb.core.guard name="grd11" org.eventb.core.label="grd11" org.eventb.core.predicate="∀row, col, num · row ↦ col ↦ num ∈ digCell ∧ row ↦ col ∈ dom(digCell) ⇒&#10;(∀rowX · rowX ↦ col ∈ dom(digCell)∖{row ↦ col} ∧ rowX ≠ row ⇒ digCell(rowX ↦ col) ≠ num) ∧ &#10;(∀colX · row ↦ colX ∈ dom(digCell)∖{row ↦ col} ∧ colX ≠ col ⇒ digCell(row ↦ colX) ≠ num)"/>
+<org.eventb.core.guard name="grd12" org.eventb.core.label="grd12" org.eventb.core.predicate="∀rowa, cola , num · rowa ↦ cola ↦ num ∈ digCell ∧ rowa ↦ cola ∈ dom(digCell) ⇒&#10;(∀rowb, colb · rowb ↦ colb ↦ num ∈ digCell∖{rowa ↦ cola ↦ num} ∧ rowb ↦ colb ∈ dom(digCell) ⇒&#10;BOX(rowa ↦ cola) ≠ BOX(rowb ↦ colb))"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

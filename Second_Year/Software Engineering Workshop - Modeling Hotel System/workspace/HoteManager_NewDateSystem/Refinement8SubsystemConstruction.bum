@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="act1" org.eventb.core.assignment="checkInReservation ≔ ∅" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="act2" org.eventb.core.assignment="occupiedRoom ≔ ∅" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="act3" org.eventb.core.assignment="cleanliness ≔ (λroom·room ∈ ROOMS ∣ TRUE)" org.eventb.core.comment="all rooms are clean no matter what" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt1" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="CheckIn">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="guest"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="room"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="guest ∈ customers"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="room ∈ ROOMS"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="room is not allocated to guest" org.eventb.core.label="grd3" org.eventb.core.predicate="room ∉ dom(checkInReservation)"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="checkInReservation(room) ≔ guest" org.eventb.core.comment="room is allocated to guest" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="-" org.eventb.core.comment="guest is not in any rooms" org.eventb.core.label="grd4" org.eventb.core.predicate="guest ∉ dom(occupiedRoom)"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd5" org.eventb.core.predicate="cleanliness(room) = TRUE"/>
+<org.eventb.core.guard name="/" org.eventb.core.comment="guest can't checkin twice" org.eventb.core.label="grd6" org.eventb.core.predicate="guest ∉ ran(checkInReservation)"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt2" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Enter">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="guest"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="room"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="guest ∈ customers"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="room ∈ ROOMS"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="guest is not in any room" org.eventb.core.label="grd3" org.eventb.core.predicate="guest ∉ dom(occupiedRoom)"/>
+<org.eventb.core.guard name="," org.eventb.core.comment="guest is allocated to the room" org.eventb.core.label="grd4" org.eventb.core.predicate="room↦guest ∈ checkInReservation"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="occupiedRoom(guest) ≔ room" org.eventb.core.comment="guest is in the room" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt3" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Exit">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="guest"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="room"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="guest ∈ customers"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="room ∈ ROOMS"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="guest must be in the room" org.eventb.core.label="grd3" org.eventb.core.predicate="(guest↦room) ∈ occupiedRoom"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="occupiedRoom ≔ {guest} ⩤ occupiedRoom" org.eventb.core.comment="guest is not in the domain anymore" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="act1" org.eventb.core.assignment="cleanliness(room) ≔ FALSE" org.eventb.core.comment="guest makes room dirty when they enter" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt4" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Checkout">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="guest"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="room"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="guest ∈ customers"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="room ∈ ROOMS"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="guest ∉ dom(occupiedRoom)"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="room ∈ dom(checkInReservation)"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="checkInReservation ≔ {room} ⩤ checkInReservation" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd5" org.eventb.core.predicate="checkInReservation(room) = guest"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt5" org.eventb.core.comment="this particular settings assume that the cleaner can clean the room at any time" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Clean">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="room"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="room ∈ ROOMS"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="" org.eventb.core.label="grd2" org.eventb.core.predicate="cleanliness(room) = FALSE"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="cleanliness(room) ≔ TRUE" org.eventb.core.comment="" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.seesContext name="(" org.eventb.core.target="Refinement8KeyCardSubSystem"/>
+<org.eventb.core.variable name="var1" org.eventb.core.comment="partial funciton that maps room to guest" org.eventb.core.identifier="checkInReservation"/>
+<org.eventb.core.variable name="var4" org.eventb.core.comment="location mapps guest to room" org.eventb.core.identifier="occupiedRoom"/>
+<org.eventb.core.variable name="var3" org.eventb.core.comment="total funciton shows scleaning status of each room" org.eventb.core.identifier="cleanliness"/>
+<org.eventb.core.invariant name="inv1" org.eventb.core.label="inv1" org.eventb.core.predicate="checkInReservation ∈ ROOMS ⇸ customers"/>
+<org.eventb.core.invariant name="inv4" org.eventb.core.comment="" org.eventb.core.label="inv2" org.eventb.core.predicate="occupiedRoom ∈ customers ⇸ ROOMS"/>
+<org.eventb.core.invariant name="inv3" org.eventb.core.label="inv3" org.eventb.core.predicate="cleanliness ∈ ROOMS → BOOL"/>
+<org.eventb.core.invariant name="var5" org.eventb.core.label="inv4" org.eventb.core.predicate="dom(occupiedRoom) ⊆ ran(checkInReservation)"/>
+</org.eventb.core.machineFile>

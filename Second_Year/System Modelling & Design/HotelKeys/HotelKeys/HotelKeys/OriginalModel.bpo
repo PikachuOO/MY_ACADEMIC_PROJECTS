@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="12">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="9">
+<org.eventb.core.poIdentifier name="People" org.eventb.core.type="ℙ(People)"/>
+<org.eventb.core.poIdentifier name="ROOMS" org.eventb.core.type="ℙ(ROOMS)"/>
+<org.eventb.core.poPredicate name="Peoplf" org.eventb.core.predicate="finite(People)" org.eventb.core.source="/HotelKeys3/AbstractModelContext.buc|org.eventb.core.contextFile#AbstractModelContext|org.eventb.core.axiom#)"/>
+<org.eventb.core.poPredicate name="Peoplg" org.eventb.core.predicate="finite(ROOMS)" org.eventb.core.source="/HotelKeys3/AbstractModelContext.buc|org.eventb.core.contextFile#AbstractModelContext|org.eventb.core.axiom#*"/>
+<org.eventb.core.poIdentifier name="Cleaners" org.eventb.core.type="ℙ(Cleaners)"/>
+<org.eventb.core.poIdentifier name="GuestCards" org.eventb.core.type="ℙ(GuestCards)"/>
+<org.eventb.core.poIdentifier name="Keys" org.eventb.core.type="ℙ(Keys)"/>
+<org.eventb.core.poIdentifier name="Locks" org.eventb.core.type="ℙ(Locks)"/>
+<org.eventb.core.poIdentifier name="MasterCards" org.eventb.core.type="ℙ(MasterCards)"/>
+<org.eventb.core.poIdentifier name="MasterKeys" org.eventb.core.type="ℙ(MasterKeys)"/>
+<org.eventb.core.poIdentifier name="getLock" org.eventb.core.type="ℙ(getLock)"/>
+<org.eventb.core.poIdentifier name="cleanerKey" org.eventb.core.type="MasterKeys"/>
+<org.eventb.core.poPredicate name="MasterCardt" org.eventb.core.predicate="finite(Keys)" org.eventb.core.source="/HotelKeys3/OriginalSystemContext.buc|org.eventb.core.contextFile#OriginalSystemContext|org.eventb.core.axiom#)"/>
+<org.eventb.core.poPredicate name="MasterCardu" org.eventb.core.predicate="finite(MasterCards)" org.eventb.core.source="/HotelKeys3/OriginalSystemContext.buc|org.eventb.core.contextFile#OriginalSystemContext|org.eventb.core.axiom#."/>
+<org.eventb.core.poPredicate name="MasterCardv" org.eventb.core.predicate="finite(Cleaners)" org.eventb.core.source="/HotelKeys3/OriginalSystemContext.buc|org.eventb.core.contextFile#OriginalSystemContext|org.eventb.core.axiom#\/"/>
+<org.eventb.core.poPredicate name="MasterCardw" org.eventb.core.predicate="finite(GuestCards)" org.eventb.core.source="/HotelKeys3/OriginalSystemContext.buc|org.eventb.core.contextFile#OriginalSystemContext|org.eventb.core.axiom#0"/>
+<org.eventb.core.poPredicate name="MasterCardx" org.eventb.core.predicate="finite(Locks)" org.eventb.core.source="/HotelKeys3/OriginalSystemContext.buc|org.eventb.core.contextFile#OriginalSystemContext|org.eventb.core.axiom#1"/>
+<org.eventb.core.poPredicate name="MasterCardy" org.eventb.core.predicate="cleanerKey∈MasterKeys" org.eventb.core.source="/HotelKeys3/OriginalSystemContext.buc|org.eventb.core.contextFile#OriginalSystemContext|org.eventb.core.axiom#4"/>
+<org.eventb.core.poPredicate name="MasterCardz" org.eventb.core.predicate="card(Locks)=card(ROOMS)" org.eventb.core.source="/HotelKeys3/OriginalSystemContext.buc|org.eventb.core.contextFile#OriginalSystemContext|org.eventb.core.axiom#5"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/HotelKeys3/OriginalModel.bpo|org.eventb.core.poFile#OriginalModel|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="9">
+<org.eventb.core.poIdentifier name="allocated" org.eventb.core.type="ℙ(ROOMS×People)"/>
+<org.eventb.core.poIdentifier name="cleanliness" org.eventb.core.type="ℙ(ROOMS×BOOL)"/>
+<org.eventb.core.poIdentifier name="guests" org.eventb.core.type="ℙ(People)"/>
+<org.eventb.core.poIdentifier name="location" org.eventb.core.type="ℙ(People×ROOMS)"/>
+<org.eventb.core.poPredicate name="cleanlinest" org.eventb.core.predicate="guests⊆People" org.eventb.core.source="/HotelKeys3/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.invariant#)"/>
+<org.eventb.core.poPredicate name="cleanlinesu" org.eventb.core.predicate="allocated∈ROOMS ⇸ guests" org.eventb.core.source="/HotelKeys3/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.invariant#-"/>
+<org.eventb.core.poPredicate name="cleanlinesv" org.eventb.core.predicate="location∈guests ⇸ ROOMS" org.eventb.core.source="/HotelKeys3/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.invariant#0"/>
+<org.eventb.core.poPredicate name="cleanlinesw" org.eventb.core.predicate="cleanliness∈ROOMS → BOOL" org.eventb.core.source="/HotelKeys3/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.invariant#6"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTOriginalSystemContexu" org.eventb.core.parentSet="/HotelKeys3/OriginalModel.bpo|org.eventb.core.poFile#OriginalModel|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="9">
+<org.eventb.core.poIdentifier name="allocated'" org.eventb.core.type="ℙ(ROOMS×People)"/>
+<org.eventb.core.poIdentifier name="cleanliness'" org.eventb.core.type="ℙ(ROOMS×BOOL)"/>
+<org.eventb.core.poIdentifier name="guests'" org.eventb.core.type="ℙ(People)"/>
+<org.eventb.core.poIdentifier name="location'" org.eventb.core.type="ℙ(People×ROOMS)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPOriginalSystemContexu" org.eventb.core.parentSet="/HotelKeys3/OriginalModel.bpo|org.eventb.core.poFile#OriginalModel|org.eventb.core.poPredicateSet#EVTIDENTOriginalSystemContexu" org.eventb.core.poStamp="9"/>
+<org.eventb.core.poSequent name="CheckIn/grd5/GRD" org.eventb.core.accurate="false" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="11">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelKeys3/OriginalModel.bpo|org.eventb.core.poFile#OriginalModel|org.eventb.core.poPredicateSet#EVTALLHYPOriginalSystemContexv"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="cleanliness(room)=TRUE" org.eventb.core.source="/HotelKeys3/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#1|org.eventb.core.guard#."/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/HotelKeys3/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#1"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/HotelKeys3/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#1|org.eventb.core.guard#."/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/HotelKeys3/OriginalModel.bum|org.eventb.core.machineFile#OriginalModel|org.eventb.core.event#7"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HotelKeys3/OriginalModel.bpo|org.eventb.core.poFile#OriginalModel|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HotelKeys3/OriginalModel.bpo|org.eventb.core.poFile#OriginalModel|org.eventb.core.poSequent#CheckIn\/grd5\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTOriginalSystemContexv" org.eventb.core.parentSet="/HotelKeys3/OriginalModel.bpo|org.eventb.core.poFile#OriginalModel|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="9">
+<org.eventb.core.poIdentifier name="guest" org.eventb.core.type="People"/>
+<org.eventb.core.poIdentifier name="allocated'" org.eventb.core.type="ℙ(ROOMS×People)"/>
+<org.eventb.core.poIdentifier name="room" org.eventb.core.type="ROOMS"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPOriginalSystemContexv" org.eventb.core.parentSet="/HotelKeys3/OriginalModel.bpo|org.eventb.core.poFile#OriginalModel|org.eventb.core.poPredicateSet#EVTIDENTOriginalSystemContexv" org.eventb.core.poStamp="9">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="guest∈guests" org.eventb.core.source="/HotelKeys3/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#1|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="room∈ROOMS" org.eventb.core.source="/HotelKeys3/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#1|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="room∉dom(allocated)" org.eventb.core.source="/HotelKeys3/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#1|org.eventb.core.guard#+"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="guest∉dom(location)" org.eventb.core.source="/HotelKeys3/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#1|org.eventb.core.guard#-"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="Enter/cleanliness/EQL" org.eventb.core.accurate="false" org.eventb.core.poDesc="Equality of common variables" org.eventb.core.poStamp="10">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelKeys3/OriginalModel.bpo|org.eventb.core.poFile#OriginalModel|org.eventb.core.poPredicateSet#EVTALLHYPOriginalSystemContexw"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="cleanliness{room ↦ FALSE}=cleanliness" org.eventb.core.source="/HotelKeys3/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#2|org.eventb.core.action#."/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/HotelKeys3/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#2"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/HotelKeys3/OriginalModel.bum|org.eventb.core.machineFile#OriginalModel|org.eventb.core.event#8"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HotelKeys3/OriginalModel.bpo|org.eventb.core.poFile#OriginalModel|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HotelKeys3/OriginalModel.bpo|org.eventb.core.poFile#OriginalModel|org.eventb.core.poSequent#Enter\/cleanliness\/EQL|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTOriginalSystemContexw" org.eventb.core.parentSet="/HotelKeys3/OriginalModel.bpo|org.eventb.core.poFile#OriginalModel|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="9">
+<org.eventb.core.poIdentifier name="guest" org.eventb.core.type="People"/>
+<org.eventb.core.poIdentifier name="cleanliness'" org.eventb.core.type="ℙ(ROOMS×BOOL)"/>
+<org.eventb.core.poIdentifier name="room" org.eventb.core.type="ROOMS"/>
+<org.eventb.core.poIdentifier name="location'" org.eventb.core.type="ℙ(People×ROOMS)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPOriginalSystemContexw" org.eventb.core.parentSet="/HotelKeys3/OriginalModel.bpo|org.eventb.core.poFile#OriginalModel|org.eventb.core.poPredicateSet#EVTIDENTOriginalSystemContexw" org.eventb.core.poStamp="9">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="guest∈guests" org.eventb.core.source="/HotelKeys3/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#2|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="room∈ROOMS" org.eventb.core.source="/HotelKeys3/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#2|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="guest∉dom(location)" org.eventb.core.source="/HotelKeys3/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#2|org.eventb.core.guard#+"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="room ↦ guest∈allocated" org.eventb.core.source="/HotelKeys3/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#2|org.eventb.core.guard#,"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTOriginalSystemContexx" org.eventb.core.parentSet="/HotelKeys3/OriginalModel.bpo|org.eventb.core.poFile#OriginalModel|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="9">
+<org.eventb.core.poIdentifier name="guest" org.eventb.core.type="People"/>
+<org.eventb.core.poIdentifier name="room" org.eventb.core.type="ROOMS"/>
+<org.eventb.core.poIdentifier name="location'" org.eventb.core.type="ℙ(People×ROOMS)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPOriginalSystemContexx" org.eventb.core.parentSet="/HotelKeys3/OriginalModel.bpo|org.eventb.core.poFile#OriginalModel|org.eventb.core.poPredicateSet#EVTIDENTOriginalSystemContexx" org.eventb.core.poStamp="9">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="guest∈guests" org.eventb.core.source="/HotelKeys3/OriginalModel.bum|org.eventb.core.machineFile#OriginalModel|org.eventb.core.event#9|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="room∈ROOMS" org.eventb.core.source="/HotelKeys3/OriginalModel.bum|org.eventb.core.machineFile#OriginalModel|org.eventb.core.event#9|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="guest ↦ room∈location" org.eventb.core.source="/HotelKeys3/OriginalModel.bum|org.eventb.core.machineFile#OriginalModel|org.eventb.core.event#9|org.eventb.core.guard#+"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="Checkout/act2/SIM" org.eventb.core.accurate="false" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="12">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelKeys3/OriginalModel.bpo|org.eventb.core.poFile#OriginalModel|org.eventb.core.poPredicateSet#EVTALLHYPOriginalSystemContexy"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="cleanliness=cleanliness{room ↦ FALSE}" org.eventb.core.source="/HotelKeys3/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#4|org.eventb.core.action#\/"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/HotelKeys3/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#4"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/HotelKeys3/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#4|org.eventb.core.action#\/"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/HotelKeys3/OriginalModel.bum|org.eventb.core.machineFile#OriginalModel|org.eventb.core.event#:"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HotelKeys3/OriginalModel.bpo|org.eventb.core.poFile#OriginalModel|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HotelKeys3/OriginalModel.bpo|org.eventb.core.poFile#OriginalModel|org.eventb.core.poSequent#Checkout\/act2\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTOriginalSystemContexy" org.eventb.core.parentSet="/HotelKeys3/OriginalModel.bpo|org.eventb.core.poFile#OriginalModel|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="12">
+<org.eventb.core.poIdentifier name="guest" org.eventb.core.type="People"/>
+<org.eventb.core.poIdentifier name="allocated'" org.eventb.core.type="ℙ(ROOMS×People)"/>
+<org.eventb.core.poIdentifier name="cleanliness'" org.eventb.core.type="ℙ(ROOMS×BOOL)"/>
+<org.eventb.core.poIdentifier name="room" org.eventb.core.type="ROOMS"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPOriginalSystemContexy" org.eventb.core.parentSet="/HotelKeys3/OriginalModel.bpo|org.eventb.core.poFile#OriginalModel|org.eventb.core.poPredicateSet#EVTIDENTOriginalSystemContexy" org.eventb.core.poStamp="12">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="guest∈guests" org.eventb.core.source="/HotelKeys3/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#4|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="room∈ROOMS" org.eventb.core.source="/HotelKeys3/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#4|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="guest∉dom(location)" org.eventb.core.source="/HotelKeys3/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#4|org.eventb.core.guard#+"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="room∈dom(allocated)" org.eventb.core.source="/HotelKeys3/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#4|org.eventb.core.guard#,"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="allocated(room)=guest" org.eventb.core.source="/HotelKeys3/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#4|org.eventb.core.guard#."/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTOriginalSystemContexz" org.eventb.core.parentSet="/HotelKeys3/OriginalModel.bpo|org.eventb.core.poFile#OriginalModel|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="9">
+<org.eventb.core.poIdentifier name="cleanliness'" org.eventb.core.type="ℙ(ROOMS×BOOL)"/>
+<org.eventb.core.poIdentifier name="room" org.eventb.core.type="ROOMS"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPOriginalSystemContexz" org.eventb.core.parentSet="/HotelKeys3/OriginalModel.bpo|org.eventb.core.poFile#OriginalModel|org.eventb.core.poPredicateSet#EVTIDENTOriginalSystemContexz" org.eventb.core.poStamp="9">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="room∈ROOMS" org.eventb.core.source="/HotelKeys3/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#7|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="cleanliness(room)=FALSE" org.eventb.core.source="/HotelKeys3/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#7|org.eventb.core.guard#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/HotelKeys3/OriginalModel.bpo|org.eventb.core.poFile#OriginalModel|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="9"/>
+</org.eventb.core.poFile>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+<org.eventb.core.carrierSet name="," org.eventb.core.identifier="ALLHUMAN"/>
+<org.eventb.core.carrierSet name="(" org.eventb.core.comment="captalised here since rooms will never be change throughout the system" org.eventb.core.identifier="ROOMS"/>
+<org.eventb.core.axiom name=")" org.eventb.core.comment="there are finite number of people" org.eventb.core.label="axm1" org.eventb.core.predicate="finite(ALLHUMAN)"/>
+<org.eventb.core.axiom name="*" org.eventb.core.comment="there are finite number of rooms in hotel, and this is represent all possible rooms" org.eventb.core.label="axm2" org.eventb.core.predicate="finite(ROOMS)"/>
+<org.eventb.core.axiom name="+" org.eventb.core.label="axm3" org.eventb.core.predicate="ROOMS ≠ ∅"/>
+<org.eventb.core.constant name="-" org.eventb.core.comment="assume people is the set represent all guest in hotel" org.eventb.core.identifier="People"/>
+<org.eventb.core.axiom name="." org.eventb.core.label="axm4" org.eventb.core.predicate="People ⊂ ALLHUMAN"/>
+<org.eventb.core.axiom name="/" org.eventb.core.label="axm5" org.eventb.core.predicate="People ≠ ∅"/>
+</org.eventb.core.contextFile>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="CUSTOMERSTATUS" org.eventb.core.type="ℙ(CUSTOMERSTATUS)"/>
+<org.eventb.core.poIdentifier name="PEOPLE" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.poIdentifier name="ROOMS" org.eventb.core.type="ℙ(ROOMS)"/>
+<org.eventb.core.poIdentifier name="SERVICES" org.eventb.core.type="ℙ(SERVICES)"/>
+<org.eventb.core.poIdentifier name="DOWNGRADE" org.eventb.core.type="ℙ(CUSTOMERSTATUS×CUSTOMERSTATUS)"/>
+<org.eventb.core.poIdentifier name="LEASTFINANCE" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="LOYAL" org.eventb.core.type="CUSTOMERSTATUS"/>
+<org.eventb.core.poIdentifier name="MANAGER" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.poIdentifier name="NORMAL" org.eventb.core.type="CUSTOMERSTATUS"/>
+<org.eventb.core.poIdentifier name="PASSIVE" org.eventb.core.type="CUSTOMERSTATUS"/>
+<org.eventb.core.poIdentifier name="RESTOREFEE" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATUT" org.eventb.core.predicate="finite(ROOMS)" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#("/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATUU" org.eventb.core.predicate="finite(PEOPLE)" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATUV" org.eventb.core.predicate="finite(SERVICES)" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#,"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATUW" org.eventb.core.predicate="finite(CUSTOMERSTATUS)" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#@"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATUX" org.eventb.core.predicate="LEASTFINANCE∈ℕ" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#."/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATUY" org.eventb.core.predicate="LEASTFINANCE=0" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#1"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATUZ" org.eventb.core.predicate="partition(CUSTOMERSTATUS,{LOYAL},{NORMAL},{PASSIVE})" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#5"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATU[" org.eventb.core.predicate="card(CUSTOMERSTATUS)=3" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#6"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATU\" org.eventb.core.predicate="card(PEOPLE)=20" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#7"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATU]" org.eventb.core.predicate="DOWNGRADE∈CUSTOMERSTATUS → CUSTOMERSTATUS" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#:"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATU^" org.eventb.core.predicate="DOWNGRADE(LOYAL)=NORMAL∧DOWNGRADE(NORMAL)=PASSIVE∧DOWNGRADE(PASSIVE)=PASSIVE" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#;"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATU_" org.eventb.core.predicate="MANAGER∈PEOPLE" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#?"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATU`" org.eventb.core.predicate="RESTOREFEE∈ℕ1" org.eventb.core.source="/HotelManager_AllFunc/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#B"/>
+<org.eventb.core.poIdentifier name="PERSONALINFO" org.eventb.core.type="ℙ(PERSONALINFO)"/>
+<org.eventb.core.poIdentifier name="MANAGERINFO" org.eventb.core.type="PERSONALINFO"/>
+<org.eventb.core.poIdentifier name="OTHERS" org.eventb.core.type="ℙ(PERSONALINFO)"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATUa" org.eventb.core.predicate="OTHERS⊂PERSONALINFO" org.eventb.core.source="/HotelManager_AllFunc/Refinement6PersonalInfo.buc|org.eventb.core.contextFile#Refinement6PersonalInfo|org.eventb.core.axiom#+"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATUb" org.eventb.core.predicate="MANAGERINFO∈PERSONALINFO" org.eventb.core.source="/HotelManager_AllFunc/Refinement6PersonalInfo.buc|org.eventb.core.contextFile#Refinement6PersonalInfo|org.eventb.core.axiom#-"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATUc" org.eventb.core.predicate="partition(PERSONALINFO,{MANAGERINFO},OTHERS)" org.eventb.core.source="/HotelManager_AllFunc/Refinement6PersonalInfo.buc|org.eventb.core.contextFile#Refinement6PersonalInfo|org.eventb.core.axiom#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="customers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.poIdentifier name="employees" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.poIdentifier name="personalInfo" org.eventb.core.type="ℙ(PEOPLE×PERSONALINFO)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="INITIALISATION/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#EVTALLHYPRefinement6PersonalInft"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(PEOPLE))⊆PEOPLE ∖ {MANAGER}" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.invariant#inv1"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.invariant#inv1"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poSequent#INITIALISATION\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#EVTALLHYPRefinement6PersonalInft"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{MANAGER}∩(∅ ⦂ ℙ(PEOPLE))=(∅ ⦂ ℙ(PEOPLE))" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.invariant#inv3"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.invariant#inv3"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poSequent#INITIALISATION\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#EVTALLHYPRefinement6PersonalInft"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{MANAGER ↦ MANAGERINFO}∈{MANAGER}∪(∅ ⦂ ℙ(PEOPLE)) → PERSONALINFO" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.invariant#var6"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.invariant#var6"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poSequent#INITIALISATION\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTRefinement6PersonalInft" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="employees'" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.poIdentifier name="personalInfo'" org.eventb.core.type="ℙ(PEOPLE×PERSONALINFO)"/>
+<org.eventb.core.poIdentifier name="customers'" org.eventb.core.type="ℙ(PEOPLE)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPRefinement6PersonalInft" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#EVTIDENTRefinement6PersonalInft" org.eventb.core.poStamp="1"/>
+<org.eventb.core.poSequent name="AddEmployee/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#EVTALLHYPRefinement6PersonalInfu"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(employees∪{employee})∩customers=(∅ ⦂ ℙ(PEOPLE))" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.invariant#inv3"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.event#evt1"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.invariant#inv3"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poSequent#AddEmployee\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="AddEmployee/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#EVTALLHYPRefinement6PersonalInfu"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="personalInfo{employee ↦ newInfo}∈(employees∪{employee})∪customers → PERSONALINFO" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.invariant#var6"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.event#evt1"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.invariant#var6"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poSequent#AddEmployee\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTRefinement6PersonalInfu" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="employees'" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.poIdentifier name="personalInfo'" org.eventb.core.type="ℙ(PEOPLE×PERSONALINFO)"/>
+<org.eventb.core.poIdentifier name="employee" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.poIdentifier name="newInfo" org.eventb.core.type="PERSONALINFO"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPRefinement6PersonalInfu" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#EVTIDENTRefinement6PersonalInfu" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="employee∈PEOPLE ∖ (customers∪employees)" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.event#evt1|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="newInfo∈PERSONALINFO ∖ ran(personalInfo)" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.event#evt1|org.eventb.core.guard#grd1"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="EmployeeQuits/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#EVTALLHYPRefinement6PersonalInfv"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(employees ∖ {employee})∩customers=(∅ ⦂ ℙ(PEOPLE))" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.invariant#inv3"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.event#evt2"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.invariant#inv3"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poSequent#EmployeeQuits\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="EmployeeQuits/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#EVTALLHYPRefinement6PersonalInfv"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{employee} ⩤ personalInfo∈(employees ∖ {employee})∪customers → PERSONALINFO" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.invariant#var6"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.event#evt2"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.invariant#var6"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poSequent#EmployeeQuits\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTRefinement6PersonalInfv" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="employees'" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.poIdentifier name="personalInfo'" org.eventb.core.type="ℙ(PEOPLE×PERSONALINFO)"/>
+<org.eventb.core.poIdentifier name="employee" org.eventb.core.type="PEOPLE"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPRefinement6PersonalInfv" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#EVTIDENTRefinement6PersonalInfv" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="employee∈employees ∖ {MANAGER}" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.event#evt2|org.eventb.core.guard#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="AddCustomer/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#EVTALLHYPRefinement6PersonalInfw"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="customers∪{customer}⊆PEOPLE ∖ {MANAGER}" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.invariant#inv1"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.event#evt3"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.invariant#inv1"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poSequent#AddCustomer\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="AddCustomer/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#EVTALLHYPRefinement6PersonalInfw"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="employees∩(customers∪{customer})=(∅ ⦂ ℙ(PEOPLE))" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.invariant#inv3"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.event#evt3"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.invariant#inv3"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poSequent#AddCustomer\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="AddCustomer/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#EVTALLHYPRefinement6PersonalInfw"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="personalInfo{customer ↦ newInfo}∈employees∪(customers∪{customer}) → PERSONALINFO" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.invariant#var6"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.event#evt3"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.invariant#var6"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poSequent#AddCustomer\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTRefinement6PersonalInfw" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="personalInfo'" org.eventb.core.type="ℙ(PEOPLE×PERSONALINFO)"/>
+<org.eventb.core.poIdentifier name="customers'" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.poIdentifier name="newInfo" org.eventb.core.type="PERSONALINFO"/>
+<org.eventb.core.poIdentifier name="customer" org.eventb.core.type="PEOPLE"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPRefinement6PersonalInfw" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#EVTIDENTRefinement6PersonalInfw" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="customer∈PEOPLE ∖ (customers∪employees∪{MANAGER})" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.event#evt3|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="employees ∖ {MANAGER}≠(∅ ⦂ ℙ(PEOPLE))" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.event#evt3|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="newInfo∈PERSONALINFO ∖ ran(personalInfo)" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.event#evt3|org.eventb.core.guard#,"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="UpdateInfomation/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#EVTALLHYPRefinement6PersonalInfx"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="personalInfo{people ↦ newInfo}∈employees∪customers → PERSONALINFO" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.invariant#var6"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.event#var8"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.invariant#var6"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poSequent#UpdateInfomation\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTRefinement6PersonalInfx" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="personalInfo'" org.eventb.core.type="ℙ(PEOPLE×PERSONALINFO)"/>
+<org.eventb.core.poIdentifier name="people" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.poIdentifier name="manager" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.poIdentifier name="newInfo" org.eventb.core.type="PERSONALINFO"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPRefinement6PersonalInfx" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#EVTIDENTRefinement6PersonalInfx" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="people∈employees∪customers" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.event#var8|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="manager=MANAGER" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.event#var8|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="newInfo∈PERSONALINFO ∖ ran(personalInfo)" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.event#var8|org.eventb.core.guard#+"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement6.bpo|org.eventb.core.poFile#Refinement6|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="customers⊆PEOPLE ∖ {MANAGER}" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.invariant#inv1"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="employees⊆PEOPLE" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.invariant#inv2"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="employees∩customers=(∅ ⦂ ℙ(PEOPLE))" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.invariant#inv3"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="personalInfo∈employees∪customers → PERSONALINFO" org.eventb.core.source="/HotelManager_AllFunc/Refinement6.bum|org.eventb.core.machineFile#Refinement6|org.eventb.core.invariant#var6"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

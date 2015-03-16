@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+<org.eventb.core.extendsContext name="'" org.eventb.core.target="SudokuGrid"/>
+<org.eventb.core.constant name="(" org.eventb.core.identifier="grid"/>
+<org.eventb.core.axiom name=")" org.eventb.core.label="axm1" org.eventb.core.predicate="grid ∈ ROW ↔ COL"/>
+<org.eventb.core.axiom name="*" org.eventb.core.label="axm2" org.eventb.core.predicate="∀row, col · row ∈ ROW ∧ col ∈ COL ⇒ row ↦ col ∈ grid "/>
+<org.eventb.core.constant name="+" org.eventb.core.identifier="SAMEROW"/>
+<org.eventb.core.axiom name="," org.eventb.core.label="axm4" org.eventb.core.predicate="SAMEROW ∈ grid ↔ grid"/>
+<org.eventb.core.constant name="-" org.eventb.core.identifier="SAMECOL"/>
+<org.eventb.core.axiom name="." org.eventb.core.label="axm5" org.eventb.core.predicate="SAMECOL ∈ grid ↔ grid"/>
+<org.eventb.core.constant name="/" org.eventb.core.identifier="SAMEBOX"/>
+<org.eventb.core.axiom name="0" org.eventb.core.label="axm6" org.eventb.core.predicate="SAMEBOX ∈  grid ↔ grid"/>
+<org.eventb.core.axiom name="axm5" org.eventb.core.label="axm7" org.eventb.core.predicate="∀rowa, cola, rowb, colb · rowa ∈ ROW ∧ rowb ∈ ROW ∧ cola ∈ COL ∧ colb ∈ COL ∧ rowa = rowb ⇒&#10;((rowa ↦ cola)↦(rowb ↦ colb)) ∈ SAMEROW"/>
+<org.eventb.core.axiom name="axm6" org.eventb.core.label="axm8" org.eventb.core.predicate="∀rowa, cola, rowb, colb ·  rowa ∈ ROW ∧ rowb ∈ ROW ∧ cola ∈ COL ∧ colb ∈ COL ∧ cola = colb ⇒&#10;((rowa ↦ cola)↦(rowb ↦ colb)) ∈ SAMECOL"/>
+<org.eventb.core.axiom name="axm7" org.eventb.core.label="axm9" org.eventb.core.predicate="∀rowa, cola, rowb, colb · rowa ∈ ROW ∧ rowb ∈ ROW ∧ cola ∈ COL ∧ colb ∈ COL ∧ (BOX(rowa ↦ cola) = BOX(rowb ↦ colb)) ⇒&#10;((rowa ↦ cola)↦(rowb ↦ colb)) ∈ SAMEBOX"/>
+</org.eventb.core.contextFile>

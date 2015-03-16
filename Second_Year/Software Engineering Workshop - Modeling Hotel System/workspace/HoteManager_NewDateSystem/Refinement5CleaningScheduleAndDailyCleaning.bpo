@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="CLEANERS" org.eventb.core.type="ℙ(CLEANERS)"/>
+<org.eventb.core.poIdentifier name="ROOM" org.eventb.core.type="ℙ(ROOM)"/>
+<org.eventb.core.poIdentifier name="DATETIME" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/HoteManager_NewDateSystem/Refinement5CleaningScheduleAndDailyCleaning.bpo|org.eventb.core.poFile#Refinement5CleaningScheduleAndDailyCleaning|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="finite(ROOM)" org.eventb.core.source="/HoteManager_NewDateSystem/Refinement5CleaningScheduleAndDailyCleaning.buc|org.eventb.core.contextFile#Refinement5CleaningScheduleAndDailyCleaning|org.eventb.core.axiom#)"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="finite(CLEANERS)" org.eventb.core.source="/HoteManager_NewDateSystem/Refinement5CleaningScheduleAndDailyCleaning.buc|org.eventb.core.contextFile#Refinement5CleaningScheduleAndDailyCleaning|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="DATETIME=ℕ1" org.eventb.core.source="/HoteManager_NewDateSystem/Refinement5CleaningScheduleAndDailyCleaning.buc|org.eventb.core.contextFile#Refinement5CleaningScheduleAndDailyCleaning|org.eventb.core.axiom#,"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

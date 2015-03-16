@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="4">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="DATE" org.eventb.core.type="ℙ(DATE)"/>
+<org.eventb.core.poIdentifier name="GUEST" org.eventb.core.type="ℙ(GUEST)"/>
+<org.eventb.core.poIdentifier name="ROOM" org.eventb.core.type="ℙ(ROOM)"/>
+<org.eventb.core.poIdentifier name="DATES" org.eventb.core.type="ℙ(DATE)"/>
+<org.eventb.core.poIdentifier name="RESERVATION" org.eventb.core.type="ℙ(GUEST×DATE×ROOM)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/CartProductSample/Conext.bpo|org.eventb.core.poFile#Conext|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="4">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="DATES∈ℙ1(DATE)" org.eventb.core.source="/CartProductSample/Conext.buc|org.eventb.core.contextFile#Conext|org.eventb.core.axiom#-"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="RESERVATION∈GUEST × DATES ⇸ ROOM" org.eventb.core.source="/CartProductSample/Conext.buc|org.eventb.core.contextFile#Conext|org.eventb.core.axiom#*"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

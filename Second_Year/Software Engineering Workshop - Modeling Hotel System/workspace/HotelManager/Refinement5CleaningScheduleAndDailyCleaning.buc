@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+<org.eventb.core.carrierSet name="'" org.eventb.core.identifier="ROOM"/>
+<org.eventb.core.carrierSet name="(" org.eventb.core.identifier="CLEANERS"/>
+<org.eventb.core.axiom name=")" org.eventb.core.label="axm1" org.eventb.core.predicate="finite(ROOM)"/>
+<org.eventb.core.axiom name="*" org.eventb.core.label="axm2" org.eventb.core.predicate="finite(CLEANERS)"/>
+<org.eventb.core.constant name="+" org.eventb.core.identifier="DATETIME"/>
+<org.eventb.core.axiom name="," org.eventb.core.label="axm3" org.eventb.core.predicate="DATETIME = ℕ1"/>
+</org.eventb.core.contextFile>

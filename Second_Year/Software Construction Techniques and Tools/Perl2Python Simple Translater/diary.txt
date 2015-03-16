@@ -1,0 +1,72 @@
+Author: Jiashu Chen z3411585 jche804 
+
+Date:   Wed Oct 9 20:48:53 2013 +1100
+
+    final version with test and everhthong
+
+Date:   Wed Oct 9 17:59:42 2013 +1100
+
+    some test and bug fix for string concatenatoin
+
+Date:   Wed Oct 9 17:27:36 2013 +1100
+
+    support for reverse and more cases added for print function
+    one more case that handles reverse
+
+Date:   Wed Oct 9 14:40:29 2013 +1100
+
+    push pop shift unshfit
+
+Date:   Wed Oct 9 11:00:40 2013 +1100
+
+    added new functionality for numeric value detections
+
+Date:   Wed Oct 9 10:37:07 2013 +1100
+
+    bug fixing for print statement
+
+Date:   Wed Oct 9 01:31:48 2013 +1100
+
+    bug fixing on print statement: added edge cases
+
+Date:   Wed Oct 9 01:18:40 2013 +1100
+
+    Deal with type cast to int problems, only type cast when needed to perform an arithemetic operation
+
+Date:   Tue Oct 8 20:13:43 2013 +1100
+
+    Deal with more complicated case of . and .=
+
+Date:   Tue Oct 8 00:36:42 2013 +1100
+
+    Subset 4 handler without type casting ability and support for push, pop, shift and unshift
+
+Date:   Mon Oct 7 02:06:52 2013 +1100
+
+    Deal with all subset 3 tests, still lack on support for ++ and --
+    however deal with stdin and most of the other cases
+    does not cater cases where for (expr;expr;) loop is used
+
+Date:   Sun Oct 6 12:59:02 2013 +1100
+
+    Error fixed for declare variable and a logic leak on case "print ****:}" to end a if statement or while loop
+    still have some false positives on variable decleartion
+
+Date:   Sun Oct 6 12:27:19 2013 +1100
+
+
+Date:   Sun Oct 6 10:19:59 2013 +1100
+
+    Subset 2 handler without full support for the following
+
+Date:   Sat Oct 5 20:16:59 2013 +1000
+
+    Subset 0 and 1 handler, with some extra design dealers
+
+Date:   Sat Oct 5 00:15:50 2013 +1000
+
+    Redesigned Solution after accidently delete everything include the .git folder
+
+Date:   Tue Oct 1 15:49:21 2013 +1000
+
+    Subset 0 handler

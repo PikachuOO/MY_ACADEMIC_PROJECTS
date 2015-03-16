@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd">
+<org.eventb.core.scAxiom name="'" org.eventb.core.label="axm1" org.eventb.core.predicate="OTHERS⊂PERSONALINFO" org.eventb.core.source="/HotelManager/Refinement6PersonalInfo.buc|org.eventb.core.contextFile#Refinement6PersonalInfo|org.eventb.core.axiom#+" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="(" org.eventb.core.label="axm2" org.eventb.core.predicate="MANAGERINFO∈PERSONALINFO" org.eventb.core.source="/HotelManager/Refinement6PersonalInfo.buc|org.eventb.core.contextFile#Refinement6PersonalInfo|org.eventb.core.axiom#-" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name=")" org.eventb.core.label="axm3" org.eventb.core.predicate="partition(PERSONALINFO,{MANAGERINFO},OTHERS)" org.eventb.core.source="/HotelManager/Refinement6PersonalInfo.buc|org.eventb.core.contextFile#Refinement6PersonalInfo|org.eventb.core.axiom#)" org.eventb.core.theorem="false"/>
+<org.eventb.core.scConstant name="MANAGERINFO" org.eventb.core.source="/HotelManager/Refinement6PersonalInfo.buc|org.eventb.core.contextFile#Refinement6PersonalInfo|org.eventb.core.constant#," org.eventb.core.type="PERSONALINFO"/>
+<org.eventb.core.scConstant name="OTHERS" org.eventb.core.source="/HotelManager/Refinement6PersonalInfo.buc|org.eventb.core.contextFile#Refinement6PersonalInfo|org.eventb.core.constant#*" org.eventb.core.type="ℙ(PERSONALINFO)"/>
+<org.eventb.core.scCarrierSet name="PERSONALINFO" org.eventb.core.source="/HotelManager/Refinement6PersonalInfo.buc|org.eventb.core.contextFile#Refinement6PersonalInfo|org.eventb.core.carrierSet#(" org.eventb.core.type="ℙ(PERSONALINFO)"/>
+</org.eventb.core.scContextFile>

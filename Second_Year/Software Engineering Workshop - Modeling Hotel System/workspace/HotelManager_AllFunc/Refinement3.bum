@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="Refinement2"/>
+<org.eventb.core.seesContext name="*" org.eventb.core.target="Refinement3Employee"/>
+<org.eventb.core.variable name="(" org.eventb.core.comment="all customers at hotel" org.eventb.core.identifier="customers"/>
+<org.eventb.core.variable name="+" org.eventb.core.comment="all employees at hotel" org.eventb.core.identifier="employees"/>
+<org.eventb.core.variable name="/" org.eventb.core.comment="Rooms that can be used" org.eventb.core.identifier="addedRooms"/>
+<org.eventb.core.variable name="2" org.eventb.core.comment="current available service" org.eventb.core.identifier="importedServices"/>
+<org.eventb.core.variable name="7" org.eventb.core.comment="total financial balance of the hotel" org.eventb.core.identifier="hotelFinance"/>
+<org.eventb.core.variable name="&gt;" org.eventb.core.comment="return the customer status" org.eventb.core.identifier="customerStatus"/>
+<org.eventb.core.variable name="J" org.eventb.core.comment="return the maintainance status of room" org.eventb.core.identifier="getCleaningStatus"/>
+<org.eventb.core.variable name="L" org.eventb.core.comment="store the reservation that a customer has" org.eventb.core.identifier="customerReservation"/>
+<org.eventb.core.variable name="N" org.eventb.core.comment="STORE THE current reservation inside a room" org.eventb.core.identifier="roomReservation"/>
+<org.eventb.core.variable name="R" org.eventb.core.comment="RESERVATION THAT ARE IN USE" org.eventb.core.identifier="addedReservations"/>
+<org.eventb.core.variable name="P" org.eventb.core.comment="Reservation needs to have a date, attribute of Reservation, PD 1.2.1" org.eventb.core.identifier="reservationDate"/>
+<org.eventb.core.variable name="T" org.eventb.core.comment="store the status of reservation" org.eventb.core.identifier="reservationStatus"/>
+<org.eventb.core.variable name="V" org.eventb.core.comment="store the condition of reservation" org.eventb.core.identifier="reservationCondition"/>
+<org.eventb.core.variable name="X" org.eventb.core.comment="Event B syntax still in discusions&#10;paymentTotal : Reservation -&gt; N&#10;paymentTotal := paymentTotal ( Reservation := newPayment ) " org.eventb.core.identifier="reservationTotalPayment"/>
+<org.eventb.core.variable name="_" org.eventb.core.comment="TOTAL INCOME hotel get form the reservation" org.eventb.core.identifier="reservationTotalIncome"/>
+<org.eventb.core.variable name="var2" org.eventb.core.comment="current date&#10;" org.eventb.core.identifier="today"/>
+<org.eventb.core.variable name="q" org.eventb.core.comment="currently available inventory" org.eventb.core.identifier="addedInventories"/>
+<org.eventb.core.variable name="r" org.eventb.core.comment="what inventory does each service use" org.eventb.core.identifier="serviceUses"/>
+<org.eventb.core.variable name="s" org.eventb.core.comment="the amount of stock left for a particular inventory" org.eventb.core.identifier="inventoryAmount"/>
+<org.eventb.core.variable name="t" org.eventb.core.comment="price of each service" org.eventb.core.identifier="servicePrice"/>
+<org.eventb.core.variable name="u" org.eventb.core.comment="minimum amount of each type of inventory, before it triggers the alarm" org.eventb.core.identifier="minAmountInventory"/>
+<org.eventb.core.variable name="v" org.eventb.core.comment="is the amount left for this inventory low" org.eventb.core.identifier="inventoryLow"/>
+<org.eventb.core.variable name="var1" org.eventb.core.comment="date that the inventory item expires&#10;" org.eventb.core.identifier="inventoryExpireDate"/>
+<org.eventb.core.event name="w" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="jobPosition ≔ {MANAGER ↦ ADMINMANAGE}" org.eventb.core.label="act26"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="loginDetail ≔ {MANAGER ↦ ADMINLOGIN}" org.eventb.core.label="act27"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="loginStatus ≔ {MANAGER ↦ FALSE}" org.eventb.core.label="act28"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt7" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="dayPass">
+<org.eventb.core.refinesEvent name="(" org.eventb.core.target="dayPass"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'&gt;" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="LogIn">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="employee"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="logindetail"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="employee ∈ employees"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="logindetail ∈ LOGINDETAIL"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="login detail of the employee has to match properly" org.eventb.core.label="grd3" org.eventb.core.predicate="loginDetail(employee) = logindetail"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="loginStatus(employee) ≔ TRUE" org.eventb.core.comment="the employee will now logged in" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd4" org.eventb.core.predicate="loginStatus(employee) = FALSE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt1" org.eventb.core.comment="" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="LogOff">
+<org.eventb.core.parameter name="'" org.eventb.core.comment="" org.eventb.core.identifier="employee"/>
+<org.eventb.core.parameter name="(" org.eventb.core.comment="" org.eventb.core.identifier="logindetail"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="employee ∈ employees"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="logindetail ∈ LOGINDETAIL"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="login detail of the employee has to match properly" org.eventb.core.label="grd3" org.eventb.core.predicate="loginDetail(employee) = logindetail"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="loginStatus(employee) ≔ FALSE" org.eventb.core.comment="the employee will now logged in" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd4" org.eventb.core.predicate="loginStatus(employee) = TRUE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="x" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="AddEmployee">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="AddEmployee"/>
+<org.eventb.core.parameter name="(" org.eventb.core.comment="" org.eventb.core.identifier="manager"/>
+<org.eventb.core.parameter name=")" org.eventb.core.comment="" org.eventb.core.identifier="position"/>
+<org.eventb.core.parameter name="*" org.eventb.core.comment="" org.eventb.core.identifier="login"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="" org.eventb.core.label="grd2" org.eventb.core.predicate="manager = MANAGER"/>
+<org.eventb.core.guard name="," org.eventb.core.comment="" org.eventb.core.label="grd3" org.eventb.core.predicate="position ∈ JOBPOSITION"/>
+<org.eventb.core.guard name="-" org.eventb.core.comment="only manager can employee people" org.eventb.core.label="grd4" org.eventb.core.predicate="loginStatus(manager) = TRUE"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd5" org.eventb.core.predicate="login ∈ LOGINDETAIL ∖ (ran(loginDetail) ∪ {ADMINLOGIN})"/>
+<org.eventb.core.action name="/" org.eventb.core.assignment="jobPosition(employee) ≔ position" org.eventb.core.comment="Related PD-4.2.1, A newly added employee will have specific position now" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="0" org.eventb.core.assignment="loginDetail(employee) ≔ login" org.eventb.core.comment="Related PD-4.2.1, unique login detail will be assigned for the employee" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="1" org.eventb.core.assignment="loginStatus(employee) ≔ FALSE" org.eventb.core.label="act4"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="y" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="EmployeeQuits">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="EmployeeQuits"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd2" org.eventb.core.predicate="manager = MANAGER"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="jobPosition ≔ {employee} ⩤ jobPosition" org.eventb.core.comment="all the employee details are removed" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd3" org.eventb.core.predicate="loginStatus(manager) = TRUE"/>
+<org.eventb.core.parameter name="+" org.eventb.core.identifier="manager"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="loginDetail ≔ {employee} ⩤ loginDetail" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="loginStatus ≔ {employee} ⩤ loginStatus" org.eventb.core.label="act4"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd4" org.eventb.core.predicate="loginStatus(employee) = FALSE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="z" org.eventb.core.comment="ROOM THAT ARE READY TO USE" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="AddRooms">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="AddRooms"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd4" org.eventb.core.predicate="manager = MANAGER"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd5" org.eventb.core.predicate="jobPosition(manager) = ADMINMANAGE"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd6" org.eventb.core.predicate="loginStatus(manager) = TRUE"/>
+<org.eventb.core.parameter name="+" org.eventb.core.identifier="manager"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="{" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="DeleteRooms">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="DeleteRooms"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd4" org.eventb.core.predicate="manager = MANAGER"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd5" org.eventb.core.predicate="jobPosition(manager) = ADMINMANAGE"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd6" org.eventb.core.predicate="loginStatus(manager) = TRUE"/>
+<org.eventb.core.parameter name="+" org.eventb.core.identifier="manager"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="|" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="AddService">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="AddService"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd4" org.eventb.core.predicate="manager = MANAGER"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.label="grd5" org.eventb.core.predicate="jobPosition(manager) = ADMINMANAGE"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.label="grd6" org.eventb.core.predicate="loginStatus(manager) = TRUE"/>
+<org.eventb.core.parameter name="grd4" org.eventb.core.comment="only manager can add service" org.eventb.core.identifier="manager"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="var3" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="UpdateService">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="UpdateService"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.comment="" org.eventb.core.label="grd3" org.eventb.core.predicate="manager = MANAGER"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.comment="" org.eventb.core.label="grd4" org.eventb.core.predicate="jobPosition(manager) = ADMINMANAGE"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.label="grd5" org.eventb.core.predicate="loginStatus(manager) = TRUE"/>
+<org.eventb.core.parameter name="grd5" org.eventb.core.identifier="manager"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="}" org.eventb.core.comment="used when service is not available anymore" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="RemoveService">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="RemoveService"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="manager"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.comment="" org.eventb.core.label="grd3" org.eventb.core.predicate="manager = MANAGER"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.comment="" org.eventb.core.label="grd4" org.eventb.core.predicate="jobPosition(manager) = ADMINMANAGE"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.label="grd5" org.eventb.core.predicate="loginStatus(manager) = TRUE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="~" org.eventb.core.comment="" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="AddCustomer">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="AddCustomer"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd3" org.eventb.core.predicate="employee ∈ employees"/>
+<org.eventb.core.parameter name=")" org.eventb.core.comment="" org.eventb.core.identifier="employee"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="either manager or reception can add a customer" org.eventb.core.label="grd4" org.eventb.core.predicate="jobPosition(employee) ∈ {ADMINMANAGE, RECEPTION}"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd5" org.eventb.core.predicate="loginStatus(employee) = TRUE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="''" org.eventb.core.comment="requirement in PD 4.1" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="AddFinance">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="AddFinance"/>
+<org.eventb.core.parameter name="(" org.eventb.core.comment="" org.eventb.core.identifier="employee"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd3" org.eventb.core.predicate="employee ∈ employees"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.comment="either finance recepition or manager can put money inyo hotel" org.eventb.core.label="grd4" org.eventb.core.predicate="jobPosition(employee) ∈ {FINANCE, RECEPTION, ADMINMANAGE}"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.label="grd5" org.eventb.core.predicate="loginStatus(employee) = TRUE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'(" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="RobFinance">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="RobFinance"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="employee"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.comment="" org.eventb.core.label="grd4" org.eventb.core.predicate="employee ∈ employees"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.comment="either manager or finance can use money" org.eventb.core.label="grd5" org.eventb.core.predicate="jobPosition(employee) ∈ {ADMINMANAGE, FINANCE}"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.label="grd6" org.eventb.core.predicate="loginStatus(employee) = TRUE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="')" org.eventb.core.comment="this event is related to PD-2.1.2" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="CleanRoom">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="CleanRoom"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="cleaner"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.comment="" org.eventb.core.label="grd4" org.eventb.core.predicate="cleaner ∈ employees"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.comment="only cleaners can clean the room" org.eventb.core.label="grd5" org.eventb.core.predicate="jobPosition(cleaner) = CLEANER"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.label="grd6" org.eventb.core.predicate="loginStatus(cleaner) = TRUE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt9" org.eventb.core.comment="" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="PolluteRoom">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="PolluteRoom"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'*" org.eventb.core.comment="this event is related to DN1.1" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="MakeReservation">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="MakeReservation"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd9" org.eventb.core.predicate="employee ∈ employees"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="employee"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd10" org.eventb.core.predicate="loginStatus(employee) = TRUE"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="only reception can make a booking for customer" org.eventb.core.label="grd11" org.eventb.core.predicate="jobPosition(employee) = RECEPTION"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt5" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ChangeReservation">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ChangeReservation"/>
+<org.eventb.core.guard name="grd7" org.eventb.core.label="grd12" org.eventb.core.predicate="employee ∈ employees"/>
+<org.eventb.core.guard name="grd8" org.eventb.core.label="grd13" org.eventb.core.predicate="loginStatus(employee) = TRUE"/>
+<org.eventb.core.guard name="grd9" org.eventb.core.comment="either service or manager unlink a service with inventory" org.eventb.core.label="grd14" org.eventb.core.predicate="jobPosition(employee) ∈ {RECEPTION}"/>
+<org.eventb.core.parameter name="grd:" org.eventb.core.identifier="employee"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'+" org.eventb.core.comment="this event is related to partially of PD-1.2.3a" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="CloseReservation">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="CloseReservation"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="employee"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd10" org.eventb.core.predicate="employee ∈ employees"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd11" org.eventb.core.predicate="loginStatus(employee) = TRUE"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="only service and cleaner can't " org.eventb.core.label="grd12" org.eventb.core.predicate="jobPosition(employee) ∉ {SERVICE, CLEANER}"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt6" org.eventb.core.comment="this event is related to partially of PD-1.2.3a" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ClearReservation">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ClearReservation"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="employee"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd11" org.eventb.core.predicate="employee ∈ employees"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd12" org.eventb.core.predicate="loginStatus(employee) = TRUE"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="only finance can handle payments" org.eventb.core.label="grd13" org.eventb.core.predicate="jobPosition(employee) = FINANCE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'," org.eventb.core.comment="this event is related to PD-1.1.2 " org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ConfirmReservation">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ConfirmReservation"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="employee"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.comment="" org.eventb.core.label="grd3" org.eventb.core.predicate="employee ∈ employees"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.comment="" org.eventb.core.label="grd4" org.eventb.core.predicate="loginStatus(employee) = TRUE"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.comment="only finance can handle payments" org.eventb.core.label="grd5" org.eventb.core.predicate="jobPosition(employee) = FINANCE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt8" org.eventb.core.comment="don't need employee done by system" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ExpireReservation">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ExpireReservation"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'-" org.eventb.core.comment="this event is related to PD-1.2.2a and PD-1.5.1a " org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="CancelTentativeReservationReq">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="CancelTentativeReservationReq"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'." org.eventb.core.comment="this event is related to PD-1.2.1a&#10;CANCEL base on customer request, no deposit returned&#10;in this stage, the hotel sales/income function hasn't been refined&#10;therefore no update deposit to HotelFinance yet&#10;CANCEL CONFIRMED RESERVATION DOESN'T DOWNGRADE THE CUSTOMER" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="CancelConfirmedReservationReq">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="CancelConfirmedReservationReq"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="employee"/>
+<org.eventb.core.guard name="grd6" org.eventb.core.comment="" org.eventb.core.label="grd11" org.eventb.core.predicate="employee ∈ employees"/>
+<org.eventb.core.guard name="grd7" org.eventb.core.comment="" org.eventb.core.label="grd12" org.eventb.core.predicate="loginStatus(employee) = TRUE"/>
+<org.eventb.core.guard name="grd8" org.eventb.core.comment="reception can cancel tentative reservation because&#10;this process doesn't involve transaction of funds" org.eventb.core.label="grd13" org.eventb.core.predicate="jobPosition(employee) = RECEPTION"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'/" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="AddInventory">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="AddInventory"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="employee"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.comment="" org.eventb.core.label="grd8" org.eventb.core.predicate="employee ∈ employees"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.comment="" org.eventb.core.label="grd9" org.eventb.core.predicate="loginStatus(employee) = TRUE"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.comment="either service or manager can add inventory" org.eventb.core.label="grd10" org.eventb.core.predicate="jobPosition(employee) ∈ {SERVICE, ADMINMANAGE}"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="var2" org.eventb.core.comment="done by system" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ExpireInventory">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ExpireInventory"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'0" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="RemoveInventory">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="RemoveInventory"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="employee"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.comment="" org.eventb.core.label="grd4" org.eventb.core.predicate="employee ∈ employees"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.comment="" org.eventb.core.label="grd5" org.eventb.core.predicate="loginStatus(employee) = TRUE"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.comment="" org.eventb.core.label="grd6" org.eventb.core.predicate="jobPosition(employee) ∈ {SERVICE, ADMINMANAGE}"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'1" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="LinkInventoryToService">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="LinkInventoryToService"/>
+<org.eventb.core.parameter name="(" org.eventb.core.comment="" org.eventb.core.identifier="employee"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd4" org.eventb.core.predicate="employee ∈ employees"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.label="grd5" org.eventb.core.predicate="loginStatus(employee) = TRUE"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.comment="either service or manager link a service with inventory" org.eventb.core.label="grd6" org.eventb.core.predicate="jobPosition(employee) ∈ {SERVICE, ADMINMANAGE}"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'2" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="UnlinkInventoryFromService">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="UnlinkInventoryFromService"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="employee"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd4" org.eventb.core.predicate="employee ∈ employees"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.label="grd5" org.eventb.core.predicate="loginStatus(employee) = TRUE"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.comment="either service or manager unlink a service with inventory" org.eventb.core.label="grd6" org.eventb.core.predicate="jobPosition(employee) ∈ {SERVICE, ADMINMANAGE}"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'3" org.eventb.core.comment="Alert inventory should be done by the system&#10;therefore no employee needed" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="AlertInventory">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="AlertInventory"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'4" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="UseInventory">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="UseInventory"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="employee"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd9" org.eventb.core.predicate="employee ∈ employees"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="" org.eventb.core.label="grd10" org.eventb.core.predicate="loginStatus(employee) = TRUE"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="only service can use inventory" org.eventb.core.label="grd11" org.eventb.core.predicate="jobPosition(employee) = SERVICE"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="'6" org.eventb.core.comment="position of employee" org.eventb.core.identifier="jobPosition"/>
+<org.eventb.core.variable name="'7" org.eventb.core.comment="login detail of employee" org.eventb.core.identifier="loginDetail"/>
+<org.eventb.core.variable name="'8" org.eventb.core.comment="current login status of employee" org.eventb.core.identifier="loginStatus"/>
+<org.eventb.core.invariant name="'9" org.eventb.core.label="inv1" org.eventb.core.predicate="jobPosition ∈ employees → JOBPOSITION"/>
+<org.eventb.core.invariant name="':" org.eventb.core.label="inv2" org.eventb.core.predicate="loginDetail ∈ employees ↣ LOGINDETAIL"/>
+<org.eventb.core.invariant name="';" org.eventb.core.comment="only manager can have admin login" org.eventb.core.label="inv3" org.eventb.core.predicate="∀employee· employee ∈ employees ∧ employee ≠ MANAGER ⇒ &#10;loginDetail(employee) ≠ ADMINLOGIN"/>
+<org.eventb.core.invariant name="'=" org.eventb.core.label="inv4" org.eventb.core.predicate="loginStatus ∈ employees → BOOL"/>
+<org.eventb.core.variable name="evt3" org.eventb.core.comment="cost for inventory that haven't paid" org.eventb.core.identifier="inventoryCost"/>
+<org.eventb.core.event name="evt4" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="payInventory">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="payInventory"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd6" org.eventb.core.predicate="employee ∈ employees"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.label="grd7" org.eventb.core.predicate="loginStatus(employee) = TRUE"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.comment="either service or manager unlink a service with inventory" org.eventb.core.label="grd8" org.eventb.core.predicate="jobPosition(employee) ∈ {FINANCE, ADMINMANAGE}"/>
+<org.eventb.core.parameter name="grd4" org.eventb.core.identifier="employee"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'5" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ChargeReservation">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ChargeReservation"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="employee"/>
+<org.eventb.core.guard name="grd9" org.eventb.core.comment="" org.eventb.core.label="grd11" org.eventb.core.predicate="employee ∈ employees"/>
+<org.eventb.core.guard name="grd10" org.eventb.core.comment="" org.eventb.core.label="grd12" org.eventb.core.predicate="loginStatus(employee) = TRUE"/>
+<org.eventb.core.guard name="grd11" org.eventb.core.comment="only service can use inventory" org.eventb.core.label="grd13" org.eventb.core.predicate="jobPosition(employee) = SERVICE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="var4" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="RestoreCustomer">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="RestoreCustomer"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd4" org.eventb.core.predicate="employee ∈ employees"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.comment="either manager, finance or reception can update customer" org.eventb.core.label="grd5" org.eventb.core.predicate="jobPosition(employee) ∈ {ADMINMANAGE, RECEPTION, FINANCE}"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.label="grd6" org.eventb.core.predicate="loginStatus(employee) = TRUE"/>
+<org.eventb.core.parameter name="grd4" org.eventb.core.identifier="employee"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

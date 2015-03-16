@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="ALLHUMAN" org.eventb.core.type="ℙ(ALLHUMAN)"/>
+<org.eventb.core.poIdentifier name="ROOMS" org.eventb.core.type="ℙ(ROOMS)"/>
+<org.eventb.core.poIdentifier name="People" org.eventb.core.type="ℙ(ALLHUMAN)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/HotelKeys/AbstractModelContext.bpo|org.eventb.core.poFile#AbstractModelContext|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="finite(ALLHUMAN)" org.eventb.core.source="/HotelKeys/AbstractModelContext.buc|org.eventb.core.contextFile#AbstractModelContext|org.eventb.core.axiom#)"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="finite(ROOMS)" org.eventb.core.source="/HotelKeys/AbstractModelContext.buc|org.eventb.core.contextFile#AbstractModelContext|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="ROOMS≠(∅ ⦂ ℙ(ROOMS))" org.eventb.core.source="/HotelKeys/AbstractModelContext.buc|org.eventb.core.contextFile#AbstractModelContext|org.eventb.core.axiom#+"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="People⊂ALLHUMAN" org.eventb.core.source="/HotelKeys/AbstractModelContext.buc|org.eventb.core.contextFile#AbstractModelContext|org.eventb.core.axiom#."/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="People≠(∅ ⦂ ℙ(ALLHUMAN))" org.eventb.core.source="/HotelKeys/AbstractModelContext.buc|org.eventb.core.contextFile#AbstractModelContext|org.eventb.core.axiom#\/"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

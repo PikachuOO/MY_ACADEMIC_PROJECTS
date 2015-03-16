@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="6">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="5">
+<org.eventb.core.poIdentifier name="DATE" org.eventb.core.type="ℙ(DATE)"/>
+<org.eventb.core.poIdentifier name="GUEST" org.eventb.core.type="ℙ(GUEST)"/>
+<org.eventb.core.poIdentifier name="ROOM" org.eventb.core.type="ℙ(ROOM)"/>
+<org.eventb.core.poIdentifier name="DATES" org.eventb.core.type="ℙ(DATE)"/>
+<org.eventb.core.poIdentifier name="RESERVATION" org.eventb.core.type="ℙ(GUEST×DATE×ROOM)"/>
+<org.eventb.core.poPredicate name="RESERVATIOO" org.eventb.core.predicate="DATES∈ℙ1(DATE)" org.eventb.core.source="/CartProductSample/Conext.buc|org.eventb.core.contextFile#Conext|org.eventb.core.axiom#-"/>
+<org.eventb.core.poPredicate name="RESERVATIOP" org.eventb.core.predicate="RESERVATION∈GUEST × DATES ⇸ ROOM" org.eventb.core.source="/CartProductSample/Conext.buc|org.eventb.core.contextFile#Conext|org.eventb.core.axiom#*"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/CartProductSample/BOOKINGS.bpo|org.eventb.core.poFile#BOOKINGS|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="5"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPConexu" org.eventb.core.parentSet="/CartProductSample/BOOKINGS.bpo|org.eventb.core.poFile#BOOKINGS|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="5"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTConexv" org.eventb.core.parentSet="/CartProductSample/BOOKINGS.bpo|org.eventb.core.poFile#BOOKINGS|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="5">
+<org.eventb.core.poIdentifier name="r" org.eventb.core.type="ROOM"/>
+<org.eventb.core.poIdentifier name="g" org.eventb.core.type="GUEST"/>
+<org.eventb.core.poIdentifier name="ds" org.eventb.core.type="DATE"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPConexv" org.eventb.core.parentSet="/CartProductSample/BOOKINGS.bpo|org.eventb.core.poFile#BOOKINGS|org.eventb.core.poPredicateSet#EVTIDENTConexv" org.eventb.core.poStamp="6">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="g∈GUEST" org.eventb.core.source="/CartProductSample/BOOKINGS.bum|org.eventb.core.machineFile#BOOKINGS|org.eventb.core.event#(|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="r∈ROOM" org.eventb.core.source="/CartProductSample/BOOKINGS.bum|org.eventb.core.machineFile#BOOKINGS|org.eventb.core.event#(|org.eventb.core.guard#,"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="ds∈DATES" org.eventb.core.source="/CartProductSample/BOOKINGS.bum|org.eventb.core.machineFile#BOOKINGS|org.eventb.core.event#(|org.eventb.core.guard#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/CartProductSample/BOOKINGS.bpo|org.eventb.core.poFile#BOOKINGS|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="5"/>
+</org.eventb.core.poFile>

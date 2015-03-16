@@ -1,0 +1,8 @@
+4 nodes explored
+cost = 27
+Move from 0 0 to 0 2
+Carry from 0 2 to 0 4
+Move from 0 4 to 3 5
+Carry from 3 5 to 7 5
+Move from 7 5 to 0 7
+Carry from 0 7 to 0 13

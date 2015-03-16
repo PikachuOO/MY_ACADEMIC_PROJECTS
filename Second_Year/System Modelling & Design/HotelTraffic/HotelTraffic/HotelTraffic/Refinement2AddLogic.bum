@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.comment="to ensure the fairness of the system, such when the sensor on both direction at a intersection&#10;has been triggered, the direction gets triggered first will become green first" org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="Refinement1AddSensor"/>
+<org.eventb.core.seesContext name="(" org.eventb.core.target="PedLightColor"/>
+<org.eventb.core.seesContext name=")" org.eventb.core.target="TrafficLightColor"/>
+<org.eventb.core.seesContext name="*" org.eventb.core.target="Directions"/>
+<org.eventb.core.seesContext name="element1" org.eventb.core.target="Road"/>
+<org.eventb.core.variable name="var1" org.eventb.core.comment="" org.eventb.core.identifier="trafficLight"/>
+<org.eventb.core.variable name="var2" org.eventb.core.identifier="pedLight"/>
+<org.eventb.core.variable name="var5" org.eventb.core.identifier="ORIGIN"/>
+<org.eventb.core.variable name="var3" org.eventb.core.identifier="trafficCoil"/>
+<org.eventb.core.variable name="var4" org.eventb.core.identifier="pedSensor"/>
+<org.eventb.core.event name="var5" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="coilTime ≔ {(NW ↦ NORTHSOUTH ↦ 0),(NW ↦ EASTWEST ↦ 0),&#10;(SW ↦ NORTHSOUTH ↦ 0),(SW ↦ EASTWEST ↦ 0),&#10;(NE ↦ NORTHSOUTH ↦ 0),(NE ↦ EASTWEST ↦ 0),&#10;(SE ↦ NORTHSOUTH ↦ 0),(SE ↦ EASTWEST ↦ 0),&#10;(PARK ↦ NORTHSOUTH ↦ 0),(PARK ↦ EASTWEST ↦ 0)}" org.eventb.core.label="act6"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="pedTime ≔ {(NW ↦ NORTHSOUTH ↦ 0),(NW ↦ EASTWEST ↦ 0),&#10;(SW ↦ NORTHSOUTH ↦ 0),(SW ↦ EASTWEST ↦ 0),&#10;(NE ↦ NORTHSOUTH ↦ 0),(NE ↦ EASTWEST ↦ 0),&#10;(SE ↦ NORTHSOUTH ↦ 0),(SE ↦ EASTWEST ↦ 0),&#10;(PARK ↦ NORTHSOUTH ↦ 0),(PARK ↦ EASTWEST ↦ 0)}" org.eventb.core.label="act7"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="var6" org.eventb.core.comment="NO SENSOR NEEDED (COME IN HANDY IN LATER REFINEMENT)&#10;THIS EVENT DOES THE SAME AS THE OTHER THREE EVENTS&#10;changeTrafficToGreen&#10;changeTrafficToAmber&#10;changeTrafficToRed" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="changeTrafficCycle">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="changeTrafficCycle"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="var7" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="changePedToGreen">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="changePedToGreen"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="pedTime(intersection ↦ direction) ≔ pedTime(intersection ↦ otherDirection(direction))" org.eventb.core.label="act3"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd7" org.eventb.core.predicate="(intersection ↦ direction) ∈ dom(pedTime)"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd8" org.eventb.core.predicate="(intersection ↦ otherDirection(direction)) ∈ dom(pedTime)" org.eventb.core.theorem="true"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="var8" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="changePedToRed">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="changePedToRed"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="var9" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="triggerPedSensorNoPriorityUpdate">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="triggerPedSensor"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd5" org.eventb.core.predicate="(intersection ↦ direction) ∈ dom(pedTime)"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd6" org.eventb.core.predicate="(intersection ↦ otherDirection(direction)) ∈ dom(pedTime)" org.eventb.core.theorem="true"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd7" org.eventb.core.predicate="pedSensor(intersection ↦ otherDirection(direction)) = TRUE ∧ &#10;pedSensor(intersection ↦ direction) = FALSE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt3" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="triggerPedSensorPriorityUpdate">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="triggerPedSensor"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd5" org.eventb.core.predicate="(intersection ↦ direction) ∈ dom(pedTime)"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd6" org.eventb.core.predicate="(intersection ↦ otherDirection(direction)) ∈ dom(pedTime)" org.eventb.core.theorem="true"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd7" org.eventb.core.predicate="pedSensor(intersection ↦ otherDirection(direction)) = FALSE ∧ &#10;pedSensor(intersection ↦ direction) = FALSE"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="pedTime(intersection ↦ otherDirection(direction)) ≔ pedTime(intersection ↦ direction) + 1" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt4" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="triggerTrafficCoilNoPriorityUpdate">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="triggerTrafficCoil"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd5" org.eventb.core.predicate="(intersection ↦ direction) ∈ dom(coilTime)"/>
+<org.eventb.core.guard name="act3" org.eventb.core.label="grd6" org.eventb.core.predicate="(intersection ↦ otherDirection(direction)) ∈ dom(coilTime)"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd7" org.eventb.core.predicate="trafficCoil(intersection ↦ otherDirection(direction)) = TRUE ∧&#10;trafficCoil(intersection ↦ direction) = FALSE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="var:" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="triggerTrafficCoilPriorityUpdate">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="triggerTrafficCoil"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd5" org.eventb.core.predicate="(intersection ↦ direction) ∈ dom(coilTime)"/>
+<org.eventb.core.action name="act1" org.eventb.core.assignment="coilTime(intersection ↦ otherDirection(direction)) ≔ coilTime(intersection ↦ direction) + 1" org.eventb.core.comment="make the other direction&#10;less important" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="act3" org.eventb.core.label="grd6" org.eventb.core.predicate="(intersection ↦ otherDirection(direction)) ∈ dom(coilTime)"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd7" org.eventb.core.predicate="trafficCoil(intersection ↦ otherDirection(direction)) = FALSE ∧&#10;trafficCoil(intersection ↦ direction) = FALSE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="var;" org.eventb.core.comment="SENSOR NEEDED (COME IN HANDY IN LATER REFINEMENT)" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="changeTrafficToGreenTrafficDoubleTrigger">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="changeTrafficToGreenTraffic"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd13" org.eventb.core.predicate="(intersection ↦ direction) ∈ dom(coilTime)"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd14" org.eventb.core.predicate="(intersection ↦ otherDirection(direction)) ∈ dom(coilTime)" org.eventb.core.theorem="true"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="this direction is more important" org.eventb.core.label="grd15" org.eventb.core.predicate="coilTime(intersection ↦ direction) &lt; coilTime(intersection ↦ otherDirection(direction))"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="coilTime(intersection ↦ direction) ≔ coilTime(intersection ↦ otherDirection(direction))" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt5" org.eventb.core.comment="SENSOR NEEDED (COME IN HANDY IN LATER REFINEMENT)" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="changeTrafficToGreenTrafficSingleTrigger">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="changeTrafficToGreenTraffic"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd13" org.eventb.core.predicate="(intersection ↦ direction) ∈ dom(coilTime)"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd14" org.eventb.core.predicate="(intersection ↦ otherDirection(direction)) ∈ dom(coilTime)" org.eventb.core.theorem="true"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="coilTime(intersection ↦ direction) ≔ coilTime(intersection ↦ otherDirection(direction))" org.eventb.core.label="act3"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd15" org.eventb.core.predicate="trafficCoil(intersection ↦ otherDirection(direction)) ≠ trafficCoil(intersection ↦ direction)"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt2" org.eventb.core.comment="SENSOR NEEDED (COME IN HANDY IN LATER REFINEMENT)" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="changeTrafficToGreenPedDoubleTrigger">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="changeTrafficToGreenPed"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd13" org.eventb.core.predicate="(intersection ↦ direction) ∈ dom(pedTime)"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd14" org.eventb.core.predicate="(intersection ↦ otherDirection(direction)) ∈ dom(pedTime)" org.eventb.core.theorem="true"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="this direction is more important" org.eventb.core.label="grd15" org.eventb.core.predicate="pedTime(intersection ↦ direction) &lt; pedTime(intersection ↦ otherDirection(direction))"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt6" org.eventb.core.comment="SENSOR NEEDED (COME IN HANDY IN LATER REFINEMENT)" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="changeTrafficToGreenPedSingleTrigger">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="changeTrafficToGreenPed"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd13" org.eventb.core.predicate="(intersection ↦ direction) ∈ dom(pedTime)"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd14" org.eventb.core.predicate="(intersection ↦ otherDirection(direction)) ∈ dom(pedTime)" org.eventb.core.theorem="true"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd15" org.eventb.core.predicate="pedSensor(intersection ↦ otherDirection(direction)) ≠ pedSensor(intersection ↦ direction)"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="var=" org.eventb.core.comment="SENSOR NEEDED (COME IN HANDY IN LATER REFINEMENT)" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="changeTrafficToAMBER">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="changeTrafficToAMBER"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="var&gt;" org.eventb.core.comment="SENSOR NEEDED (COME IN HANDY IN LATER REFINEMENT)" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="changeTrafficToRED">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="changeTrafficToRED"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="var?" org.eventb.core.identifier="coilTime"/>
+<org.eventb.core.invariant name="var@" org.eventb.core.label="inv1" org.eventb.core.predicate="coilTime ∈ (INTERSECTION × DIRECTION) → ℕ"/>
+<org.eventb.core.variable name="varB" org.eventb.core.identifier="pedTime"/>
+<org.eventb.core.invariant name="varC" org.eventb.core.label="inv2" org.eventb.core.predicate="pedTime ∈ (INTERSECTION × DIRECTION) → ℕ"/>
+<org.eventb.core.event name="varD" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="roadToOPPOSITERed">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="roadToOPPOSITERed"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="varE" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="roadToGreen">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="roadToGreen"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

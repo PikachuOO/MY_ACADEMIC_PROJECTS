@@ -1,0 +1,32 @@
+Room H23Q assigned
+H23Q
+Emily Aug 5 9 8 WorkProject
+Emily Aug 12 9 8 WorkProject
+Emily Aug 19 9 8 WorkProject
+Emily Aug 26 9 8 WorkProject
+Emily Sep 2 9 8 WorkProject
+Emily Sep 9 9 8 WorkProject
+Booking rejected
+Deletion rejected
+Booking rejected
+H23Q
+Emily Aug 5 9 8 WorkProject
+Emily Aug 12 9 8 WorkProject
+Emily Aug 19 9 8 WorkProject
+Emily Aug 26 9 8 WorkProject
+Emily Sep 2 9 8 WorkProject
+Emily Sep 9 9 8 WorkProject
+Room ABC8 assigned
+H23Q
+Emily Aug 5 9 8 WorkProject
+Emily Aug 12 9 8 WorkProject
+Emily Aug 19 9 8 WorkProject
+Emily Aug 26 9 8 WorkProject
+Emily Sep 2 9 8 WorkProject
+Emily Sep 9 9 8 WorkProject
+ABC8
+Chris Aug 12 12 1 StudySesh
+Booking rejected
+Room FF77 assigned
+FF77
+Morgan Aug 12 12 1 PlayZone

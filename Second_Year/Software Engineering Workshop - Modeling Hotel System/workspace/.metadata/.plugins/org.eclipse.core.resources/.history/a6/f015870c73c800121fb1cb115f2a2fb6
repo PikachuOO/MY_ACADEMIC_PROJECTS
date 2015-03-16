@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="6">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="ALLHUMAN" org.eventb.core.type="ℙ(ALLHUMAN)"/>
+<org.eventb.core.poIdentifier name="ROOMS" org.eventb.core.type="ℙ(ROOMS)"/>
+<org.eventb.core.poIdentifier name="People" org.eventb.core.type="ℙ(ALLHUMAN)"/>
+<org.eventb.core.poPredicate name="ALLHUMAO" org.eventb.core.predicate="finite(ALLHUMAN)" org.eventb.core.source="/keyCard/AbstractModelContext.buc|org.eventb.core.contextFile#AbstractModelContext|org.eventb.core.axiom#)"/>
+<org.eventb.core.poPredicate name="ALLHUMAP" org.eventb.core.predicate="finite(ROOMS)" org.eventb.core.source="/keyCard/AbstractModelContext.buc|org.eventb.core.contextFile#AbstractModelContext|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="ALLHUMAQ" org.eventb.core.predicate="ROOMS≠(∅ ⦂ ℙ(ROOMS))" org.eventb.core.source="/keyCard/AbstractModelContext.buc|org.eventb.core.contextFile#AbstractModelContext|org.eventb.core.axiom#+"/>
+<org.eventb.core.poPredicate name="ALLHUMAR" org.eventb.core.predicate="People⊂ALLHUMAN" org.eventb.core.source="/keyCard/AbstractModelContext.buc|org.eventb.core.contextFile#AbstractModelContext|org.eventb.core.axiom#."/>
+<org.eventb.core.poPredicate name="ALLHUMAS" org.eventb.core.predicate="People≠(∅ ⦂ ℙ(ALLHUMAN))" org.eventb.core.source="/keyCard/AbstractModelContext.buc|org.eventb.core.contextFile#AbstractModelContext|org.eventb.core.axiom#\/"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="allocated" org.eventb.core.type="ℙ(ROOMS×ALLHUMAN)"/>
+<org.eventb.core.poIdentifier name="cleanliness" org.eventb.core.type="ℙ(ROOMS×BOOL)"/>
+<org.eventb.core.poIdentifier name="guests" org.eventb.core.type="ℙ(ALLHUMAN)"/>
+<org.eventb.core.poIdentifier name="occupiedRoom" org.eventb.core.type="ℙ(ALLHUMAN×ROOMS)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="INITIALISATION/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="4">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#EVTALLHYPAbstractModelContexy"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="People⊆People" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.invariant#)"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.invariant#)"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poSequent#INITIALISATION\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="4">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#EVTALLHYPAbstractModelContexy"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(ROOMS×ALLHUMAN))∈ROOMS ⇸ People" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poSequent#INITIALISATION\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="4">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#EVTALLHYPAbstractModelContexy"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(ALLHUMAN×ROOMS))∈People ⇸ ROOMS" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.invariant#0"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.invariant#0"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poSequent#INITIALISATION\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="4">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#EVTALLHYPAbstractModelContexy"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(λroom⦂ROOMS·room∈ROOMS ∣ TRUE)∈ROOMS → BOOL" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.invariant#6"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.invariant#6"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poSequent#INITIALISATION\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTAbstractModelContexy" org.eventb.core.parentSet="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="occupiedRoom'" org.eventb.core.type="ℙ(ALLHUMAN×ROOMS)"/>
+<org.eventb.core.poIdentifier name="allocated'" org.eventb.core.type="ℙ(ROOMS×ALLHUMAN)"/>
+<org.eventb.core.poIdentifier name="cleanliness'" org.eventb.core.type="ℙ(ROOMS×BOOL)"/>
+<org.eventb.core.poIdentifier name="guests'" org.eventb.core.type="ℙ(ALLHUMAN)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPAbstractModelContexy" org.eventb.core.parentSet="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#EVTIDENTAbstractModelContexy" org.eventb.core.poStamp="3"/>
+<org.eventb.core.poSequent name="CheckIn/grd5/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="5">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#EVTHYPAbstractModelContexz*"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="room∈dom(cleanliness)∧cleanliness∈ROOMS ⇸ BOOL" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#1|org.eventb.core.guard#."/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#1|org.eventb.core.guard#."/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#EVTHYPAbstractModelContexz*"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="CheckIn/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="5">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#EVTALLHYPAbstractModelContexz"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="allocated{room ↦ guest}∈ROOMS ⇸ guests" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#1"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poSequent#CheckIn\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTAbstractModelContexz" org.eventb.core.parentSet="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="guest" org.eventb.core.type="ALLHUMAN"/>
+<org.eventb.core.poIdentifier name="allocated'" org.eventb.core.type="ℙ(ROOMS×ALLHUMAN)"/>
+<org.eventb.core.poIdentifier name="room" org.eventb.core.type="ROOMS"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPAbstractModelContexz*" org.eventb.core.parentSet="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#EVTIDENTAbstractModelContexz" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="guest∈guests" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#1|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="room∈ROOMS" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#1|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="room∉dom(allocated)" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#1|org.eventb.core.guard#+"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="guest∉dom(occupiedRoom)" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#1|org.eventb.core.guard#-"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPAbstractModelContexz" org.eventb.core.parentSet="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#EVTHYPAbstractModelContexz*" org.eventb.core.poStamp="5">
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="cleanliness(room)=TRUE" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#1|org.eventb.core.guard#."/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="guest∉ran(allocated)" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#1|org.eventb.core.guard#\/"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="Enter/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="6">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#EVTALLHYPAbstractModelContex{"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="occupiedRoom{guest ↦ room}∈guests ⇸ ROOMS" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.invariant#0"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#2"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.invariant#0"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poSequent#Enter\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Enter/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="6">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#EVTALLHYPAbstractModelContex{"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="cleanliness{room ↦ FALSE}∈ROOMS → BOOL" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.invariant#6"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#2"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.invariant#6"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poSequent#Enter\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTAbstractModelContex{" org.eventb.core.parentSet="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="6">
+<org.eventb.core.poIdentifier name="occupiedRoom'" org.eventb.core.type="ℙ(ALLHUMAN×ROOMS)"/>
+<org.eventb.core.poIdentifier name="guest" org.eventb.core.type="ALLHUMAN"/>
+<org.eventb.core.poIdentifier name="cleanliness'" org.eventb.core.type="ℙ(ROOMS×BOOL)"/>
+<org.eventb.core.poIdentifier name="room" org.eventb.core.type="ROOMS"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPAbstractModelContex{" org.eventb.core.parentSet="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#EVTIDENTAbstractModelContex{" org.eventb.core.poStamp="6">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="guest∈guests" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#2|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="room∈ROOMS" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#2|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="guest∉dom(occupiedRoom)" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#2|org.eventb.core.guard#+"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="room ↦ guest∈allocated" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#2|org.eventb.core.guard#,"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTAbstractModelContex|" org.eventb.core.parentSet="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="guest" org.eventb.core.type="ALLHUMAN"/>
+<org.eventb.core.poIdentifier name="room" org.eventb.core.type="ROOMS"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPAbstractModelContex|" org.eventb.core.parentSet="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#EVTIDENTAbstractModelContex\|" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="guest∈guests" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#3|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="room∈ROOMS" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#3|org.eventb.core.guard#*"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="Checkout/grd5/WD" org.eventb.core.accurate="false" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#EVTHYPAbstractModelContex})"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="room∈dom(allocated)∧allocated∈ROOMS ⇸ ALLHUMAN" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#4|org.eventb.core.guard#."/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#4|org.eventb.core.guard#."/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#EVTHYPAbstractModelContex})"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Checkout/inv2/INV" org.eventb.core.accurate="false" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#EVTALLHYPAbstractModelContex}"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{room} ⩤ allocated∈ROOMS ⇸ guests" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#4"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poSequent#Checkout\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTAbstractModelContex}" org.eventb.core.parentSet="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="guest" org.eventb.core.type="ALLHUMAN"/>
+<org.eventb.core.poIdentifier name="allocated'" org.eventb.core.type="ℙ(ROOMS×ALLHUMAN)"/>
+<org.eventb.core.poIdentifier name="room" org.eventb.core.type="ROOMS"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPAbstractModelContex})" org.eventb.core.parentSet="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#EVTIDENTAbstractModelContex}" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="guest∈guests" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#4|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="room∈ROOMS" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#4|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="room∈dom(allocated)" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#4|org.eventb.core.guard#,"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPAbstractModelContex}" org.eventb.core.parentSet="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#EVTHYPAbstractModelContex})" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="allocated(room)=guest" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#4|org.eventb.core.guard#."/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="Clean/grd2/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#EVTHYPAbstractModelContex~'"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="room∈dom(cleanliness)∧cleanliness∈ROOMS ⇸ BOOL" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#7|org.eventb.core.guard#)"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#7|org.eventb.core.guard#)"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#EVTHYPAbstractModelContex~'"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Clean/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#EVTALLHYPAbstractModelContex~"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="cleanliness{room ↦ TRUE}∈ROOMS → BOOL" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.invariant#6"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#7"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.invariant#6"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poSequent#Clean\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTAbstractModelContex~" org.eventb.core.parentSet="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="cleanliness'" org.eventb.core.type="ℙ(ROOMS×BOOL)"/>
+<org.eventb.core.poIdentifier name="room" org.eventb.core.type="ROOMS"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPAbstractModelContex~'" org.eventb.core.parentSet="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#EVTIDENTAbstractModelContex~" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="room∈ROOMS" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#7|org.eventb.core.guard#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPAbstractModelContex~" org.eventb.core.parentSet="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#EVTHYPAbstractModelContex~'" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="cleanliness(room)=FALSE" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#7|org.eventb.core.guard#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/keyCard/AbstractModel.bpo|org.eventb.core.poFile#AbstractModel|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="guests⊆People" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.invariant#)"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="allocated∈ROOMS ⇸ guests" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.invariant#-"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="occupiedRoom∈guests ⇸ ROOMS" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.invariant#0"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="cleanliness∈ROOMS → BOOL" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.invariant#6"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

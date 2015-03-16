@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="PEOPLE" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.poIdentifier name="ROOMS" org.eventb.core.type="ℙ(ROOMS)"/>
+<org.eventb.core.poIdentifier name="customers" org.eventb.core.type="ℙ(PEOPLE)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="axm5/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HoteManager_NewDateSystem/Refinement8KeyCardSubSystem.bpo|org.eventb.core.poFile#Refinement8KeyCardSubSystem|org.eventb.core.poPredicateSet#HYP*"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(ROOMS)" org.eventb.core.source="/HoteManager_NewDateSystem/Refinement8KeyCardSubSystem.buc|org.eventb.core.contextFile#Refinement8KeyCardSubSystem|org.eventb.core.axiom#."/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HoteManager_NewDateSystem/Refinement8KeyCardSubSystem.buc|org.eventb.core.contextFile#Refinement8KeyCardSubSystem|org.eventb.core.axiom#."/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/HoteManager_NewDateSystem/Refinement8KeyCardSubSystem.bpo|org.eventb.core.poFile#Refinement8KeyCardSubSystem|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/HoteManager_NewDateSystem/Refinement8KeyCardSubSystem.bpo|org.eventb.core.poFile#Refinement8KeyCardSubSystem|org.eventb.core.poPredicateSet#HYP*"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="HYP*" org.eventb.core.parentSet="/HoteManager_NewDateSystem/Refinement8KeyCardSubSystem.bpo|org.eventb.core.poFile#Refinement8KeyCardSubSystem|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="finite(PEOPLE)" org.eventb.core.source="/HoteManager_NewDateSystem/Refinement8KeyCardSubSystem.buc|org.eventb.core.contextFile#Refinement8KeyCardSubSystem|org.eventb.core.axiom#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="finite(ROOMS)" org.eventb.core.source="/HoteManager_NewDateSystem/Refinement8KeyCardSubSystem.buc|org.eventb.core.contextFile#Refinement8KeyCardSubSystem|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="customers⊆PEOPLE" org.eventb.core.source="/HoteManager_NewDateSystem/Refinement8KeyCardSubSystem.buc|org.eventb.core.contextFile#Refinement8KeyCardSubSystem|org.eventb.core.axiom#,"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="customers≠(∅ ⦂ ℙ(PEOPLE))" org.eventb.core.source="/HoteManager_NewDateSystem/Refinement8KeyCardSubSystem.buc|org.eventb.core.contextFile#Refinement8KeyCardSubSystem|org.eventb.core.axiom#-"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/HoteManager_NewDateSystem/Refinement8KeyCardSubSystem.bpo|org.eventb.core.poFile#Refinement8KeyCardSubSystem|org.eventb.core.poPredicateSet#HYP*" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="card(ROOMS)=1" org.eventb.core.source="/HoteManager_NewDateSystem/Refinement8KeyCardSubSystem.buc|org.eventb.core.contextFile#Refinement8KeyCardSubSystem|org.eventb.core.axiom#."/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

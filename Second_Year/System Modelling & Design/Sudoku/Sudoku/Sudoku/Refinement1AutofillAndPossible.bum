@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="AbstractLevel"/>
+<org.eventb.core.seesContext name="*" org.eventb.core.target="PossibleGrid"/>
+<org.eventb.core.variable name="(" org.eventb.core.identifier="sudokuGrid"/>
+<org.eventb.core.event name="inv6" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name=")" org.eventb.core.assignment="possible ≔ (λcell · cell ∈ grid ∣ NUM)" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="upToDate ≔ TRUE" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="redAlert ≔ FALSE" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="hintedCell ≔ 0 ↦ 0 ↦ ∅" org.eventb.core.label="act5"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="inv7" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="setUp">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="setUp"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="possible ≔ possible  (λcell · cell ∈ dom(initGrid) ∣ ∅)" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd6" org.eventb.core.predicate="upToDate = TRUE"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="upToDate ≔ FALSE" org.eventb.core.label="act3"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd7" org.eventb.core.predicate="redAlert = FALSE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="inv8" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="fill">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="fill"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="possible(row ↦col) ≔ ∅" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd12" org.eventb.core.predicate="upToDate = TRUE"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd13" org.eventb.core.predicate="num ∈ possible(row ↦ col)"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="upToDate ≔ FALSE" org.eventb.core.label="act3"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd14" org.eventb.core.predicate="redAlert = FALSE"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd15" org.eventb.core.predicate="hintedCell = 0 ↦ 0 ↦ ∅"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd16" org.eventb.core.predicate="∀cell · cell ∈ dom(possible) ∧ cell ∉ dom(sudokuGrid) ⇒ card(possible(cell)) &gt; 1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="invQ" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="autofill">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="fill"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd12" org.eventb.core.predicate="upToDate = TRUE"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.label="grd13" org.eventb.core.predicate="redAlert = FALSE"/>
+<org.eventb.core.guard name="grd4" org.eventb.core.label="grd14" org.eventb.core.predicate="hintedCell = 0 ↦ 0 ↦ ∅"/>
+<org.eventb.core.action name="act1" org.eventb.core.assignment="possible(row ↦col) ≔ ∅" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="act2" org.eventb.core.assignment="upToDate ≔ FALSE" org.eventb.core.label="act3"/>
+<org.eventb.core.guard name="grd5" org.eventb.core.label="grd15" org.eventb.core.predicate="∃cell · cell ∈ dom(possible) ∧ cell ∉ dom(sudokuGrid) ⇒ card(possible(cell)) = 1"/>
+<org.eventb.core.guard name="grd6" org.eventb.core.label="grd16" org.eventb.core.predicate="card(possible(row↦col)) = 1"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.label="grd17" org.eventb.core.predicate="num ∈ possible(row ↦ col)"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="inv9" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="digCell">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="digCell"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd13" org.eventb.core.predicate="upToDate = TRUE"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="upToDate ≔ FALSE" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd14" org.eventb.core.predicate="hintedCell = 0 ↦ 0 ↦ ∅"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="inv=" org.eventb.core.identifier="possible"/>
+<org.eventb.core.invariant name="invA" org.eventb.core.label="inv1" org.eventb.core.predicate="possible ∈ grid → ℙ(NUM)"/>
+<org.eventb.core.invariant name="inv?" org.eventb.core.label="inv2" org.eventb.core.predicate="dom(BOX) = dom(possible)"/>
+<org.eventb.core.invariant name="invB" org.eventb.core.label="inv3" org.eventb.core.predicate="∀row,col · row ↦ col ∈ dom(possible) ⇒ finite(possible(row ↦ col))"/>
+<org.eventb.core.invariant name="invC" org.eventb.core.label="inv4" org.eventb.core.predicate="∀row, col · row ∈ ROW ∧ col ∈ COL ∧ row ↦ col ∈ dom(sudokuGrid) ⇒ possible(row ↦ col) = ∅"/>
+<org.eventb.core.variable name="invE" org.eventb.core.identifier="upToDate"/>
+<org.eventb.core.invariant name="invF" org.eventb.core.label="inv5" org.eventb.core.predicate="upToDate ∈ BOOL"/>
+<org.eventb.core.event name="evt1" org.eventb.core.comment="need to put in :| to update the possibles" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="upDatePossibleFullGrid">
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="upToDate = FALSE"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="upToDate ≔ TRUE" org.eventb.core.comment="" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="possible ≔ (λcell · cell ∈ grid ∣ ∅)" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="," org.eventb.core.comment="81 things in sudoku" org.eventb.core.label="grd2" org.eventb.core.predicate="card(sudokuGrid) = 81"/>
+<org.eventb.core.guard name="." org.eventb.core.comment="grid needs to be full" org.eventb.core.label="grd3" org.eventb.core.predicate="dom(sudokuGrid) = dom(possible)"/>
+<org.eventb.core.guard name="-" org.eventb.core.comment="double check" org.eventb.core.label="grd4" org.eventb.core.predicate="∀cell · cell ∈ grid ⇒ cell ∈ dom(sudokuGrid)" org.eventb.core.theorem="true"/>
+<org.eventb.core.guard name="/" org.eventb.core.label="grd5" org.eventb.core.predicate="hintedCell = 0 ↦ 0 ↦ ∅"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="invG" org.eventb.core.comment="need to put in :| to update the possibles" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="upDatePossible">
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="upToDate = FALSE"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="upToDate ≔ TRUE" org.eventb.core.comment="" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="the cell belongs to the grid should be already updated by the fill autofill and guess event" org.eventb.core.label="grd2" org.eventb.core.predicate="∀row, col · row ∈ ROW ∧ col ∈ COL ∧ row ↦ col ∈ dom(sudokuGrid) ⇒ possible(row ↦ col) = ∅"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="" org.eventb.core.label="grd3" org.eventb.core.predicate="∀row, col · row ∈ ROW ∧ col ∈ COL ∧ row ↦ col ∉ dom(sudokuGrid) ⇒ finite(possible(row↦col))"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="possible :∣ ((∀cell · cell ∈ dom(sudokuGrid) ∧ cell ∈ grid ⇒ possible'(cell) = possible(cell)&#10;)) ∧&#10;(∀row, col · row ∈ ROW ∧ col ∈ COL ∧ row↦col ∉ dom(sudokuGrid) ∧ row↦col ∈ grid ⇒ &#10;possible'(row↦col) = possible(row↦col)∖&#10;union({numberSet, rowx, colx · numberSet ∈ ℙ(NUM) ∧ rowx ∈ ROW ∧ colx ∈ COL ∧&#10;((rowx ↦ colx) ∈ ((SAMEBOX[{row↦col}] ∪ SAMEROW[{row ↦col}] ∪ SAMECOL[{row ↦col}]) ∩ dom(sudokuGrid))) ∧&#10;sudokuGrid(rowx ↦ colx) ∈ numberSet&#10;∣numberSet})&#10;)" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd4" org.eventb.core.predicate="∀row, col · row ∈ ROW ∧ col ∈ COL ∧ row ↦ col ∉ dom(sudokuGrid) ⇒ possible(row↦col) ∈ ℙ(NUM)"/>
+<org.eventb.core.guard name="," org.eventb.core.comment="grid can't be full" org.eventb.core.label="grd5" org.eventb.core.predicate="card(sudokuGrid) &lt; 81"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd6" org.eventb.core.predicate="hintedCell = 0 ↦ 0 ↦ ∅"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="invH" org.eventb.core.identifier="redAlert"/>
+<org.eventb.core.invariant name="invI" org.eventb.core.label="inv6" org.eventb.core.predicate="redAlert ∈ BOOL"/>
+<org.eventb.core.event name="invJ" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="alarm">
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="cell ∈ grid"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd2" org.eventb.core.predicate="cell ∉ dom(sudokuGrid)"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd3" org.eventb.core.predicate="possible(cell) = ∅"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="redAlert ≔ TRUE" org.eventb.core.label="act1"/>
+<org.eventb.core.parameter name="+" org.eventb.core.identifier="cell"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt2" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="unAlarm">
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="∀cell · cell ∈ grid ∧ cell ∉ dom(sudokuGrid) ⇒&#10;possible(cell) ≠ ∅"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="redAlert ≔ FALSE" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="redAlert = TRUE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="invK" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="hint">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="row"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="col"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="row ∈ ROW"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="col ∈ COL"/>
+<org.eventb.core.guard name="0" org.eventb.core.comment="must have been seted up" org.eventb.core.label="grd3" org.eventb.core.predicate="sudokuGrid ≠ ∅"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd4" org.eventb.core.predicate="row ↦ col ∉ dom(sudokuGrid)"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd5" org.eventb.core.predicate="∀rowa, cola · rowa ↦ cola ∈ dom(possible) ⇒ finite(possible(row↦col))"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd6" org.eventb.core.predicate="∀rowa, cola · rowa ↦ cola ∈ dom(possible)∖dom(sudokuGrid) ⇒ card(possible(rowa ↦ cola)) ≥ card(possible(row ↦col))"/>
+<org.eventb.core.action name="." org.eventb.core.assignment="hintedCell ≔ row ↦ col ↦ possible(row↦col)" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="/" org.eventb.core.label="grd7" org.eventb.core.predicate="hintedCell = 0 ↦ 0 ↦ ∅"/>
+<org.eventb.core.guard name="1" org.eventb.core.label="grd8" org.eventb.core.predicate="upToDate = TRUE"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="invL" org.eventb.core.identifier="hintedCell"/>
+<org.eventb.core.invariant name="invM" org.eventb.core.label="inv7" org.eventb.core.predicate="hintedCell ∈ 0‥9 × 0‥9 × ℙ(0‥9)"/>
+<org.eventb.core.event name="invN" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="guess">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="fill"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd12" org.eventb.core.predicate="upToDate = TRUE"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.label="grd13" org.eventb.core.predicate="num ∈ possible(row ↦ col)"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.label="grd14" org.eventb.core.predicate="redAlert = FALSE"/>
+<org.eventb.core.guard name="grd4" org.eventb.core.label="grd15" org.eventb.core.predicate="hintedCell ≠ 0 ↦ 0 ↦ ∅"/>
+<org.eventb.core.action name="act1" org.eventb.core.assignment="possible(row ↦col) ≔ ∅" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="act2" org.eventb.core.assignment="upToDate ≔ FALSE" org.eventb.core.label="act3"/>
+<org.eventb.core.guard name="grd5" org.eventb.core.label="grd16" org.eventb.core.predicate="row ↦ col ↦ numSet = hintedCell"/>
+<org.eventb.core.action name="grd6" org.eventb.core.assignment="hintedCell ≔ 0 ↦ 0 ↦ ∅" org.eventb.core.label="act4"/>
+<org.eventb.core.guard name="grd7" org.eventb.core.label="grd17" org.eventb.core.predicate="num ∈ numSet"/>
+<org.eventb.core.parameter name="grd8" org.eventb.core.identifier="numSet"/>
+</org.eventb.core.event>
+<org.eventb.core.invariant name="invO" org.eventb.core.label="inv8" org.eventb.core.predicate="∀row, col · row ∈ ROW ∧ col ∈ COL ∧ row ↦ col ∉ dom(sudokuGrid) ∧ row ↦ col ∈ dom(possible) ∧ upToDate = TRUE ⇒ &#10;possible(row ↦ col) ∩&#10;union({numberSet, rowx, colx · numberSet ∈ ℙ(NUM) ∧ rowx ∈ ROW ∧ colx ∈ COL ∧&#10;((rowx ↦ colx) ∈ ((SAMEBOX[{row↦col}] ∪ SAMEROW[{row ↦col}] ∪ SAMECOL[{row ↦col}]) ∩ dom(sudokuGrid))) ∧&#10;sudokuGrid(rowx ↦ colx) ∈ numberSet&#10;∣numberSet}) = ∅"/>
+<org.eventb.core.invariant name="invP" org.eventb.core.label="inv9" org.eventb.core.predicate="∀cell · cell ∈ grid ⇒ cell ∈ dom(BOX)" org.eventb.core.theorem="true"/>
+</org.eventb.core.machineFile>

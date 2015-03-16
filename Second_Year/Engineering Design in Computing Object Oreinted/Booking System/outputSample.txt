@@ -1,0 +1,24 @@
+Room 113 assigned
+113
+Alan Mar 4 12 1 Seminar
+Alan Mar 11 12 1 Seminar
+Alan Mar 18 12 1 Seminar
+Alan Mar 25 12 1 Seminar
+Alan Apr 1 12 1 Seminar
+Alan Apr 8 12 1 Seminar
+Alan Apr 15 12 1 Seminar
+Alan Apr 22 12 1 Seminar
+Alan Apr 29 12 1 Seminar
+Alan May 6 12 1 Seminar
+Alan May 13 12 1 Seminar
+Alan May 20 12 1 Seminar
+Alan May 27 12 1 Seminar
+Room 201B assigned
+Room 201B assigned
+Reservations deleted
+201B
+Bill Mar 6 15 2 Tutorial
+Bill Mar 20 15 2 Tutorial
+Alan Apr 2 12 3 Project
+Alan Apr 9 12 3 Project
+Alan Apr 16 12 3 Project

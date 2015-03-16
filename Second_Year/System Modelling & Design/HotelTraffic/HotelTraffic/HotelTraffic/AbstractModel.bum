@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.comment="can only change color of lights&#10;The UNDISCHARGED PO for event&#10;changeTrafficColorCycle&#10;changeTrafficToGreen&#10;inv3 and inv4 are due to the same reason" org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="act1" org.eventb.core.assignment="trafficLight ≔ {(NW ↦ NORTHSOUTH ↦ RED),(NW ↦ EASTWEST ↦ RED),&#10;(SW ↦ NORTHSOUTH ↦ RED),(SW ↦ EASTWEST ↦ RED),&#10;(NE ↦ NORTHSOUTH ↦ RED),(NE ↦ EASTWEST ↦ RED),&#10;(SE ↦ NORTHSOUTH ↦ RED),(SE ↦ EASTWEST ↦ RED),&#10;(PARK ↦ NORTHSOUTH ↦ RED),(PARK ↦ EASTWEST ↦ RED)}" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="act2" org.eventb.core.assignment="pedLight ≔ {(NW ↦ NORTHSOUTH ↦ RED),(NW ↦ EASTWEST ↦ RED),&#10;(SW ↦ NORTHSOUTH ↦ RED),(SW ↦ EASTWEST ↦ RED),&#10;(NE ↦ NORTHSOUTH ↦ RED),(NE ↦ EASTWEST ↦ RED),&#10;(SE ↦ NORTHSOUTH ↦ RED),(SE ↦ EASTWEST ↦ RED),&#10;(PARK ↦ NORTHSOUTH ↦ RED),(PARK ↦ EASTWEST ↦ RED)}" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="act3" org.eventb.core.assignment="ORIGIN ≔ TRUE" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt5" org.eventb.core.comment="NO SENSOR NEEDED (COME IN HANDY IN LATER REFINEMENT)&#10;THIS EVENT DOES THE SAME AS THE OTHER THREE EVENTS&#10;changeTrafficToGreen&#10;changeTrafficToAmber&#10;changeTrafficToRed" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="changeTrafficCycle">
+<org.eventb.core.guard name="'" org.eventb.core.comment="" org.eventb.core.label="grd1" org.eventb.core.predicate="direction ∈ DIRECTION"/>
+<org.eventb.core.parameter name="(" org.eventb.core.comment="" org.eventb.core.identifier="direction"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd2" org.eventb.core.predicate="intersection ∈ INTERSECTION"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd3" org.eventb.core.predicate="(intersection ↦ direction) ∈ dom(trafficLight)"/>
+<org.eventb.core.guard name="/" org.eventb.core.label="grd4" org.eventb.core.predicate="(intersection ↦ direction) ∈ dom(pedLight)"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="CAN'T CHANGE this direction green, if otherDirection has traffic" org.eventb.core.label="grd5" org.eventb.core.predicate="∀d · d ∈ DIRECTION ∧ trafficLight(intersection ↦ d) ∈ {AMBER, GREEN} ⇒ trafficLight(intersection ↦ otherDirection(d)) = RED"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="trafficLight(intersection ↦ direction) ≔ nextColor(trafficLight(intersection ↦ direction))" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="CAN'T CHANGE this direction green, if otherDirection has ped" org.eventb.core.label="grd6" org.eventb.core.predicate="∀d · d ∈ DIRECTION ∧ trafficLight(intersection ↦ d) ∈ {AMBER, GREEN} ⇒ pedLight(intersection ↦ otherDirection(d)) = RED"/>
+<org.eventb.core.parameter name="," org.eventb.core.comment="" org.eventb.core.identifier="intersection"/>
+<org.eventb.core.guard name="0" org.eventb.core.label="grd7" org.eventb.core.predicate="trafficLight(intersection ↦ direction) ∈ COLOR" org.eventb.core.theorem="true"/>
+<org.eventb.core.guard name="1" org.eventb.core.label="grd8" org.eventb.core.predicate="trafficLight(intersection ↦ otherDirection(direction)) = RED"/>
+<org.eventb.core.guard name="2" org.eventb.core.label="grd9" org.eventb.core.predicate="pedLight(intersection ↦ otherDirection(direction)) = RED"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt2" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="changePedToGreen">
+<org.eventb.core.parameter name="(" org.eventb.core.comment="" org.eventb.core.identifier="intersection"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="pedLight(intersection ↦ direction) ≔ trafficLight(intersection ↦ direction)" org.eventb.core.comment="can use pedLight(interDir) := GREEN instead,&#10;put in to emphasis the safety feature 4 in requirement" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.comment="" org.eventb.core.label="grd1" org.eventb.core.predicate="direction ∈ DIRECTION"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.label="grd2" org.eventb.core.predicate="intersection ∈ INTERSECTION"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.label="grd3" org.eventb.core.predicate="(intersection ↦ direction) ∈ dom(trafficLight)"/>
+<org.eventb.core.guard name="grd4" org.eventb.core.label="grd4" org.eventb.core.predicate="(intersection ↦ direction) ∈ dom(pedLight)"/>
+<org.eventb.core.parameter name="," org.eventb.core.identifier="direction"/>
+<org.eventb.core.guard name="grd5" org.eventb.core.label="grd5" org.eventb.core.predicate="trafficLight(intersection ↦ direction) = GREEN"/>
+<org.eventb.core.guard name="grd6" org.eventb.core.label="grd6" org.eventb.core.predicate="pedLight(intersection ↦ direction) ≠ GREEN"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt6" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="changePedToRed">
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="interDir ∈ dom(pedLight)"/>
+<org.eventb.core.parameter name="(" org.eventb.core.comment="" org.eventb.core.identifier="interDir"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="trafficLight(interDir) = RED"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="pedLight(interDir) ≔ trafficLight(interDir)" org.eventb.core.comment="can use pedLight(interDir) := RED instead,&#10;put in to emphasis the safety feature 4 in requirement" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="" org.eventb.core.label="grd3" org.eventb.core.predicate="pedLight(interDir) ≠ RED"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt1" org.eventb.core.comment="SENSOR NEEDED (COME IN HANDY IN LATER REFINEMENT)" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="changeTrafficToGreen">
+<org.eventb.core.guard name="'" org.eventb.core.comment="" org.eventb.core.label="grd1" org.eventb.core.predicate="direction ∈ DIRECTION"/>
+<org.eventb.core.parameter name="(" org.eventb.core.comment="" org.eventb.core.identifier="direction"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd2" org.eventb.core.predicate="intersection ∈ INTERSECTION"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd3" org.eventb.core.predicate="(intersection ↦ direction) ∈ dom(trafficLight)"/>
+<org.eventb.core.guard name="/" org.eventb.core.label="grd4" org.eventb.core.predicate="(intersection ↦ direction) ∈ dom(pedLight)"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="CAN'T CHANGE this direction green, if otherDirection has traffic" org.eventb.core.label="grd5" org.eventb.core.predicate="∀d · d ∈ DIRECTION ∧ trafficLight(intersection ↦ d) ∈ {AMBER, GREEN} ⇒ trafficLight(intersection ↦ otherDirection(d)) = RED"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="trafficLight(intersection ↦ direction) ≔ GREEN" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="CAN'T CHANGE this direction green, if otherDirection has ped" org.eventb.core.label="grd6" org.eventb.core.predicate="∀d · d ∈ DIRECTION ∧ trafficLight(intersection ↦ d) ∈ {AMBER, GREEN} ⇒ pedLight(intersection ↦ otherDirection(d)) = RED"/>
+<org.eventb.core.parameter name="," org.eventb.core.comment="" org.eventb.core.identifier="intersection"/>
+<org.eventb.core.guard name="0" org.eventb.core.label="grd7" org.eventb.core.predicate="trafficLight(intersection ↦ direction) = RED"/>
+<org.eventb.core.guard name="1" org.eventb.core.label="grd8" org.eventb.core.predicate="trafficLight(intersection ↦ otherDirection(direction)) = RED"/>
+<org.eventb.core.guard name="2" org.eventb.core.label="grd9" org.eventb.core.predicate="pedLight(intersection ↦ otherDirection(direction)) = RED"/>
+</org.eventb.core.event>
+<org.eventb.core.seesContext name="(" org.eventb.core.target="PedLightColor"/>
+<org.eventb.core.seesContext name=")" org.eventb.core.target="TrafficLightColor"/>
+<org.eventb.core.seesContext name="*" org.eventb.core.target="Directions"/>
+<org.eventb.core.variable name="var1" org.eventb.core.comment="" org.eventb.core.identifier="trafficLight"/>
+<org.eventb.core.variable name="var2" org.eventb.core.identifier="pedLight"/>
+<org.eventb.core.invariant name="inv1" org.eventb.core.label="inv1" org.eventb.core.predicate="trafficLight ∈ (INTERSECTION × DIRECTION) → COLOR"/>
+<org.eventb.core.invariant name="inv2" org.eventb.core.comment="" org.eventb.core.label="inv2" org.eventb.core.predicate="pedLight ∈ (INTERSECTION × DIRECTION) → COLOR"/>
+<org.eventb.core.invariant name="inv3" org.eventb.core.label="inv3" org.eventb.core.predicate="∀i · i ∈ INTERSECTION ∧ trafficLight(i ↦ NORTHSOUTH) ∈ {AMBER, GREEN} ⇒ trafficLight(i ↦ EASTWEST) = RED"/>
+<org.eventb.core.invariant name="inv4" org.eventb.core.label="inv4" org.eventb.core.predicate="∀i · i ∈ INTERSECTION ∧ trafficLight(i ↦ EASTWEST) ∈ {AMBER, GREEN} ⇒ trafficLight(i ↦ NORTHSOUTH) = RED"/>
+<org.eventb.core.invariant name="inv5" org.eventb.core.label="inv5" org.eventb.core.predicate="∀i · i ∈ INTERSECTION ∧ trafficLight(i ↦ NORTHSOUTH) ∈ {AMBER, GREEN} ⇒ pedLight(i ↦ EASTWEST) = RED"/>
+<org.eventb.core.invariant name="inv6" org.eventb.core.label="inv6" org.eventb.core.predicate="∀i · i ∈ INTERSECTION ∧ trafficLight(i ↦ EASTWEST) ∈ {AMBER, GREEN} ⇒ pedLight(i ↦ NORTHSOUTH) = RED"/>
+<org.eventb.core.event name="evt3" org.eventb.core.comment="SENSOR NEEDED (COME IN HANDY IN LATER REFINEMENT)" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="changeTrafficToAMBER">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="direction"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="intersection"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="direction ∈ DIRECTION"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="intersection ∈ INTERSECTION"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.label="grd3" org.eventb.core.predicate="(intersection ↦ direction) ∈ dom(trafficLight)"/>
+<org.eventb.core.guard name="grd4" org.eventb.core.label="grd4" org.eventb.core.predicate="(intersection ↦ direction) ∈ dom(pedLight)"/>
+<org.eventb.core.guard name="grd7" org.eventb.core.label="grd5" org.eventb.core.predicate="trafficLight(intersection ↦ direction) = GREEN"/>
+<org.eventb.core.guard name="grd5" org.eventb.core.comment="the other direction at this intersection needs to be red" org.eventb.core.label="grd6" org.eventb.core.predicate="trafficLight(intersection ↦ otherDirection(direction)) = RED"/>
+<org.eventb.core.guard name="grd6" org.eventb.core.comment="the other direction at this intersection needs to be red" org.eventb.core.label="grd7" org.eventb.core.predicate="pedLight(intersection ↦ otherDirection(direction)) = RED"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="trafficLight(intersection ↦ direction) ≔ AMBER" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt4" org.eventb.core.comment="SENSOR NEEDED (COME IN HANDY IN LATER REFINEMENT)" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="changeTrafficToRED">
+<org.eventb.core.parameter name="'" org.eventb.core.comment="" org.eventb.core.identifier="direction"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="intersection"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="direction ∈ DIRECTION"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="intersection ∈ INTERSECTION"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.label="grd3" org.eventb.core.predicate="(intersection ↦ direction) ∈ dom(trafficLight)"/>
+<org.eventb.core.guard name="grd4" org.eventb.core.label="grd4" org.eventb.core.predicate="(intersection ↦ direction) ∈ dom(pedLight)"/>
+<org.eventb.core.guard name="grd7" org.eventb.core.label="grd5" org.eventb.core.predicate="trafficLight(intersection ↦ direction) = AMBER"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="trafficLight(intersection ↦ direction) ≔ RED" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.invariant name="var3" org.eventb.core.comment="added in to indicate the implementation strategy specified in the Latex Documents" org.eventb.core.label="inv7" org.eventb.core.predicate="dom(pedLight) = dom(trafficLight)" org.eventb.core.theorem="true"/>
+<org.eventb.core.event name="var4" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="roadToGreen">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="intersection"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="direction"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd1" org.eventb.core.predicate="direction ∈ DIRECTION"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.label="grd2" org.eventb.core.predicate="intersection ∈ INTERSECTION"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.label="grd3" org.eventb.core.predicate="(intersection ↦ direction) ∈ dom(trafficLight)"/>
+<org.eventb.core.guard name="grd4" org.eventb.core.label="grd4" org.eventb.core.predicate="(intersection ↦ direction) ∈ dom(pedLight)"/>
+<org.eventb.core.guard name="grd5" org.eventb.core.label="grd5" org.eventb.core.predicate="(intersection ↦ direction) ∈ dom(ROAD)"/>
+<org.eventb.core.guard name="grd?" org.eventb.core.label="grd6" org.eventb.core.predicate="(intersection ↦ otherDirection(direction)) ∈ dom(ROAD)"/>
+<org.eventb.core.guard name="grd6" org.eventb.core.label="grd7" org.eventb.core.predicate="∀i · i ∈ ROAD(intersection ↦ direction) ⇒ i ∈ dom(trafficLight)"/>
+<org.eventb.core.guard name="grd8" org.eventb.core.comment="" org.eventb.core.label="grd8" org.eventb.core.predicate="∀i · i ∈ ROAD(intersection ↦ direction) ⇒ i ∈ dom(pedLight)"/>
+<org.eventb.core.action name="grd:" org.eventb.core.assignment="pedLight ≔ pedLight  (λi · i ∈ ROAD(intersection ↦ direction) ∣ GREEN)" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="act1" org.eventb.core.assignment="trafficLight ≔ trafficLight  (λi · i ∈ ROAD(intersection ↦ direction) ∣ GREEN)" org.eventb.core.comment="" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="grd13" org.eventb.core.label="grd11" org.eventb.core.predicate="ROAD(intersection ↦ otherDirection(direction)) ⊆ dom(trafficLight)" org.eventb.core.theorem="true"/>
+<org.eventb.core.guard name="grd14" org.eventb.core.label="grd12" org.eventb.core.predicate="ROAD(intersection ↦ otherDirection(direction)) ⊆ dom(pedLight)" org.eventb.core.theorem="true"/>
+<org.eventb.core.guard name="grd15" org.eventb.core.label="grd13" org.eventb.core.predicate="ORIGIN = TRUE"/>
+<org.eventb.core.guard name="grd16" org.eventb.core.label="grd14" org.eventb.core.predicate="∀i · i ∈ dom(trafficLight) ⇒ trafficLight(i) = RED"/>
+<org.eventb.core.guard name="grd17" org.eventb.core.label="grd15" org.eventb.core.predicate="∀i · i ∈ dom(pedLight) ⇒ trafficLight(i) = RED"/>
+<org.eventb.core.action name="grd18" org.eventb.core.assignment="ORIGIN ≔ FALSE" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="var5" org.eventb.core.comment="same as init" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="roadToOPPOSITERed">
+<org.eventb.core.action name="'" org.eventb.core.assignment="ORIGIN ≔ TRUE" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="act1" org.eventb.core.assignment="trafficLight ≔ {(NW ↦ NORTHSOUTH ↦ RED),(NW ↦ EASTWEST ↦ RED),&#10;(SW ↦ NORTHSOUTH ↦ RED),(SW ↦ EASTWEST ↦ RED),&#10;(NE ↦ NORTHSOUTH ↦ RED),(NE ↦ EASTWEST ↦ RED),&#10;(SE ↦ NORTHSOUTH ↦ RED),(SE ↦ EASTWEST ↦ RED),&#10;(PARK ↦ NORTHSOUTH ↦ RED),(PARK ↦ EASTWEST ↦ RED)}" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="act2" org.eventb.core.assignment="pedLight ≔ {(NW ↦ NORTHSOUTH ↦ RED),(NW ↦ EASTWEST ↦ RED),&#10;(SW ↦ NORTHSOUTH ↦ RED),(SW ↦ EASTWEST ↦ RED),&#10;(NE ↦ NORTHSOUTH ↦ RED),(NE ↦ EASTWEST ↦ RED),&#10;(SE ↦ NORTHSOUTH ↦ RED),(SE ↦ EASTWEST ↦ RED),&#10;(PARK ↦ NORTHSOUTH ↦ RED),(PARK ↦ EASTWEST ↦ RED)}" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.seesContext name="var6" org.eventb.core.target="Road"/>
+<org.eventb.core.variable name="var7" org.eventb.core.identifier="ORIGIN"/>
+<org.eventb.core.invariant name="var8" org.eventb.core.label="inv8" org.eventb.core.predicate="ORIGIN ∈ BOOL"/>
+</org.eventb.core.machineFile>

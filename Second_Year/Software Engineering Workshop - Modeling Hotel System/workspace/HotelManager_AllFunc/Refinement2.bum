@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="Refinement1"/>
+<org.eventb.core.seesContext name="*" org.eventb.core.target="Refinement2Service"/>
+<org.eventb.core.variable name="(" org.eventb.core.comment="all customers at hotel" org.eventb.core.identifier="customers"/>
+<org.eventb.core.variable name="+" org.eventb.core.comment="all employees at hotel" org.eventb.core.identifier="employees"/>
+<org.eventb.core.variable name="/" org.eventb.core.comment="Rooms that can be used" org.eventb.core.identifier="addedRooms"/>
+<org.eventb.core.variable name="2" org.eventb.core.comment="current available service" org.eventb.core.identifier="importedServices"/>
+<org.eventb.core.variable name="7" org.eventb.core.comment="total financial balance of the hotel" org.eventb.core.identifier="hotelFinance"/>
+<org.eventb.core.variable name="&gt;" org.eventb.core.comment="return the customer status&#10;" org.eventb.core.identifier="customerStatus"/>
+<org.eventb.core.variable name="J" org.eventb.core.comment="return the maintainance status of room" org.eventb.core.identifier="getCleaningStatus"/>
+<org.eventb.core.variable name="L" org.eventb.core.comment="store the reservation that a customer has" org.eventb.core.identifier="customerReservation"/>
+<org.eventb.core.variable name="N" org.eventb.core.comment="STORE THE current reservation inside a room" org.eventb.core.identifier="roomReservation"/>
+<org.eventb.core.variable name="R" org.eventb.core.comment="RESERVATION THAT ARE IN USE" org.eventb.core.identifier="addedReservations"/>
+<org.eventb.core.variable name="P" org.eventb.core.comment="Reservation needs to have a date, attribute of Reservation, PD 1.2.1" org.eventb.core.identifier="reservationDate"/>
+<org.eventb.core.variable name="T" org.eventb.core.comment="store the status of reservation" org.eventb.core.identifier="reservationStatus"/>
+<org.eventb.core.variable name="V" org.eventb.core.comment="store the condition of reservation" org.eventb.core.identifier="reservationCondition"/>
+<org.eventb.core.variable name="X" org.eventb.core.comment="Event B syntax still in discusions&#10;paymentTotal : Reservation -&gt; N&#10;paymentTotal := paymentTotal ( Reservation := newPayment ) " org.eventb.core.identifier="reservationTotalPayment"/>
+<org.eventb.core.variable name="_" org.eventb.core.comment="TOTAL INCOME hotel get form the reservation" org.eventb.core.identifier="reservationTotalIncome"/>
+<org.eventb.core.event name="`" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="addedInventories ≔ ∅" org.eventb.core.label="act18"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="serviceUses ≔ ∅" org.eventb.core.label="act19"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="inventoryAmount ≔ (λinventory · inventory ∈ INVENTORY∖{NULLINVENTORY} ∣ 0)" org.eventb.core.label="act20"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="servicePrice ≔ ∅" org.eventb.core.label="act21"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="minAmountInventory ≔ (λinventory · inventory ∈ INVENTORY∖{NULLINVENTORY} ∣ 0)" org.eventb.core.comment="Inventory alert amount is zero &#10;for all inventory at the start" org.eventb.core.label="act22"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="inventoryLow ≔ (λinventory · inventory ∈ INVENTORY∖{NULLINVENTORY} ∣ FALSE)" org.eventb.core.label="act23"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="inventoryCost ≔ (λinventory · inventory ∈ INVENTORY∖{NULLINVENTORY} ∣ 0)" org.eventb.core.label="act24"/>
+<org.eventb.core.action name="." org.eventb.core.assignment="inventoryExpireDate ≔ (λinventory · inventory ∈ INVENTORY∖{NULLINVENTORY} ∣ NULLDATE)" org.eventb.core.label="act25"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt7" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="dayPass">
+<org.eventb.core.refinesEvent name="(" org.eventb.core.target="dayPass"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="a" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="AddEmployee">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="AddEmployee"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="b" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="EmployeeQuits">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="EmployeeQuits"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="c" org.eventb.core.comment="ROOM THAT ARE READY TO USE" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="AddRooms">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="AddRooms"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="d" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="DeleteRooms">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="DeleteRooms"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="e" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="AddService">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="AddService"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd3" org.eventb.core.predicate="price ∈ ℕ1"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="price"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="serviceUses ≔ serviceUses  {service ↦ ∅}" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="servicePrice ≔ servicePrice  {service ↦ price}" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt11" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="UpdateService">
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="price ∈ ℕ1"/>
+<org.eventb.core.parameter name="," org.eventb.core.identifier="service"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="price"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="servicePrice ≔ servicePrice  {service ↦ price}" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd2" org.eventb.core.predicate="service ∈ dom(servicePrice)"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="f" org.eventb.core.comment="used when service is not available anymore" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="RemoveService">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="RemoveService"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="serviceUses ≔ {service} ⩤ serviceUses" org.eventb.core.label="act2"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="servicePrice ≔ {service} ⩤ servicePrice" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="g" org.eventb.core.comment="" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="AddCustomer">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="AddCustomer"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="h" org.eventb.core.comment="requirement in PD 4.1" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="AddFinance">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="AddFinance"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="i" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="RobFinance">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="RobFinance"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="j" org.eventb.core.comment="this event is related to PD-2.1.2" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="CleanRoom">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="CleanRoom"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt13" org.eventb.core.comment="" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="PolluteRoom">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="PolluteRoom"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="k" org.eventb.core.comment="this event is related to DN1.1" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="MakeReservation">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="MakeReservation"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt5" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ChangeReservation">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ChangeReservation"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="l" org.eventb.core.comment="this event is related to partially of PD-1.2.3a" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="CloseReservation">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="CloseReservation"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt6" org.eventb.core.comment="this event is related to partially of PD-1.2.3a" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ClearReservation">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ClearReservation"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="m" org.eventb.core.comment="this event is related to PD-1.1.2 " org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ConfirmReservation">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ConfirmReservation"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="p" org.eventb.core.comment="" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ChargeReservation">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ChargeReservation"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd10" org.eventb.core.predicate="price  = servicePrice(service)"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt9" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ExpireReservation">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ExpireReservation"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="n" org.eventb.core.comment="this event is related to PD-1.2.2a and PD-1.5.1a " org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="CancelTentativeReservationReq">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="CancelTentativeReservationReq"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="o" org.eventb.core.comment="this event is related to PD-1.2.1a&#10;CANCEL base on customer request, no deposit returned&#10;in this stage, the hotel sales/income function hasn't been refined&#10;therefore no update deposit to HotelFinance yet&#10;CANCEL CONFIRMED RESERVATION DOESN'T DOWNGRADE THE CUSTOMER" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="CancelConfirmedReservationReq">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="CancelConfirmedReservationReq"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="evt8" org.eventb.core.comment="current date&#10;" org.eventb.core.identifier="today"/>
+<org.eventb.core.variable name="q" org.eventb.core.comment="currently available inventory" org.eventb.core.identifier="addedInventories"/>
+<org.eventb.core.variable name="r" org.eventb.core.comment="what inventory does each service use" org.eventb.core.identifier="serviceUses"/>
+<org.eventb.core.variable name="s" org.eventb.core.comment="the amount of stock left for a particular inventory" org.eventb.core.identifier="inventoryAmount"/>
+<org.eventb.core.variable name="t" org.eventb.core.comment="price of each service" org.eventb.core.identifier="servicePrice"/>
+<org.eventb.core.variable name="u" org.eventb.core.comment="minimum amount of each type of inventory, before it triggers the alarm" org.eventb.core.identifier="minAmountInventory"/>
+<org.eventb.core.variable name="v" org.eventb.core.comment="is the amount left for this inventory low" org.eventb.core.identifier="inventoryLow"/>
+<org.eventb.core.invariant name="w" org.eventb.core.label="inv1" org.eventb.core.predicate="addedInventories ⊆ INVENTORY∖{NULLINVENTORY}"/>
+<org.eventb.core.invariant name="x" org.eventb.core.comment="The set of items that is used when a service in the hotel is performed&#10;not all service need inventory" org.eventb.core.label="inv2" org.eventb.core.predicate="serviceUses ∈ importedServices ⇸ ℙ(addedInventories)"/>
+<org.eventb.core.invariant name="y" org.eventb.core.label="inv3" org.eventb.core.predicate="inventoryAmount ∈ INVENTORY∖{NULLINVENTORY} → ℕ"/>
+<org.eventb.core.invariant name="z" org.eventb.core.comment="used for testing" org.eventb.core.label="inv4" org.eventb.core.predicate="importedServices = dom(serviceUses)"/>
+<org.eventb.core.invariant name="{" org.eventb.core.comment="service uses inventory that hotel has" org.eventb.core.label="inv5" org.eventb.core.predicate="∀service · service ∈ dom(serviceUses) ⇒ serviceUses(service) ⊆ dom(inventoryAmount)"/>
+<org.eventb.core.invariant name="}" org.eventb.core.label="inv6" org.eventb.core.predicate="servicePrice ∈ importedServices → ℕ1"/>
+<org.eventb.core.invariant name="~" org.eventb.core.label="inv7" org.eventb.core.predicate="minAmountInventory ∈ INVENTORY∖{NULLINVENTORY} → ℕ"/>
+<org.eventb.core.invariant name="''" org.eventb.core.comment="TRUE IF INVENTORY IS LOW" org.eventb.core.label="inv8" org.eventb.core.predicate="inventoryLow ∈ INVENTORY∖{NULLINVENTORY} → BOOL"/>
+<org.eventb.core.event name="'(" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="AddInventory">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="inventory"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="amount"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="alertValue"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="The category of item that is added to the inventory can’t have zero amount" org.eventb.core.label="grd1" org.eventb.core.predicate="inventory ∈ INVENTORY∖{NULLINVENTORY}"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="amount ∈ ℕ1"/>
+<org.eventb.core.guard name="," org.eventb.core.comment="An employee is needed in order to perform this task" org.eventb.core.label="grd3" org.eventb.core.predicate="employees∖{MANAGER} ≠ ∅"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd4" org.eventb.core.predicate="alertValue ∈ ℕ1"/>
+<org.eventb.core.guard name="." org.eventb.core.comment="always want to add more than the min amount" org.eventb.core.label="grd5" org.eventb.core.predicate="alertValue &lt; amount"/>
+<org.eventb.core.action name="/" org.eventb.core.assignment="addedInventories ≔ addedInventories ∪ {inventory}" org.eventb.core.comment="related to PD-3.3.1&#10;the category of item is added to the inventory of the hotel," org.eventb.core.label="act1"/>
+<org.eventb.core.action name="0" org.eventb.core.assignment="inventoryAmount ≔ inventoryAmount  {inventory ↦ (inventoryAmount(inventory) + amount)}" org.eventb.core.comment="related to PD-3.3.1&#10;the inventory amount of the item is updated according to the added amount\" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="1" org.eventb.core.assignment="minAmountInventory(inventory) ≔ alertValue" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="2" org.eventb.core.assignment="inventoryLow(inventory) ≔ FALSE" org.eventb.core.comment="inventory not low anymore after being refilled" org.eventb.core.label="act4"/>
+<org.eventb.core.parameter name="6" org.eventb.core.identifier="dateExpire"/>
+<org.eventb.core.parameter name="3" org.eventb.core.identifier="cost"/>
+<org.eventb.core.action name="8" org.eventb.core.assignment="inventoryExpireDate(inventory) ≔ dateExpire" org.eventb.core.comment="set expire date" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="4" org.eventb.core.assignment="inventoryCost(inventory) ≔ cost" org.eventb.core.label="act6"/>
+<org.eventb.core.guard name="5" org.eventb.core.comment="cost must be positive" org.eventb.core.label="grd6" org.eventb.core.predicate="cost ∈ ℕ1"/>
+<org.eventb.core.guard name="7" org.eventb.core.label="grd7" org.eventb.core.predicate="dateExpire ∈ DATETIME∖{NULLDATE} ∧ dateExpire &gt; today"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="')" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ExpireInventory">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="inventory"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="inventory ∈ addedInventories"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="inventoryAmount ≔ inventoryAmount  {inventory ↦ 0}" org.eventb.core.comment="Any of the remaining item of that category is removed " org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="0" org.eventb.core.comment="must be a expired inventory" org.eventb.core.label="grd2" org.eventb.core.predicate="inventoryExpireDate(inventory) &lt; today"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt10" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="RemoveInventory">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="inventory"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="inventory ∈ addedInventories"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="The specific category of item can’t be used in any of the service in the hotel" org.eventb.core.label="grd2" org.eventb.core.predicate="∀service · service ∈ dom(serviceUses) ⇒ inventory ∉ serviceUses(service)"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="addedInventories ≔ addedInventories∖{inventory}" org.eventb.core.comment="Related to PD-3.3.1&#10;Removing the item from the inventory of the hotel" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="inventoryAmount ≔ inventoryAmount  {inventory ↦ 0}" org.eventb.core.comment="Any of the remaining item of that category is removed " org.eventb.core.label="act2"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="minAmountInventory ≔ minAmountInventory  {inventory ↦ 0}" org.eventb.core.comment="alert value become zero" org.eventb.core.label="act3"/>
+<org.eventb.core.guard name="-" org.eventb.core.comment="must clear payment to suppliers" org.eventb.core.label="grd3" org.eventb.core.predicate="inventoryCost(inventory) = 0"/>
+<org.eventb.core.action name="." org.eventb.core.assignment="inventoryCost ≔ inventoryCost  {inventory ↦ 0}" org.eventb.core.label="act4"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'*" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="LinkInventoryToService">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="service"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="newItem"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="service ∈ importedServices"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="newItem ∈ addedInventories ∧ newItem ∈ dom(inventoryAmount)"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="inventoryAmount(newItem) &gt; 0"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="serviceUses ≔ serviceUses  {service ↦ (serviceUses(service) ∪ {newItem})}" org.eventb.core.comment="related to PD-3.4.1, PD-4.3.2&#10;A specific service will now use a new category of item when it is executed" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'+" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="UnlinkInventoryFromService">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="service"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="removeItem"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="service ∈ importedServices"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="removeItem ∈ addedInventories"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="removeItem ∈ serviceUses(service)"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="serviceUses ≔ serviceUses  {service ↦ (serviceUses(service)∖{removeItem})}" org.eventb.core.comment="related to PD-3.4.1, PD-4.3.2&#10;A specific service will now remove a category of item from its requirement" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'," org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="AlertInventory">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="inventory"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="no point to alert no current inventory" org.eventb.core.label="grd1" org.eventb.core.predicate="inventory ∈ addedInventories"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="only happens when the number of item of specific category is lower than the minimum threshold" org.eventb.core.label="grd2" org.eventb.core.predicate="inventoryAmount(inventory) ≤ minAmountInventory(inventory)"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="don't set up alert for inventory already alerted" org.eventb.core.label="grd3" org.eventb.core.predicate="inventory ∉ inventoryLow∼[{TRUE}]"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="inventoryLow(inventory) ≔ TRUE" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt4" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="payInventory">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="inventory"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd4" org.eventb.core.predicate="inventory ∈ addedInventories"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="hotel doesn't have to pay all payment at once" org.eventb.core.label="grd5" org.eventb.core.predicate="inventoryCost(inventory) ≥ purchase"/>
+<org.eventb.core.refinesEvent name="," org.eventb.core.target="RobFinance"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'-" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="UseInventory">
+<org.eventb.core.parameter name="'" org.eventb.core.comment="" org.eventb.core.identifier="service"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="units"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="service ∈ dom(serviceUses)"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="serviceUses(service) ≠ ∅"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="units ∈ ℕ1"/>
+<org.eventb.core.guard name="1" org.eventb.core.label="grd4" org.eventb.core.predicate="∀item · item ∈ serviceUses(service) ⇒ item ∈ dom(inventoryAmount)" org.eventb.core.theorem="true"/>
+<org.eventb.core.guard name="-" org.eventb.core.comment="can't use inventory that has low stock, must add first" org.eventb.core.label="grd5" org.eventb.core.predicate="∀item · item ∈ serviceUses(service) ⇒ inventoryAmount(item) − units ≥ 1"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd6" org.eventb.core.predicate="∀item · item ∈ serviceUses(service) ⇒ inventoryLow(item) = FALSE"/>
+<org.eventb.core.guard name="/" org.eventb.core.label="grd7" org.eventb.core.predicate="∀item · item ∈ serviceUses(service) ⇒ inventoryAmount(item) &gt; minAmountInventory(item)"/>
+<org.eventb.core.guard name="0" org.eventb.core.label="grd8" org.eventb.core.predicate="∀item · item ∈ serviceUses(service) ⇒ inventoryAmount(item) − units ∈ ℕ1" org.eventb.core.theorem="true"/>
+<org.eventb.core.action name="4" org.eventb.core.assignment="inventoryAmount ≔ inventoryAmount  (λitem · item ∈ serviceUses(service) ∣ inventoryAmount(item) − units)" org.eventb.core.comment="related to PD-3.3.1&#10;the amount of specific items used in this service is updated according to the usage" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="evt2" org.eventb.core.comment="cost for inventory that haven't paid" org.eventb.core.identifier="inventoryCost"/>
+<org.eventb.core.invariant name="evt3" org.eventb.core.label="inv9" org.eventb.core.predicate="inventoryCost ∈ INVENTORY∖{NULLINVENTORY} → ℕ"/>
+<org.eventb.core.variable name="evt:" org.eventb.core.comment="date that the inventory item expires" org.eventb.core.identifier="inventoryExpireDate"/>
+<org.eventb.core.invariant name="evt;" org.eventb.core.label="inv10" org.eventb.core.predicate="inventoryExpireDate ∈ INVENTORY∖{NULLINVENTORY} → DATETIME"/>
+<org.eventb.core.invariant name="evt=" org.eventb.core.label="inv11" org.eventb.core.predicate="∀item · item ∈ addedInventories ⇒ inventoryExpireDate(item) ≠ NULLDATE"/>
+<org.eventb.core.invariant name="|" org.eventb.core.comment="None of the item inside hotel inventory can have zero amount" org.eventb.core.label="inv12" org.eventb.core.predicate="∀item · item ∈ addedInventories ∧ inventoryExpireDate(item) &gt; today ⇒ inventoryAmount(item) &gt; 0"/>
+<org.eventb.core.event name="evt12" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="RestoreCustomer">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="RestoreCustomer"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

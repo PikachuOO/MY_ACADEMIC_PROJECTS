@@ -1,0 +1,24 @@
+Room B117 assigned
+Room B117 assigned
+Booking rejected
+B117
+Jiashu Apr 1 8 3 COMP2911Tute
+Jiashu Apr 8 8 3 COMP2911Tute
+Jiashu Apr 15 8 3 COMP2911Tute
+Charbel Apr 8 7 1 YogaClass
+Charbel Apr 15 7 1 YogaClass
+Room B117 assigned
+B117
+Jiashu Apr 1 8 3 COMP2911Tute
+Jiashu Apr 8 8 3 COMP2911Tute
+Charbel Apr 8 7 1 YogaClass
+Charbel Apr 15 7 1 YogaClass
+Jiashu Mar 5 12 3 COMP2911TuteSpecial
+Room B117 assigned
+B117
+Jiashu Apr 1 8 3 COMP2911Tute
+Jiashu Apr 8 8 3 COMP2911Tute
+Charbel Apr 8 7 1 YogaClass
+Charbel Apr 15 7 1 YogaClass
+Jiashu Mar 5 12 3 COMP2911TuteSpecial
+John Apr 15 10 3 Lecture

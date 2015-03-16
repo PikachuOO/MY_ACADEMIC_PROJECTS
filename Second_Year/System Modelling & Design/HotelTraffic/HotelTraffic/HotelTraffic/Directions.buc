@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+<org.eventb.core.constant name="'" org.eventb.core.identifier="otherDirection"/>
+<org.eventb.core.axiom name="(" org.eventb.core.label="axm1" org.eventb.core.predicate="otherDirection ∈ DIRECTION → DIRECTION"/>
+<org.eventb.core.extendsContext name=")" org.eventb.core.target="IntersectionAndLightAndDirection"/>
+<org.eventb.core.axiom name="*" org.eventb.core.label="axm2" org.eventb.core.predicate="otherDirection(NORTHSOUTH) = EASTWEST"/>
+<org.eventb.core.axiom name="+" org.eventb.core.label="axm3" org.eventb.core.predicate="otherDirection(EASTWEST) = NORTHSOUTH"/>
+<org.eventb.core.axiom name="," org.eventb.core.label="axm4" org.eventb.core.predicate="∀d · d ∈ DIRECTION ⇒ otherDirection(otherDirection(d)) = d" org.eventb.core.theorem="true"/>
+<org.eventb.core.axiom name="-" org.eventb.core.label="axm5" org.eventb.core.predicate="∀D · D ∈ DIRECTION ⇒ otherDirection(D) ≠ D" org.eventb.core.theorem="true"/>
+</org.eventb.core.contextFile>

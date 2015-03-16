@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+<org.eventb.core.extendsContext name="'" org.eventb.core.target="Refinement8KeyCardSubSystem"/>
+<org.eventb.core.carrierSet name="(" org.eventb.core.identifier="Keys"/>
+<org.eventb.core.constant name="cst1" org.eventb.core.comment="the masterkey exclusively used by cleaners" org.eventb.core.identifier="MasterKey1"/>
+<org.eventb.core.constant name="cst2" org.eventb.core.identifier="MasterKey2"/>
+<org.eventb.core.constant name="axm12" org.eventb.core.identifier="initRoomKeys"/>
+<org.eventb.core.constant name="cst3" org.eventb.core.identifier="CustomerKeys"/>
+<org.eventb.core.axiom name="axm3" org.eventb.core.label="axm1" org.eventb.core.predicate="CustomerKeys ⊂ Keys"/>
+<org.eventb.core.axiom name="axm11" org.eventb.core.label="axm2" org.eventb.core.predicate="initRoomKeys ⊂ Keys"/>
+<org.eventb.core.axiom name="axm4" org.eventb.core.label="axm3" org.eventb.core.predicate="partition(Keys, {MasterKey1}, {MasterKey2}, CustomerKeys, initRoomKeys)"/>
+<org.eventb.core.axiom name="axm5" org.eventb.core.label="axm4" org.eventb.core.predicate="Keys ≠ ∅"/>
+<org.eventb.core.axiom name="axm6" org.eventb.core.label="axm5" org.eventb.core.predicate="cleaners ⊆ PEOPLE∖customers"/>
+<org.eventb.core.constant name="cst5" org.eventb.core.identifier="cleaners"/>
+<org.eventb.core.axiom name="axm13" org.eventb.core.label="axm6" org.eventb.core.predicate="CustomerKeys ≠ ∅"/>
+</org.eventb.core.contextFile>

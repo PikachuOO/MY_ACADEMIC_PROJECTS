@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+<org.eventb.core.constant name="'" org.eventb.core.identifier="nextColor"/>
+<org.eventb.core.axiom name="(" org.eventb.core.label="axm1" org.eventb.core.predicate="nextColor ∈ COLOR → COLOR"/>
+<org.eventb.core.extendsContext name=")" org.eventb.core.target="IntersectionAndLightAndDirection"/>
+<org.eventb.core.axiom name="*" org.eventb.core.label="axm2" org.eventb.core.predicate="nextColor(GREEN) = AMBER"/>
+<org.eventb.core.axiom name="+" org.eventb.core.label="axm3" org.eventb.core.predicate="nextColor(AMBER) = RED"/>
+<org.eventb.core.axiom name="," org.eventb.core.label="axm4" org.eventb.core.predicate="nextColor(RED) = GREEN"/>
+<org.eventb.core.axiom name="-" org.eventb.core.label="axm5" org.eventb.core.predicate="∀c · c ∈ COLOR ⇒ nextColor(nextColor(nextColor(c))) = c" org.eventb.core.theorem="true"/>
+</org.eventb.core.contextFile>

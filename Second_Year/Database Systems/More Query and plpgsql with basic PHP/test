@@ -1,0 +1,4 @@
+<?php
+$a=array("a"=>"5","b"=>5,"c"=>"5");
+echo array_search(5,$a,true);
+?>

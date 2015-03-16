@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="Refinement3"/>
+<org.eventb.core.seesContext name="*" org.eventb.core.target="Refinement4EmployeePayAndDate"/>
+<org.eventb.core.variable name="(" org.eventb.core.comment="all customers at hotel" org.eventb.core.identifier="customers"/>
+<org.eventb.core.variable name="+" org.eventb.core.comment="all employees at hotel" org.eventb.core.identifier="employees"/>
+<org.eventb.core.variable name="/" org.eventb.core.comment="Rooms that can be used" org.eventb.core.identifier="addedRooms"/>
+<org.eventb.core.variable name="2" org.eventb.core.comment="current available service" org.eventb.core.identifier="importedServices"/>
+<org.eventb.core.variable name="7" org.eventb.core.comment="total financial balance of the hotel" org.eventb.core.identifier="hotelFinance"/>
+<org.eventb.core.variable name="&gt;" org.eventb.core.comment="return the customer status&#10;" org.eventb.core.identifier="customerStatus"/>
+<org.eventb.core.variable name="J" org.eventb.core.comment="return the maintainance status of room" org.eventb.core.identifier="getCleaningStatus"/>
+<org.eventb.core.variable name="L" org.eventb.core.comment="store the reservation that a customer has" org.eventb.core.identifier="customerReservation"/>
+<org.eventb.core.variable name="N" org.eventb.core.comment="STORE THE current reservation inside a room" org.eventb.core.identifier="roomReservation"/>
+<org.eventb.core.variable name="R" org.eventb.core.comment="RESERVATION THAT ARE IN USE" org.eventb.core.identifier="addedReservations"/>
+<org.eventb.core.variable name="P" org.eventb.core.comment="Reservation needs to have a date, attribute of Reservation, PD 1.2.1" org.eventb.core.identifier="reservationDate"/>
+<org.eventb.core.variable name="T" org.eventb.core.comment="store the status of reservation" org.eventb.core.identifier="reservationStatus"/>
+<org.eventb.core.variable name="V" org.eventb.core.comment="store the condition of reservation" org.eventb.core.identifier="reservationCondition"/>
+<org.eventb.core.variable name="X" org.eventb.core.comment="total payment that the customer owe for the hotel" org.eventb.core.identifier="reservationTotalPayment"/>
+<org.eventb.core.variable name="_" org.eventb.core.comment="TOTAL INCOME hotel get form the reservation" org.eventb.core.identifier="reservationTotalIncome"/>
+<org.eventb.core.variable name="var1" org.eventb.core.comment="Current date&#10;" org.eventb.core.identifier="today"/>
+<org.eventb.core.variable name="q" org.eventb.core.comment="currently available inventory" org.eventb.core.identifier="addedInventories"/>
+<org.eventb.core.variable name="r" org.eventb.core.comment="what inventory does each service use" org.eventb.core.identifier="serviceUses"/>
+<org.eventb.core.variable name="s" org.eventb.core.comment="the amount of stock left for a particular inventory" org.eventb.core.identifier="inventoryAmount"/>
+<org.eventb.core.variable name="t" org.eventb.core.comment="price of each service" org.eventb.core.identifier="servicePrice"/>
+<org.eventb.core.variable name="u" org.eventb.core.comment="minimum amount of each type of inventory, before it triggers the alarm" org.eventb.core.identifier="minAmountInventory"/>
+<org.eventb.core.variable name="v" org.eventb.core.comment="is the amount left for this inventory low" org.eventb.core.identifier="inventoryLow"/>
+<org.eventb.core.variable name="var2" org.eventb.core.comment="date that the inventory item expires&#10;" org.eventb.core.identifier="inventoryExpireDate"/>
+<org.eventb.core.variable name="'6" org.eventb.core.comment="position of employee" org.eventb.core.identifier="jobPosition"/>
+<org.eventb.core.variable name="'7" org.eventb.core.comment="login detail of employee" org.eventb.core.identifier="loginDetail"/>
+<org.eventb.core.variable name="'8" org.eventb.core.comment="current login status of employee" org.eventb.core.identifier="loginStatus"/>
+<org.eventb.core.event name="'9" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="employeeWages ≔ {MANAGER ↦ STANDARDWAGES(ADMINMANAGE)}" org.eventb.core.label="act29"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="employeePayDate ≔ {MANAGER ↦ 31}" org.eventb.core.label="act30"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'^" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="dayPass">
+<org.eventb.core.refinesEvent name="(" org.eventb.core.target="dayPass"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="':" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="LogIn">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="LogIn"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="';" org.eventb.core.comment="" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="LogOff">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="LogOff"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'=" org.eventb.core.comment="Refines the AddEmployee from the previous base model, &#10;now the system will also record the new employee wage based on the job position, &#10;where the wage will be paid 30 days after the current date&#10;" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="AddEmployee">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="AddEmployee"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="employeeWages(employee) ≔ STANDARDWAGES(position)" org.eventb.core.comment="" org.eventb.core.label="act5"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="employeePayDate(employee) ≔ today + 30" org.eventb.core.comment="pay a month later" org.eventb.core.label="act6"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'&gt;" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="EmployeeQuits">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="EmployeeQuits"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="employeeWages≔ {employee} ⩤ employeeWages " org.eventb.core.label="act5"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="employeePayDate ≔ {employee} ⩤ employeePayDate" org.eventb.core.label="act6"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'U" org.eventb.core.comment="This event allows manager to adjust an existing employee wage." org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="wageAdjustment">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="employee"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="adjustment"/>
+<org.eventb.core.parameter name=")" org.eventb.core.comment="" org.eventb.core.identifier="manager"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="employee ∈ employees"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="adjustment ∈ ℤ"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="manager = MANAGER"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd4" org.eventb.core.predicate="loginStatus(manager) = TRUE"/>
+<org.eventb.core.action name="." org.eventb.core.assignment="employeeWages(employee) ≔ employeeWages(employee) + adjustment" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt1" org.eventb.core.comment="This event allows the delaying of an employee wage payment by 30 days,&#10; however the next wage will be increased based on the number of times it is delayed." org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="delayWagePayment">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="employee"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="adjustment"/>
+<org.eventb.core.parameter name="grd3" org.eventb.core.identifier="nextPayDay"/>
+<org.eventb.core.parameter name=")" org.eventb.core.comment="" org.eventb.core.identifier="manager"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="employee ∈ employees"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="adjustment ∈ ℤ"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="manager = MANAGER"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd4" org.eventb.core.predicate="loginStatus(manager) = TRUE"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd5" org.eventb.core.predicate="nextPayDay ∈ ℕ1"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.comment="schedule payment at least a month later" org.eventb.core.label="grd6" org.eventb.core.predicate="nextPayDay = today + 30"/>
+<org.eventb.core.action name="." org.eventb.core.assignment="employeeWages(employee) ≔ employeeWages(employee) + STANDARDWAGES(jobPosition(employee))" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="grd4" org.eventb.core.assignment="employeePayDate(employee) ≔ nextPayDay" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'V" org.eventb.core.comment="This event allows the re-scheduling of an employee's wage payment after they are paid &#10;" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ScheduleWagePayment">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="employee"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="manager"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="employee ∈ employees"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="manager = MANAGER"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="employeeWages(employee) ≔ STANDARDWAGES(jobPosition(employee))" org.eventb.core.label="act1"/>
+<org.eventb.core.parameter name="," org.eventb.core.identifier="nextPayDay"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd3" org.eventb.core.predicate="nextPayDay ∈ ℕ1"/>
+<org.eventb.core.guard name="." org.eventb.core.comment="schedule payment at least a month later" org.eventb.core.label="grd4" org.eventb.core.predicate="nextPayDay ≥ today + 30"/>
+<org.eventb.core.action name="/" org.eventb.core.assignment="employeePayDate(employee) ≔ nextPayDay" org.eventb.core.comment="the next wage is in 30 days or later" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="0" org.eventb.core.comment="employee must be paid" org.eventb.core.label="grd5" org.eventb.core.predicate="employeeWages(employee) = 0"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'W" org.eventb.core.comment="This event refines the RobFinance from the previous machine,&#10; which allows the system to pay the wage for an employee given that the date is correct.&#10;" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="payEmployee">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="employeePaid"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd7" org.eventb.core.predicate="employeePaid ∈ employees"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="employeeWages(employeePaid) ≔ 0" org.eventb.core.comment="the hotel will now owe the empoyee nothing until the next wage payment" org.eventb.core.label="act2"/>
+<org.eventb.core.refinesEvent name="-" org.eventb.core.target="RobFinance"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd8" org.eventb.core.predicate="employeeWages(employeePaid) ∈ ℕ1"/>
+<org.eventb.core.guard name="/" org.eventb.core.comment="employee can't pay him self" org.eventb.core.label="grd9" org.eventb.core.predicate="employee ≠ MANAGER ⇒ employeePaid ≠ employee"/>
+<org.eventb.core.guard name="0" org.eventb.core.label="grd10" org.eventb.core.predicate="employeeWages(employeePaid) = purchase"/>
+<org.eventb.core.guard name="1" org.eventb.core.label="grd11" org.eventb.core.predicate="employeePayDate(employee) = today"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'X" org.eventb.core.comment="should be able to charge employee at any time: when employee owe hotel payment &#10;e.g. sabotage on hotel equipments" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ChargeEmployee">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="AddFinance"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="employeeCharged"/>
+<org.eventb.core.guard name="grd4" org.eventb.core.comment="" org.eventb.core.label="grd6" org.eventb.core.predicate="employeeCharged ∈ employees"/>
+<org.eventb.core.guard name="grd5" org.eventb.core.comment="" org.eventb.core.label="grd7" org.eventb.core.predicate="employeeWages(employeeCharged) ∉ ℕ"/>
+<org.eventb.core.guard name="grd6" org.eventb.core.comment="employee can't pay him self" org.eventb.core.label="grd8" org.eventb.core.predicate="employee = MANAGER"/>
+<org.eventb.core.guard name="grd7" org.eventb.core.label="grd9" org.eventb.core.predicate="employeeWages(employeeCharged) + sales = 0"/>
+<org.eventb.core.action name="grd8" org.eventb.core.assignment="employeeWages(employeeCharged) ≔ 0" org.eventb.core.comment="" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'?" org.eventb.core.comment="ROOM THAT ARE READY TO USE" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="AddRooms">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="AddRooms"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'@" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="DeleteRooms">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="DeleteRooms"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'A" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="AddService">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="AddService"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt5" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="UpdateService">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="UpdateService"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'B" org.eventb.core.comment="used when service is not available anymore" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="RemoveService">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="RemoveService"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'C" org.eventb.core.comment="" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="AddCustomer">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="AddCustomer"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'D" org.eventb.core.comment="" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="AddFinance">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="AddFinance"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'E" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="RobFinance">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="RobFinance"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'F" org.eventb.core.comment="this event is related to PD-2.1.2" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="CleanRoom">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="CleanRoom"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt6" org.eventb.core.comment="" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="PolluteRoom">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="PolluteRoom"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'G" org.eventb.core.comment="this event is related to DN1.1" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="MakeReservation">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="MakeReservation"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd12" org.eventb.core.predicate="∀day · day ∈ date ⇒ day ≥ today"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'a" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ChangeReservation">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ChangeReservation"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt7" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ChangeReservationRoomOnly">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ChangeReservationRoomOnly"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'H" org.eventb.core.comment="this event is related to partially of PD-1.2.3a" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="CloseReservation">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="CloseReservation"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'R" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ChargeReservation">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ChargeReservation"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt2" org.eventb.core.comment="this event is related to partially of PD-1.2.3a" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ClearReservation">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ClearReservation"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'I" org.eventb.core.comment="this event is related to PD-1.1.2 " org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ConfirmReservation">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ConfirmReservation"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt3" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ExpireReservation">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ExpireReservation"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'J" org.eventb.core.comment="this event is related to PD-1.2.2a and PD-1.5.1a " org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="CancelTentativeReservationReq">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="CancelTentativeReservationReq"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'K" org.eventb.core.comment="this event is related to PD-1.2.1a&#10;CANCEL base on customer request, no deposit returned&#10;in this stage, the hotel sales/income function hasn't been refined&#10;therefore no update deposit to HotelFinance yet&#10;CANCEL CONFIRMED RESERVATION DOESN'T DOWNGRADE THE CUSTOMER" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="CancelConfirmedReservationReq">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="CancelConfirmedReservationReq"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'L" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="AddInventory">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="AddInventory"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'[" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="payInventory">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="payInventory"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'M" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="RemoveInventory">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="RemoveInventory"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt4" org.eventb.core.comment="done by system" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ExpireInventory">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ExpireInventory"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'N" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="LinkInventoryToService">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="LinkInventoryToService"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'O" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="UnlinkInventoryFromService">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="UnlinkInventoryFromService"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'P" org.eventb.core.comment="Alert inventory should be done by the system&#10;therefore no employee needed" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="AlertInventory">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="AlertInventory"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="'Q" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="UseInventory">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="UseInventory"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="'S" org.eventb.core.comment="wages for each employee" org.eventb.core.identifier="employeeWages"/>
+<org.eventb.core.invariant name="'T" org.eventb.core.comment="" org.eventb.core.label="inv1" org.eventb.core.predicate="employeeWages ∈ employees → ℤ"/>
+<org.eventb.core.variable name="'Z" org.eventb.core.comment="cost for inventory that haven't paid" org.eventb.core.identifier="inventoryCost"/>
+<org.eventb.core.variable name="'_" org.eventb.core.comment="date employee is supposed to be paid" org.eventb.core.identifier="employeePayDate"/>
+<org.eventb.core.invariant name="'`" org.eventb.core.comment="the date which specific employee is paid" org.eventb.core.label="inv2" org.eventb.core.predicate="employeePayDate ∈ employees → DATETIME"/>
+<org.eventb.core.event name="var3" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="RestoreCustomer">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="RestoreCustomer"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

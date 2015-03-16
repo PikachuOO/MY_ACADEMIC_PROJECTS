@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scMachineFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd">
+<org.eventb.core.scSeesContext name="'" org.eventb.core.scTarget="/CartProductSample/Conext.bcc" org.eventb.core.source="/CartProductSample/BOOKINGS.bum|org.eventb.core.machineFile#BOOKINGS|org.eventb.core.seesContext#*"/>
+<org.eventb.core.scInternalContext name="Conext">
+<org.eventb.core.scAxiom name="'" org.eventb.core.label="axm2" org.eventb.core.predicate="DATES∈ℙ1(DATE)" org.eventb.core.source="/CartProductSample/Conext.buc|org.eventb.core.contextFile#Conext|org.eventb.core.axiom#-" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="(" org.eventb.core.label="axm1" org.eventb.core.predicate="RESERVATION∈GUEST × DATES ⇸ ROOM" org.eventb.core.source="/CartProductSample/Conext.buc|org.eventb.core.contextFile#Conext|org.eventb.core.axiom#*" org.eventb.core.theorem="false"/>
+<org.eventb.core.scCarrierSet name="DATE" org.eventb.core.source="/CartProductSample/Conext.buc|org.eventb.core.contextFile#Conext|org.eventb.core.carrierSet#(" org.eventb.core.type="ℙ(DATE)"/>
+<org.eventb.core.scConstant name="DATES" org.eventb.core.source="/CartProductSample/Conext.buc|org.eventb.core.contextFile#Conext|org.eventb.core.constant#," org.eventb.core.type="ℙ(DATE)"/>
+<org.eventb.core.scCarrierSet name="GUEST" org.eventb.core.source="/CartProductSample/Conext.buc|org.eventb.core.contextFile#Conext|org.eventb.core.carrierSet#'" org.eventb.core.type="ℙ(GUEST)"/>
+<org.eventb.core.scConstant name="RESERVATION" org.eventb.core.source="/CartProductSample/Conext.buc|org.eventb.core.contextFile#Conext|org.eventb.core.constant#)" org.eventb.core.type="ℙ(GUEST×DATE×ROOM)"/>
+<org.eventb.core.scCarrierSet name="ROOM" org.eventb.core.source="/CartProductSample/Conext.buc|org.eventb.core.contextFile#Conext|org.eventb.core.carrierSet#+" org.eventb.core.type="ℙ(ROOM)"/>
+</org.eventb.core.scInternalContext>
+<org.eventb.core.scEvent name="Conexu" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION" org.eventb.core.source="/CartProductSample/BOOKINGS.bum|org.eventb.core.machineFile#BOOKINGS|org.eventb.core.event#'"/>
+<org.eventb.core.scEvent name="Conexv" org.eventb.core.accurate="false" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="makeReservation" org.eventb.core.source="/CartProductSample/BOOKINGS.bum|org.eventb.core.machineFile#BOOKINGS|org.eventb.core.event#(">
+<org.eventb.core.scGuard name="'" org.eventb.core.label="grd2" org.eventb.core.predicate="g∈GUEST" org.eventb.core.source="/CartProductSample/BOOKINGS.bum|org.eventb.core.machineFile#BOOKINGS|org.eventb.core.event#(|org.eventb.core.guard#*" org.eventb.core.theorem="false"/>
+<org.eventb.core.scGuard name="(" org.eventb.core.label="grd3" org.eventb.core.predicate="r∈ROOM" org.eventb.core.source="/CartProductSample/BOOKINGS.bum|org.eventb.core.machineFile#BOOKINGS|org.eventb.core.event#(|org.eventb.core.guard#," org.eventb.core.theorem="false"/>
+<org.eventb.core.scGuard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="ds∈DATES" org.eventb.core.source="/CartProductSample/BOOKINGS.bum|org.eventb.core.machineFile#BOOKINGS|org.eventb.core.event#(|org.eventb.core.guard#)" org.eventb.core.theorem="false"/>
+<org.eventb.core.scParameter name="ds" org.eventb.core.source="/CartProductSample/BOOKINGS.bum|org.eventb.core.machineFile#BOOKINGS|org.eventb.core.event#(|org.eventb.core.parameter#'" org.eventb.core.type="DATE"/>
+<org.eventb.core.scParameter name="g" org.eventb.core.source="/CartProductSample/BOOKINGS.bum|org.eventb.core.machineFile#BOOKINGS|org.eventb.core.event#(|org.eventb.core.parameter#(" org.eventb.core.type="GUEST"/>
+<org.eventb.core.scParameter name="r" org.eventb.core.source="/CartProductSample/BOOKINGS.bum|org.eventb.core.machineFile#BOOKINGS|org.eventb.core.event#(|org.eventb.core.parameter#+" org.eventb.core.type="ROOM"/>
+</org.eventb.core.scEvent>
+</org.eventb.core.scMachineFile>

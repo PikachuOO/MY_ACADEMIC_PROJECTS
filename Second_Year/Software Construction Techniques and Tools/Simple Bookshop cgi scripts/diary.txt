@@ -1,0 +1,51 @@
+Author: Jiashu Chen <jiashuchen@Jiashus-MacBook-Pro.local>
+Date:   Sun Nov 3 23:35:14 2013 +1100
+    final bug fix for search result page table format
+Author: Jiashu Chen <jiashuchen@Jiashus-MacBook-Pro.local>
+Date:   Sun Nov 3 23:01:01 2013 +1100
+    added diary.txt to git
+Author: Jiashu Chen <jiashuchen@Jiashus-MacBook-Pro.local>
+Date:   Sun Nov 3 22:57:19 2013 +1100
+    Support for check out with email confirmation
+    font and color change
+    css editing
+Author: Jiashu Chen <jiashuchen@Jiashus-MacBook-Pro.local>
+Date:   Sun Nov 3 18:42:03 2013 +1100
+    now support email, and reset password
+Author: Jiashu Chen <jiashuchen@Jiashus-MacBook-Pro.local>
+Date:   Sun Nov 3 18:38:53 2013 +1100
+    with new search result support
+Author: Jiashu Chen <jiashuchen@Jiashus-MacBook-Pro.local>
+Date:   Sun Nov 3 12:42:19 2013 +1100
+    validate email and password
+Author: Jiashu Chen <jiashuchen@Jiashus-MacBook-Pro.local>
+Date:   Sun Nov 3 11:30:31 2013 +1100
+    support for orders  and check out
+Author: Jiashu Chen <jiashuchen@Jiashus-MacBook-Pro.local>
+Date:   Sun Nov 3 09:16:44 2013 +1100
+    things I have done so far
+    check username and password in authentication
+    display search result
+    creating account
+    basket
+    check out
+    add/details in search result
+    drop/details in basket
+    details page
+    
+    Things that I am going to do
+    orders
+    check out
+    email confirmation
+    lost password
+    order multiple books
+    pdf invoice generation
+Author: Jiashu Chen <jiashuchen@Jiashus-MacBook-Pro.local>
+Date:   Sat Nov 2 23:31:10 2013 +1100
+    with new search result support
+Author: Jiashu Chen <jiashuchen@Jiashus-MacBook-Pro.local>
+Date:   Sat Nov 2 19:20:30 2013 +1100
+    fully function login and create new account
+Author: Jiashu Chen <jiashuchen@Jiashus-MacBook-Pro.local>
+Date:   Sat Nov 2 17:28:43 2013 +1100
+    subset 1 without search result

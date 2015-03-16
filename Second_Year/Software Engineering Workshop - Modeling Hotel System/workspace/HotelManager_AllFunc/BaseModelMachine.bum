@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.comment="this model construct all stakeholders and entities required for hotel to run, however doesn't not contains functional events, such order service, check in check out" org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.variable name="(" org.eventb.core.comment="All the guests at hotel" org.eventb.core.identifier="customers"/>
+<org.eventb.core.invariant name=")" org.eventb.core.comment="customers is a subset of PEOPLE which is excluded from MANAGER" org.eventb.core.label="inv1" org.eventb.core.predicate="customers ⊆ PEOPLE∖{MANAGER}"/>
+<org.eventb.core.seesContext name="*" org.eventb.core.target="BaseModel"/>
+<org.eventb.core.variable name="+" org.eventb.core.comment="All the employees at hotel" org.eventb.core.identifier="employees"/>
+<org.eventb.core.invariant name="," org.eventb.core.comment="employees IS A SUBSET OF PEOPLE" org.eventb.core.label="inv2" org.eventb.core.predicate="employees ⊆ PEOPLE"/>
+<org.eventb.core.invariant name="-" org.eventb.core.comment="An employee can't be a customer together at the same time, and vice versa" org.eventb.core.label="inv3" org.eventb.core.predicate="employees ∩ customers = ∅"/>
+<org.eventb.core.variable name="/" org.eventb.core.comment="Rooms that can be reserved" org.eventb.core.identifier="addedRooms"/>
+<org.eventb.core.invariant name="0" org.eventb.core.comment="" org.eventb.core.label="inv4" org.eventb.core.predicate="addedRooms ⊆ ROOMS"/>
+<org.eventb.core.variable name="2" org.eventb.core.comment="Currently available service" org.eventb.core.identifier="importedServices"/>
+<org.eventb.core.invariant name="3" org.eventb.core.comment="" org.eventb.core.label="inv5" org.eventb.core.predicate="importedServices ⊆ SERVICES"/>
+<org.eventb.core.variable name="7" org.eventb.core.comment="Total financial balance of the hotel" org.eventb.core.identifier="hotelFinance"/>
+<org.eventb.core.invariant name="8" org.eventb.core.comment="" org.eventb.core.label="inv6" org.eventb.core.predicate="hotelFinance ∈ ℕ"/>
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="customers ≔ ∅" org.eventb.core.comment="no customer registered at the hotel when the system start" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="employees ≔ {MANAGER}" org.eventb.core.comment="hotel has a manager" org.eventb.core.label="act2"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="addedRooms ≔ ∅" org.eventb.core.comment="no room available for RESERVATION use" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="importedServices ≔ ∅" org.eventb.core.comment="no available service at the start of system" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="hotelFinance ≔ 0" org.eventb.core.comment="cash balance is zero at the start" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="customerStatus ≔ ∅" org.eventb.core.comment="no customer no status" org.eventb.core.label="act6"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="9" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="AddEmployee">
+<org.eventb.core.parameter name="'" org.eventb.core.comment="" org.eventb.core.identifier="employee"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="employee must not be currently employed, and they are not a customer" org.eventb.core.label="grd1" org.eventb.core.predicate="employee ∈ PEOPLE∖(customers ∪ employees)"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="employees ≔ employees ∪ {employee}" org.eventb.core.comment="Related to PD-4.2.1&#13;&#10;Adding a new employee to the list of employees in the hotel" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name=":" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="EmployeeQuits">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="employee"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="Employee must be currently employee and the manager can't quit" org.eventb.core.label="grd1" org.eventb.core.predicate="employee ∈ employees∖{MANAGER}"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="employees ≔ employees∖{employee}" org.eventb.core.comment="Related to PD-4.2.3&#13;&#10;Removing an employee from the list of employees in the hotel" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="." org.eventb.core.comment="" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="AddRooms">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="room"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="Room must not be empty room" org.eventb.core.label="grd1" org.eventb.core.predicate="room ∈ ROOMS∖addedRooms"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="addedRooms ≔ addedRooms ∪ {room}" org.eventb.core.comment="Adding a room to the list of room that can be reserved in the hotel" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="Need employee to perform tasks" org.eventb.core.label="grd2" org.eventb.core.predicate="employees ≠ ∅"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="1" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="DeleteRooms">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="room"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="room must be USEABLE ROOMS" org.eventb.core.label="grd1" org.eventb.core.predicate="room ∈ addedRooms"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="addedRooms ≔ addedRooms∖{room}" org.eventb.core.comment="Removing a room from the list of room that can be reserved in the hotel" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="an employee is needed to perform this task" org.eventb.core.label="grd2" org.eventb.core.predicate="employees ≠ ∅"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="4" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="AddService">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="service"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="service must not be a currently available service" org.eventb.core.label="grd1" org.eventb.core.predicate="service ∈ SERVICES ∖ importedServices"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="importedServices ≔ importedServices ∪ {service}" org.eventb.core.comment="Related to PD-4.3.1&#13;&#10;Adding a service to the list of services that can be ordered in the hotel " org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="an employee is needed to perform this task" org.eventb.core.label="grd2" org.eventb.core.predicate="employees ≠ ∅"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="5" org.eventb.core.comment="" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="RemoveService">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="service"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="service must be a currently available service" org.eventb.core.label="grd1" org.eventb.core.predicate="service ∈ importedServices"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="importedServices ≔ importedServices∖{service}" org.eventb.core.comment="Related to PD-4.3.3&#13;&#10;Removing a service from the list of services that can be ordered in the hotel" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="an employee is needed to perform this task" org.eventb.core.label="grd2" org.eventb.core.predicate="employees ≠ ∅"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="6" org.eventb.core.comment="" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="AddCustomer">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="customer"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="customer ∈ PEOPLE∖(customers ∪ employees ∪ {MANAGER})"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="customers ≔ customers ∪ {customer}" org.eventb.core.comment="implicit requirement of PD-1.4.1&#13;&#10;A new customer is added to the list of customers in the hotel" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="hotel can't add customer when there is no employee" org.eventb.core.label="grd2" org.eventb.core.predicate="employees∖{MANAGER} ≠ ∅"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="customerStatus(customer) ≔ LOYAL" org.eventb.core.comment="Related to PD-1.5.1a&#13;&#10;The new customer status is by default, loyal" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="@" org.eventb.core.comment="NO REMOVE CUSTOMER, SINCE CUSTOMER ACTIVITIES HISTORY AT HOTEL ARE NOT MEANT TO BE DELETED UNDER ANY CIRCUIMSTANCE" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="downgradeCustomer">
+<org.eventb.core.parameter name="'" org.eventb.core.comment="" org.eventb.core.identifier="customer"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="customerStatus(customer) ≔ DOWNGRADE(customerStatus(customer))" org.eventb.core.comment="Related to PD-1.5.1a&#13;&#10;A customer current status is downgraded to a level below it" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="customer must be a recorded customer" org.eventb.core.label="grd1" org.eventb.core.predicate="customer ∈ customers"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="must have a employee to perform the task" org.eventb.core.label="grd2" org.eventb.core.predicate="employees∖{MANAGER} ≠ ∅"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="B" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="RestoreCustomer">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="customer"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="customer ∈ customers"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="employees∖{MANAGER} ≠ ∅"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd3" org.eventb.core.predicate="customerStatus(customer) ≠ LOYAL"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="customerStatus(customer) ≔ LOYAL" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="hotelFinance ≔ hotelFinance + RESTOREFEE" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name=";" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="AddFinance">
+<org.eventb.core.parameter name="'" org.eventb.core.comment="" org.eventb.core.identifier="sales"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="" org.eventb.core.label="grd1" org.eventb.core.predicate="sales ∈ ℕ1"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="hotelFinance ≔ hotelFinance + sales" org.eventb.core.comment="Related to PD-4.1.1 and PD-4.1.2&#13;&#10;Updating the current value of the hotel finance based on the added sales" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="have employee to perform task" org.eventb.core.label="grd2" org.eventb.core.predicate="employees∖{MANAGER} ≠ ∅"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="=" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="RobFinance">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="purchase"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="purchase ∈ ℕ1"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="Hotel has to have enough money to clear the payment" org.eventb.core.label="grd2" org.eventb.core.predicate="hotelFinance − purchase ≥ LEASTFINANCE "/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="hotelFinance ≔ hotelFinance − purchase" org.eventb.core.comment="Related to PD-4.1.1 and PD-4.1.2&#13;&#10;Decreasing the current value of the hotel finance based on the a purchase" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="have employee to perform the task" org.eventb.core.label="grd3" org.eventb.core.predicate="employees∖{MANAGER} ≠ ∅"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="&gt;" org.eventb.core.comment="Return the customer status" org.eventb.core.identifier="customerStatus"/>
+<org.eventb.core.invariant name="?" org.eventb.core.comment="A total function mapping each customer to a customer status" org.eventb.core.label="inv7" org.eventb.core.predicate="customerStatus ∈ customers → CUSTOMERSTATUS"/>
+<org.eventb.core.invariant name="A" org.eventb.core.comment="Manager is always considered as an employee of the hotel" org.eventb.core.label="inv8" org.eventb.core.predicate="MANAGER ∈ employees"/>
+</org.eventb.core.machineFile>

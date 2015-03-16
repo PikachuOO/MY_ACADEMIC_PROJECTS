@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="42">
+<org.eventb.core.poIdentifier name="BOX" org.eventb.core.type="ℙ(ℤ×ℤ×(ℤ×ℤ))"/>
+<org.eventb.core.poIdentifier name="COL" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.poIdentifier name="NUM" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.poIdentifier name="ROW" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.poPredicate name="ROX" org.eventb.core.predicate="ROW=1 ‥ 9" org.eventb.core.source="/Sudoku/SudokuGrid.buc|org.eventb.core.contextFile#SudokuGrid|org.eventb.core.axiom#("/>
+<org.eventb.core.poPredicate name="ROY" org.eventb.core.predicate="COL=1 ‥ 9" org.eventb.core.source="/Sudoku/SudokuGrid.buc|org.eventb.core.contextFile#SudokuGrid|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="ROZ" org.eventb.core.predicate="NUM=1 ‥ 9" org.eventb.core.source="/Sudoku/SudokuGrid.buc|org.eventb.core.contextFile#SudokuGrid|org.eventb.core.axiom#."/>
+<org.eventb.core.poPredicate name="RO[" org.eventb.core.predicate="BOX∈ROW × COL → 1 ‥ 3 × 1 ‥ 3" org.eventb.core.source="/Sudoku/SudokuGrid.buc|org.eventb.core.contextFile#SudokuGrid|org.eventb.core.axiom#0"/>
+<org.eventb.core.poPredicate name="RO\" org.eventb.core.predicate="∀row⦂ℤ,col⦂ℤ·row∈ROW∧col∈COL⇒row ↦ col∈dom(BOX)" org.eventb.core.source="/Sudoku/SudokuGrid.buc|org.eventb.core.contextFile#SudokuGrid|org.eventb.core.axiom#4"/>
+<org.eventb.core.poPredicate name="RO]" org.eventb.core.predicate="∀row⦂ℤ,col⦂ℤ·row∈ROW∧col∈COL⇒BOX(row ↦ col)=(row − 1) ÷ 3+1 ↦ (col − 1) ÷ 3+1" org.eventb.core.source="/Sudoku/SudokuGrid.buc|org.eventb.core.contextFile#SudokuGrid|org.eventb.core.axiom#1"/>
+<org.eventb.core.poPredicate name="RO^" org.eventb.core.predicate="∀row⦂ℤ,col⦂ℤ·row∈dom(dom(BOX))∧col∈ran(dom(BOX))⇒BOX(row ↦ col)=(row − 1) ÷ 3+1 ↦ (col − 1) ÷ 3+1" org.eventb.core.source="/Sudoku/SudokuGrid.buc|org.eventb.core.contextFile#SudokuGrid|org.eventb.core.axiom#2"/>
+<org.eventb.core.poPredicate name="RO_" org.eventb.core.predicate="∀row⦂ℤ,col⦂ℤ,rowX⦂ℤ,colX⦂ℤ·row ↦ col∈dom(BOX)∧rowX ↦ colX∈dom(BOX)∧(rowX − 1) ÷ 3+1 ↦ (colX − 1) ÷ 3+1≠(row − 1) ÷ 3+1 ↦ (col − 1) ÷ 3+1⇒BOX(row ↦ col)≠BOX(rowX ↦ colX)" org.eventb.core.source="/Sudoku/SudokuGrid.buc|org.eventb.core.contextFile#SudokuGrid|org.eventb.core.axiom#3"/>
+<org.eventb.core.poIdentifier name="SAMEBOX" org.eventb.core.type="ℙ(ℤ×ℤ×(ℤ×ℤ))"/>
+<org.eventb.core.poIdentifier name="SAMECOL" org.eventb.core.type="ℙ(ℤ×ℤ×(ℤ×ℤ))"/>
+<org.eventb.core.poIdentifier name="SAMEROW" org.eventb.core.type="ℙ(ℤ×ℤ×(ℤ×ℤ))"/>
+<org.eventb.core.poIdentifier name="grid" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poPredicate name="SAMEROX" org.eventb.core.predicate="grid∈ROW ↔ COL" org.eventb.core.source="/Sudoku/PossibleGrid.buc|org.eventb.core.contextFile#PossibleGrid|org.eventb.core.axiom#)"/>
+<org.eventb.core.poPredicate name="SAMEROY" org.eventb.core.predicate="∀row⦂ℤ,col⦂ℤ·row∈ROW∧col∈COL⇒row ↦ col∈grid" org.eventb.core.source="/Sudoku/PossibleGrid.buc|org.eventb.core.contextFile#PossibleGrid|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="SAMEROZ" org.eventb.core.predicate="SAMEROW∈grid ↔ grid" org.eventb.core.source="/Sudoku/PossibleGrid.buc|org.eventb.core.contextFile#PossibleGrid|org.eventb.core.axiom#,"/>
+<org.eventb.core.poPredicate name="SAMERO[" org.eventb.core.predicate="SAMECOL∈grid ↔ grid" org.eventb.core.source="/Sudoku/PossibleGrid.buc|org.eventb.core.contextFile#PossibleGrid|org.eventb.core.axiom#."/>
+<org.eventb.core.poPredicate name="SAMERO\" org.eventb.core.predicate="SAMEBOX∈grid ↔ grid" org.eventb.core.source="/Sudoku/PossibleGrid.buc|org.eventb.core.contextFile#PossibleGrid|org.eventb.core.axiom#0"/>
+<org.eventb.core.poPredicate name="SAMERO]" org.eventb.core.predicate="∀rowa⦂ℤ,cola⦂ℤ,rowb⦂ℤ,colb⦂ℤ·rowa∈ROW∧rowb∈ROW∧cola∈COL∧colb∈COL∧rowa=rowb⇒rowa ↦ cola ↦ (rowb ↦ colb)∈SAMEROW" org.eventb.core.source="/Sudoku/PossibleGrid.buc|org.eventb.core.contextFile#PossibleGrid|org.eventb.core.axiom#axm5"/>
+<org.eventb.core.poPredicate name="SAMERO^" org.eventb.core.predicate="∀rowa⦂ℤ,cola⦂ℤ,rowb⦂ℤ,colb⦂ℤ·rowa∈ROW∧rowb∈ROW∧cola∈COL∧colb∈COL∧cola=colb⇒rowa ↦ cola ↦ (rowb ↦ colb)∈SAMECOL" org.eventb.core.source="/Sudoku/PossibleGrid.buc|org.eventb.core.contextFile#PossibleGrid|org.eventb.core.axiom#axm6"/>
+<org.eventb.core.poPredicate name="SAMERO_" org.eventb.core.predicate="∀rowa⦂ℤ,cola⦂ℤ,rowb⦂ℤ,colb⦂ℤ·rowa∈ROW∧rowb∈ROW∧cola∈COL∧colb∈COL∧BOX(rowa ↦ cola)=BOX(rowb ↦ colb)⇒rowa ↦ cola ↦ (rowb ↦ colb)∈SAMEBOX" org.eventb.core.source="/Sudoku/PossibleGrid.buc|org.eventb.core.contextFile#PossibleGrid|org.eventb.core.axiom#axm7"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="42">
+<org.eventb.core.poIdentifier name="hintedCell" org.eventb.core.type="ℤ×ℤ×ℙ(ℤ)"/>
+<org.eventb.core.poIdentifier name="possible" org.eventb.core.type="ℙ(ℤ×ℤ×ℙ(ℤ))"/>
+<org.eventb.core.poIdentifier name="redAlert" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="setUpGrid" org.eventb.core.type="ℙ(ℤ×ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="sudokuGrid" org.eventb.core.type="ℙ(ℤ×ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="upToDate" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poPredicate name="sudokuGrie" org.eventb.core.predicate="sudokuGrid∈ROW × COL ⇸ NUM" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.invariant#)"/>
+<org.eventb.core.poPredicate name="sudokuGrif" org.eventb.core.predicate="dom(sudokuGrid)⊆dom(BOX)" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.invariant#inv8"/>
+<org.eventb.core.poPredicate name="sudokuGrig" org.eventb.core.predicate="sudokuGrid∈dom(BOX) ⇸ NUM" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.invariant#inv9"/>
+<org.eventb.core.poPredicate name="sudokuGrih" org.eventb.core.predicate="finite(sudokuGrid)" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.invariant#inv&gt;"/>
+<org.eventb.core.poPredicate name="sudokuGrii" org.eventb.core.predicate="card(sudokuGrid)≤81" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.invariant#inv="/>
+<org.eventb.core.poPredicate name="sudokuGrij" org.eventb.core.predicate="∀row⦂ℤ,col⦂ℤ,num⦂ℤ·row ↦ col ↦ num∈sudokuGrid∧row ↦ col∈dom(sudokuGrid)⇒(∀rowX⦂ℤ·rowX ↦ col∈dom(sudokuGrid) ∖ {row ↦ col}∧rowX≠row⇒sudokuGrid(rowX ↦ col)≠num)∧(∀colX⦂ℤ·row ↦ colX∈dom(sudokuGrid) ∖ {row ↦ col}∧colX≠col⇒sudokuGrid(row ↦ colX)≠num)" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.invariant#inv:"/>
+<org.eventb.core.poPredicate name="sudokuGrik" org.eventb.core.predicate="∀rowa⦂ℤ,cola⦂ℤ,num⦂ℤ·rowa ↦ cola ↦ num∈sudokuGrid⇒(∀rowb⦂ℤ,colb⦂ℤ·rowb ↦ colb ↦ num∈sudokuGrid ∖ {rowa ↦ cola ↦ num}⇒rowa≠rowb∨cola≠colb)" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.invariant#inv7"/>
+<org.eventb.core.poPredicate name="sudokuGril" org.eventb.core.predicate="∀rowa⦂ℤ,cola⦂ℤ,num⦂ℤ·rowa ↦ cola ↦ num∈sudokuGrid∧rowa ↦ cola∈dom(sudokuGrid)⇒(∀rowb⦂ℤ,colb⦂ℤ·rowb ↦ colb ↦ num∈sudokuGrid ∖ {rowa ↦ cola ↦ num}∧rowb ↦ colb∈dom(sudokuGrid)⇒BOX(rowa ↦ cola)≠BOX(rowb ↦ colb))" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.invariant#inv2"/>
+<org.eventb.core.poPredicate name="sudokuGrim" org.eventb.core.predicate="∀rowa⦂ℤ,cola⦂ℤ,rowb⦂ℤ,colb⦂ℤ·rowa ↦ cola∈dom(sudokuGrid)∧rowb ↦ colb∈dom(sudokuGrid)∧sudokuGrid(rowa ↦ cola)≠sudokuGrid(rowb ↦ colb)∧BOX(rowa ↦ cola)=BOX(rowb ↦ colb)⇒rowa≠rowb∨cola≠colb" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.invariant#inv;"/>
+<org.eventb.core.poPredicate name="sudokuGrin" org.eventb.core.predicate="possible∈grid → ℙ(NUM)" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.invariant#invA"/>
+<org.eventb.core.poPredicate name="sudokuGrio" org.eventb.core.predicate="dom(BOX)=dom(possible)" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.invariant#inv?"/>
+<org.eventb.core.poPredicate name="sudokuGrip" org.eventb.core.predicate="∀row⦂ℤ,col⦂ℤ·row ↦ col∈dom(possible)⇒finite(possible(row ↦ col))" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.invariant#invB"/>
+<org.eventb.core.poPredicate name="sudokuGriq" org.eventb.core.predicate="∀row⦂ℤ,col⦂ℤ·row∈ROW∧col∈COL∧row ↦ col∈dom(sudokuGrid)⇒possible(row ↦ col)=(∅ ⦂ ℙ(ℤ))" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.invariant#invC"/>
+<org.eventb.core.poPredicate name="sudokuGrir" org.eventb.core.predicate="upToDate∈BOOL" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.invariant#invF"/>
+<org.eventb.core.poPredicate name="sudokuGris" org.eventb.core.predicate="redAlert∈BOOL" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.invariant#invI"/>
+<org.eventb.core.poPredicate name="sudokuGrit" org.eventb.core.predicate="hintedCell∈0 ‥ 9 × 0 ‥ 9 × ℙ(0 ‥ 9)" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.invariant#invM"/>
+<org.eventb.core.poPredicate name="sudokuGriu" org.eventb.core.predicate="∀row⦂ℤ,col⦂ℤ·row∈ROW∧col∈COL∧row ↦ col∉dom(sudokuGrid)∧row ↦ col∈dom(possible)∧upToDate=TRUE⇒possible(row ↦ col)∩union({numberSet⦂ℙ(ℤ),rowx⦂ℤ,colx⦂ℤ·numberSet∈ℙ(NUM)∧rowx∈ROW∧colx∈COL∧rowx ↦ colx∈(SAMEBOX[{row ↦ col}]∪SAMEROW[{row ↦ col}]∪SAMECOL[{row ↦ col}])∩dom(sudokuGrid)∧sudokuGrid(rowx ↦ colx)∈numberSet ∣ numberSet})=(∅ ⦂ ℙ(ℤ))" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.invariant#invO"/>
+<org.eventb.core.poPredicate name="sudokuGriv" org.eventb.core.predicate="∀cell⦂ℤ×ℤ·cell∈grid⇒cell∈dom(BOX)" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.invariant#invP"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="INITIALISATION/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#EVTALLHYPPossibleGrio"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(ℤ×ℤ×ℤ))⊆(∅ ⦂ ℙ(ℤ×ℤ×ℤ))" org.eventb.core.source="/Sudoku/Refinement2Undo.bum|org.eventb.core.machineFile#Refinement2Undo|org.eventb.core.invariant#invW"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#inv6"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Sudoku/Refinement2Undo.bum|org.eventb.core.machineFile#Refinement2Undo|org.eventb.core.event#invM"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Sudoku/Refinement2Undo.bum|org.eventb.core.machineFile#Refinement2Undo|org.eventb.core.invariant#invW"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poSequent#INITIALISATION\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTPossibleGrio" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="42">
+<org.eventb.core.poIdentifier name="setUpGrid'" org.eventb.core.type="ℙ(ℤ×ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="upToDate'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="sudokuGrid'" org.eventb.core.type="ℙ(ℤ×ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="redAlert'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="possible'" org.eventb.core.type="ℙ(ℤ×ℤ×ℙ(ℤ))"/>
+<org.eventb.core.poIdentifier name="hintedCell'" org.eventb.core.type="ℤ×ℤ×ℙ(ℤ)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPossibleGrio" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#EVTIDENTPossibleGrio" org.eventb.core.poStamp="42"/>
+<org.eventb.core.poSequent name="setUp/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#EVTALLHYPPossibleGrip"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="initGrid⊆initGrid" org.eventb.core.source="/Sudoku/Refinement2Undo.bum|org.eventb.core.machineFile#Refinement2Undo|org.eventb.core.invariant#invW"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#inv7"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Sudoku/Refinement2Undo.bum|org.eventb.core.machineFile#Refinement2Undo|org.eventb.core.event#invN"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Sudoku/Refinement2Undo.bum|org.eventb.core.machineFile#Refinement2Undo|org.eventb.core.invariant#invW"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poSequent#setUp\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTPossibleGrip" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="42">
+<org.eventb.core.poIdentifier name="setUpGrid'" org.eventb.core.type="ℙ(ℤ×ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="upToDate'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="initGrid" org.eventb.core.type="ℙ(ℤ×ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="sudokuGrid'" org.eventb.core.type="ℙ(ℤ×ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="possible'" org.eventb.core.type="ℙ(ℤ×ℤ×ℙ(ℤ))"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPossibleGrip" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#EVTIDENTPossibleGrip" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="initGrid∈ROW × COL ⇸ NUM" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv4|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="sudokuGrid=(∅ ⦂ ℙ(ℤ×ℤ×ℤ))" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv4|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="∀row⦂ℤ,col⦂ℤ,num⦂ℤ·row ↦ col ↦ num∈initGrid∧row ↦ col∈dom(initGrid)⇒(∀rowX⦂ℤ·rowX ↦ col∈dom(initGrid) ∖ {row ↦ col}⇒initGrid(rowX ↦ col)≠num)∧(∀colX⦂ℤ·row ↦ colX∈dom(initGrid) ∖ {row ↦ col}⇒initGrid(row ↦ colX)≠num)" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv4|org.eventb.core.guard#\/"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="∀rowa⦂ℤ,cola⦂ℤ,num⦂ℤ·rowa ↦ cola ↦ num∈initGrid∧rowa ↦ cola∈dom(initGrid)⇒(∀rowb⦂ℤ,colb⦂ℤ·rowb ↦ colb ↦ num∈initGrid ∖ {rowa ↦ cola ↦ num}∧rowb ↦ colb∈dom(initGrid)⇒BOX(rowa ↦ cola)≠BOX(rowb ↦ colb))" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv4|org.eventb.core.guard#."/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="finite(initGrid)∧card(initGrid)&lt;81" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv4|org.eventb.core.guard#0"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="upToDate=TRUE" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#inv7|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="redAlert=FALSE" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#inv7|org.eventb.core.guard#+"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="fill/grd17/THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Theorem" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#EVTHYPPossibleGriqfillGrij"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="row ↦ col∉dom(setUpGrid)" org.eventb.core.source="/Sudoku/Refinement2Undo.bum|org.eventb.core.machineFile#Refinement2Undo|org.eventb.core.event#invO|org.eventb.core.guard#grd1"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Sudoku/Refinement2Undo.bum|org.eventb.core.machineFile#Refinement2Undo|org.eventb.core.event#invO|org.eventb.core.guard#grd1"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#EVTHYPPossibleGriqfillGrij"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="fill/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#EVTALLHYPPossibleGriq"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="setUpGrid⊆fillGrid" org.eventb.core.source="/Sudoku/Refinement2Undo.bum|org.eventb.core.machineFile#Refinement2Undo|org.eventb.core.invariant#invW"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#inv8"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Sudoku/Refinement2Undo.bum|org.eventb.core.machineFile#Refinement2Undo|org.eventb.core.event#invO"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Sudoku/Refinement2Undo.bum|org.eventb.core.machineFile#Refinement2Undo|org.eventb.core.invariant#invW"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poSequent#fill\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTPossibleGriq" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="42">
+<org.eventb.core.poIdentifier name="fillGrid" org.eventb.core.type="ℙ(ℤ×ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="num" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="upToDate'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="sudokuGrid'" org.eventb.core.type="ℙ(ℤ×ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="possible'" org.eventb.core.type="ℙ(ℤ×ℤ×ℙ(ℤ))"/>
+<org.eventb.core.poIdentifier name="row" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="col" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPPossibleGriqfillGrij" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#EVTIDENTPossibleGriq" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="row∈ROW" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="col∈COL" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#+"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="num∈NUM" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#,"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="fillGrid=sudokuGrid∪{row ↦ col ↦ num}" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#7"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="row ↦ col∉dom(sudokuGrid)" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#-"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="row ↦ col∈dom(BOX)" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#5"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="card(sudokuGrid)&lt;81" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#4"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="card(fillGrid)≤81" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#9"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="dom(fillGrid)⊆dom(BOX)" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#8"/>
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="∀row⦂ℤ,col⦂ℤ,num⦂ℤ·row ↦ col ↦ num∈fillGrid∧row ↦ col∈dom(fillGrid)⇒(∀rowX⦂ℤ·rowX ↦ col∈dom(fillGrid) ∖ {row ↦ col}∧rowX≠row⇒fillGrid(rowX ↦ col)≠num)∧(∀colX⦂ℤ·row ↦ colX∈dom(fillGrid) ∖ {row ↦ col}∧colX≠col⇒fillGrid(row ↦ colX)≠num)" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#\/"/>
+<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="∀rowa⦂ℤ,cola⦂ℤ,num⦂ℤ·rowa ↦ cola ↦ num∈fillGrid∧rowa ↦ cola∈dom(fillGrid)⇒(∀rowb⦂ℤ,colb⦂ℤ·rowb ↦ colb ↦ num∈fillGrid ∖ {rowa ↦ cola ↦ num}∧rowb ↦ colb∈dom(fillGrid)⇒BOX(rowa ↦ cola)≠BOX(rowb ↦ colb))" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#0"/>
+<org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="upToDate=TRUE" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#inv8|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="num∈possible(row ↦ col)" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#inv8|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD13" org.eventb.core.predicate="redAlert=FALSE" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#inv8|org.eventb.core.guard#,"/>
+<org.eventb.core.poPredicate name="PRD14" org.eventb.core.predicate="hintedCell=0 ↦ 0 ↦ (∅ ⦂ ℙ(ℤ))" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#inv8|org.eventb.core.guard#-"/>
+<org.eventb.core.poPredicate name="PRD15" org.eventb.core.predicate="∀cell⦂ℤ×ℤ·cell∈dom(possible)∧cell∉dom(sudokuGrid)⇒card(possible(cell))&gt;1" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#inv8|org.eventb.core.guard#."/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPossibleGriq" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#EVTHYPPossibleGriqfillGrij" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicate name="PRD16" org.eventb.core.predicate="row ↦ col∉dom(setUpGrid)" org.eventb.core.source="/Sudoku/Refinement2Undo.bum|org.eventb.core.machineFile#Refinement2Undo|org.eventb.core.event#invO|org.eventb.core.guard#grd1"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="autofill/grd18/THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Theorem" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#EVTHYPPossibleGrirfillGrik"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="row ↦ col∉dom(setUpGrid)" org.eventb.core.source="/Sudoku/Refinement2Undo.bum|org.eventb.core.machineFile#Refinement2Undo|org.eventb.core.event#invX|org.eventb.core.guard#grd7"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Sudoku/Refinement2Undo.bum|org.eventb.core.machineFile#Refinement2Undo|org.eventb.core.event#invX|org.eventb.core.guard#grd7"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#EVTHYPPossibleGrirfillGrik"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="autofill/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#EVTALLHYPPossibleGrir"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="setUpGrid⊆fillGrid" org.eventb.core.source="/Sudoku/Refinement2Undo.bum|org.eventb.core.machineFile#Refinement2Undo|org.eventb.core.invariant#invW"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invQ"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Sudoku/Refinement2Undo.bum|org.eventb.core.machineFile#Refinement2Undo|org.eventb.core.event#invX"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Sudoku/Refinement2Undo.bum|org.eventb.core.machineFile#Refinement2Undo|org.eventb.core.invariant#invW"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poSequent#autofill\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTPossibleGrir" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="42">
+<org.eventb.core.poIdentifier name="fillGrid" org.eventb.core.type="ℙ(ℤ×ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="num" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="upToDate'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="sudokuGrid'" org.eventb.core.type="ℙ(ℤ×ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="possible'" org.eventb.core.type="ℙ(ℤ×ℤ×ℙ(ℤ))"/>
+<org.eventb.core.poIdentifier name="row" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="col" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPPossibleGrirfillGrik" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#EVTIDENTPossibleGrir" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="row∈ROW" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="col∈COL" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#+"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="num∈NUM" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#,"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="fillGrid=sudokuGrid∪{row ↦ col ↦ num}" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#7"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="row ↦ col∉dom(sudokuGrid)" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#-"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="row ↦ col∈dom(BOX)" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#5"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="card(sudokuGrid)&lt;81" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#4"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="card(fillGrid)≤81" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#9"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="dom(fillGrid)⊆dom(BOX)" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#8"/>
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="∀row⦂ℤ,col⦂ℤ,num⦂ℤ·row ↦ col ↦ num∈fillGrid∧row ↦ col∈dom(fillGrid)⇒(∀rowX⦂ℤ·rowX ↦ col∈dom(fillGrid) ∖ {row ↦ col}∧rowX≠row⇒fillGrid(rowX ↦ col)≠num)∧(∀colX⦂ℤ·row ↦ colX∈dom(fillGrid) ∖ {row ↦ col}∧colX≠col⇒fillGrid(row ↦ colX)≠num)" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#\/"/>
+<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="∀rowa⦂ℤ,cola⦂ℤ,num⦂ℤ·rowa ↦ cola ↦ num∈fillGrid∧rowa ↦ cola∈dom(fillGrid)⇒(∀rowb⦂ℤ,colb⦂ℤ·rowb ↦ colb ↦ num∈fillGrid ∖ {rowa ↦ cola ↦ num}∧rowb ↦ colb∈dom(fillGrid)⇒BOX(rowa ↦ cola)≠BOX(rowb ↦ colb))" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#0"/>
+<org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="upToDate=TRUE" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invQ|org.eventb.core.guard#grd1"/>
+<org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="redAlert=FALSE" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invQ|org.eventb.core.guard#grd3"/>
+<org.eventb.core.poPredicate name="PRD13" org.eventb.core.predicate="hintedCell=0 ↦ 0 ↦ (∅ ⦂ ℙ(ℤ))" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invQ|org.eventb.core.guard#grd4"/>
+<org.eventb.core.poPredicate name="PRD14" org.eventb.core.predicate="∃cell⦂ℤ×ℤ·cell∈dom(possible)∧cell∉dom(sudokuGrid)⇒card(possible(cell))=1" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invQ|org.eventb.core.guard#grd5"/>
+<org.eventb.core.poPredicate name="PRD15" org.eventb.core.predicate="card(possible(row ↦ col))=1" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invQ|org.eventb.core.guard#grd6"/>
+<org.eventb.core.poPredicate name="PRD16" org.eventb.core.predicate="num∈possible(row ↦ col)" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invQ|org.eventb.core.guard#grd2"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPossibleGrir" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#EVTHYPPossibleGrirfillGrik" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicate name="PRD17" org.eventb.core.predicate="row ↦ col∉dom(setUpGrid)" org.eventb.core.source="/Sudoku/Refinement2Undo.bum|org.eventb.core.machineFile#Refinement2Undo|org.eventb.core.event#invX|org.eventb.core.guard#grd7"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="undo/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#EVTALLHYPPossibleGris"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="setUpGrid⊆digCell" org.eventb.core.source="/Sudoku/Refinement2Undo.bum|org.eventb.core.machineFile#Refinement2Undo|org.eventb.core.invariant#invW"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#inv9"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Sudoku/Refinement2Undo.bum|org.eventb.core.machineFile#Refinement2Undo|org.eventb.core.event#invP"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Sudoku/Refinement2Undo.bum|org.eventb.core.machineFile#Refinement2Undo|org.eventb.core.invariant#invW"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poSequent#undo\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTPossibleGris" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="42">
+<org.eventb.core.poIdentifier name="num" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="upToDate'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="sudokuGrid'" org.eventb.core.type="ℙ(ℤ×ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="digCell" org.eventb.core.type="ℙ(ℤ×ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="row" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="col" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPossibleGris" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#EVTIDENTPossibleGris" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="row∈ROW" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#evt1|org.eventb.core.guard#grd1"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="col∈COL" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#evt1|org.eventb.core.guard#grd2"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="num∈NUM" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#evt1|org.eventb.core.guard#grd3"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="digCell=sudokuGrid ∖ {row ↦ col ↦ num}" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#evt1|org.eventb.core.guard#grd4"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="row ↦ col∈dom(sudokuGrid)" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#evt1|org.eventb.core.guard#grd5"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="row ↦ col∈dom(BOX)" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#evt1|org.eventb.core.guard#grd7"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="card(sudokuGrid)&lt;81" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#evt1|org.eventb.core.guard#grd8"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="card(digCell)≤81" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#evt1|org.eventb.core.guard#grd9"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="dom(digCell)⊆dom(BOX)" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#evt1|org.eventb.core.guard#grd10"/>
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="num=sudokuGrid(row ↦ col)" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#evt1|org.eventb.core.guard#element4"/>
+<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="∀row⦂ℤ,col⦂ℤ,num⦂ℤ·row ↦ col ↦ num∈digCell∧row ↦ col∈dom(digCell)⇒(∀rowX⦂ℤ·rowX ↦ col∈dom(digCell) ∖ {row ↦ col}∧rowX≠row⇒digCell(rowX ↦ col)≠num)∧(∀colX⦂ℤ·row ↦ colX∈dom(digCell) ∖ {row ↦ col}∧colX≠col⇒digCell(row ↦ colX)≠num)" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#evt1|org.eventb.core.guard#grd11"/>
+<org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="∀rowa⦂ℤ,cola⦂ℤ,num⦂ℤ·rowa ↦ cola ↦ num∈digCell∧rowa ↦ cola∈dom(digCell)⇒(∀rowb⦂ℤ,colb⦂ℤ·rowb ↦ colb ↦ num∈digCell ∖ {rowa ↦ cola ↦ num}∧rowb ↦ colb∈dom(digCell)⇒BOX(rowa ↦ cola)≠BOX(rowb ↦ colb))" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#evt1|org.eventb.core.guard#grd12"/>
+<org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="upToDate=TRUE" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#inv9|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD13" org.eventb.core.predicate="hintedCell=0 ↦ 0 ↦ (∅ ⦂ ℙ(ℤ))" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#inv9|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD14" org.eventb.core.predicate="row ↦ col∉dom(setUpGrid)" org.eventb.core.source="/Sudoku/Refinement2Undo.bum|org.eventb.core.machineFile#Refinement2Undo|org.eventb.core.event#invP|org.eventb.core.guard#grd13"/>
+<org.eventb.core.poPredicate name="PRD15" org.eventb.core.predicate="setUpGrid⊆digCell" org.eventb.core.source="/Sudoku/Refinement2Undo.bum|org.eventb.core.machineFile#Refinement2Undo|org.eventb.core.event#invP|org.eventb.core.guard#grd15"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPossibleGrit" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="42">
+<org.eventb.core.poIdentifier name="upToDate'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="possible'" org.eventb.core.type="ℙ(ℤ×ℤ×ℙ(ℤ))"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPossibleGrit" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#EVTIDENTPossibleGrit" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="upToDate=FALSE" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#evt1|org.eventb.core.guard#'"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="card(sudokuGrid)=81" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#evt1|org.eventb.core.guard#,"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="dom(sudokuGrid)=dom(possible)" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#evt1|org.eventb.core.guard#."/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="∀cell⦂ℤ×ℤ·cell∈grid⇒cell∈dom(sudokuGrid)" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#evt1|org.eventb.core.guard#-"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="hintedCell=0 ↦ 0 ↦ (∅ ⦂ ℙ(ℤ))" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#evt1|org.eventb.core.guard#\/"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPossibleGriu" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="42">
+<org.eventb.core.poIdentifier name="upToDate'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="possible'" org.eventb.core.type="ℙ(ℤ×ℤ×ℙ(ℤ))"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPossibleGriu" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#EVTIDENTPossibleGriu" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="upToDate=FALSE" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invG|org.eventb.core.guard#'"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="∀row⦂ℤ,col⦂ℤ·row∈ROW∧col∈COL∧row ↦ col∈dom(sudokuGrid)⇒possible(row ↦ col)=(∅ ⦂ ℙ(ℤ))" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invG|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="∀row⦂ℤ,col⦂ℤ·row∈ROW∧col∈COL∧row ↦ col∉dom(sudokuGrid)⇒finite(possible(row ↦ col))" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invG|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="∀row⦂ℤ,col⦂ℤ·row∈ROW∧col∈COL∧row ↦ col∉dom(sudokuGrid)⇒possible(row ↦ col)∈ℙ(NUM)" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invG|org.eventb.core.guard#."/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="card(sudokuGrid)&lt;81" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invG|org.eventb.core.guard#,"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="hintedCell=0 ↦ 0 ↦ (∅ ⦂ ℙ(ℤ))" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invG|org.eventb.core.guard#-"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPossibleGriv" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="42">
+<org.eventb.core.poIdentifier name="redAlert'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="cell" org.eventb.core.type="ℤ×ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPossibleGriv" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#EVTIDENTPossibleGriv" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="cell∈grid" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invJ|org.eventb.core.guard#'"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="cell∉dom(sudokuGrid)" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invJ|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="possible(cell)=(∅ ⦂ ℙ(ℤ))" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invJ|org.eventb.core.guard#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPossibleGriw" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="42">
+<org.eventb.core.poIdentifier name="redAlert'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPossibleGriw" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#EVTIDENTPossibleGriw" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="∀cell⦂ℤ×ℤ·cell∈grid∧cell∉dom(sudokuGrid)⇒possible(cell)≠(∅ ⦂ ℙ(ℤ))" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#evt2|org.eventb.core.guard#'"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="redAlert=TRUE" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#evt2|org.eventb.core.guard#+"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPossibleGrix" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="42">
+<org.eventb.core.poIdentifier name="row" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="col" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="hintedCell'" org.eventb.core.type="ℤ×ℤ×ℙ(ℤ)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPossibleGrix" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#EVTIDENTPossibleGrix" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="row∈ROW" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invK|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="col∈COL" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invK|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="sudokuGrid≠(∅ ⦂ ℙ(ℤ×ℤ×ℤ))" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invK|org.eventb.core.guard#0"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="row ↦ col∉dom(sudokuGrid)" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invK|org.eventb.core.guard#+"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="∀rowa⦂ℤ,cola⦂ℤ·rowa ↦ cola∈dom(possible)⇒finite(possible(row ↦ col))" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invK|org.eventb.core.guard#,"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="∀rowa⦂ℤ,cola⦂ℤ·rowa ↦ cola∈dom(possible) ∖ dom(sudokuGrid)⇒card(possible(rowa ↦ cola))≥card(possible(row ↦ col))" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invK|org.eventb.core.guard#-"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="hintedCell=0 ↦ 0 ↦ (∅ ⦂ ℙ(ℤ))" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invK|org.eventb.core.guard#\/"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="upToDate=TRUE" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invK|org.eventb.core.guard#1"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="guess/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#EVTALLHYPPossibleGriy"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="setUpGrid⊆fillGrid" org.eventb.core.source="/Sudoku/Refinement2Undo.bum|org.eventb.core.machineFile#Refinement2Undo|org.eventb.core.invariant#invW"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invN"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Sudoku/Refinement2Undo.bum|org.eventb.core.machineFile#Refinement2Undo|org.eventb.core.event#invV"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Sudoku/Refinement2Undo.bum|org.eventb.core.machineFile#Refinement2Undo|org.eventb.core.invariant#invW"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poSequent#guess\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTPossibleGriy" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="42">
+<org.eventb.core.poIdentifier name="fillGrid" org.eventb.core.type="ℙ(ℤ×ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="numSet" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.poIdentifier name="num" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="upToDate'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="sudokuGrid'" org.eventb.core.type="ℙ(ℤ×ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="possible'" org.eventb.core.type="ℙ(ℤ×ℤ×ℙ(ℤ))"/>
+<org.eventb.core.poIdentifier name="row" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="col" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="hintedCell'" org.eventb.core.type="ℤ×ℤ×ℙ(ℤ)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPossibleGriy" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#EVTIDENTPossibleGriy" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="row∈ROW" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="col∈COL" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#+"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="num∈NUM" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#,"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="fillGrid=sudokuGrid∪{row ↦ col ↦ num}" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#7"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="row ↦ col∉dom(sudokuGrid)" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#-"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="row ↦ col∈dom(BOX)" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#5"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="card(sudokuGrid)&lt;81" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#4"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="card(fillGrid)≤81" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#9"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="dom(fillGrid)⊆dom(BOX)" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#8"/>
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="∀row⦂ℤ,col⦂ℤ,num⦂ℤ·row ↦ col ↦ num∈fillGrid∧row ↦ col∈dom(fillGrid)⇒(∀rowX⦂ℤ·rowX ↦ col∈dom(fillGrid) ∖ {row ↦ col}∧rowX≠row⇒fillGrid(rowX ↦ col)≠num)∧(∀colX⦂ℤ·row ↦ colX∈dom(fillGrid) ∖ {row ↦ col}∧colX≠col⇒fillGrid(row ↦ colX)≠num)" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#\/"/>
+<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="∀rowa⦂ℤ,cola⦂ℤ,num⦂ℤ·rowa ↦ cola ↦ num∈fillGrid∧rowa ↦ cola∈dom(fillGrid)⇒(∀rowb⦂ℤ,colb⦂ℤ·rowb ↦ colb ↦ num∈fillGrid ∖ {rowa ↦ cola ↦ num}∧rowb ↦ colb∈dom(fillGrid)⇒BOX(rowa ↦ cola)≠BOX(rowb ↦ colb))" org.eventb.core.source="/Sudoku/AbstractLevel.bum|org.eventb.core.machineFile#AbstractLevel|org.eventb.core.event#inv3|org.eventb.core.guard#0"/>
+<org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="upToDate=TRUE" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invN|org.eventb.core.guard#grd1"/>
+<org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="num∈possible(row ↦ col)" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invN|org.eventb.core.guard#grd2"/>
+<org.eventb.core.poPredicate name="PRD13" org.eventb.core.predicate="redAlert=FALSE" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invN|org.eventb.core.guard#grd3"/>
+<org.eventb.core.poPredicate name="PRD14" org.eventb.core.predicate="hintedCell≠0 ↦ 0 ↦ (∅ ⦂ ℙ(ℤ))" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invN|org.eventb.core.guard#grd4"/>
+<org.eventb.core.poPredicate name="PRD15" org.eventb.core.predicate="row ↦ col ↦ numSet=hintedCell" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invN|org.eventb.core.guard#grd5"/>
+<org.eventb.core.poPredicate name="PRD16" org.eventb.core.predicate="num∈numSet" org.eventb.core.source="/Sudoku/Refinement1AutofillAndPossible.bum|org.eventb.core.machineFile#Refinement1AutofillAndPossible|org.eventb.core.event#invN|org.eventb.core.guard#grd7"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Sudoku/Refinement2Undo.bpo|org.eventb.core.poFile#Refinement2Undo|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="setUpGrid⊆sudokuGrid" org.eventb.core.source="/Sudoku/Refinement2Undo.bum|org.eventb.core.machineFile#Refinement2Undo|org.eventb.core.invariant#invW"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

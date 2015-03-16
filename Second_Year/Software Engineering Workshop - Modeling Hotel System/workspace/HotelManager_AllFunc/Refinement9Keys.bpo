@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="PEOPLE" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.poIdentifier name="ROOMS" org.eventb.core.type="ℙ(ROOMS)"/>
+<org.eventb.core.poIdentifier name="customers" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.poPredicate name="customert" org.eventb.core.predicate="finite(PEOPLE)" org.eventb.core.source="/HotelManager_AllFunc/Refinement8KeyCardSubSystem.buc|org.eventb.core.contextFile#Refinement8KeyCardSubSystem|org.eventb.core.axiom#("/>
+<org.eventb.core.poPredicate name="customeru" org.eventb.core.predicate="finite(ROOMS)" org.eventb.core.source="/HotelManager_AllFunc/Refinement8KeyCardSubSystem.buc|org.eventb.core.contextFile#Refinement8KeyCardSubSystem|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="customerv" org.eventb.core.predicate="customers⊆PEOPLE" org.eventb.core.source="/HotelManager_AllFunc/Refinement8KeyCardSubSystem.buc|org.eventb.core.contextFile#Refinement8KeyCardSubSystem|org.eventb.core.axiom#,"/>
+<org.eventb.core.poPredicate name="customerw" org.eventb.core.predicate="customers≠(∅ ⦂ ℙ(PEOPLE))" org.eventb.core.source="/HotelManager_AllFunc/Refinement8KeyCardSubSystem.buc|org.eventb.core.contextFile#Refinement8KeyCardSubSystem|org.eventb.core.axiom#-"/>
+<org.eventb.core.poPredicate name="customerx" org.eventb.core.predicate="card(ROOMS)=1" org.eventb.core.source="/HotelManager_AllFunc/Refinement8KeyCardSubSystem.buc|org.eventb.core.contextFile#Refinement8KeyCardSubSystem|org.eventb.core.axiom#."/>
+<org.eventb.core.poIdentifier name="Keys" org.eventb.core.type="ℙ(Keys)"/>
+<org.eventb.core.poIdentifier name="CustomerKeys" org.eventb.core.type="ℙ(Keys)"/>
+<org.eventb.core.poIdentifier name="MasterKey1" org.eventb.core.type="Keys"/>
+<org.eventb.core.poIdentifier name="MasterKey2" org.eventb.core.type="Keys"/>
+<org.eventb.core.poIdentifier name="cleaners" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.poIdentifier name="initRoomKeys" org.eventb.core.type="ℙ(Keys)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement9Keys.bpo|org.eventb.core.poFile#Refinement9Keys|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="CustomerKeys⊂Keys" org.eventb.core.source="/HotelManager_AllFunc/Refinement9Keys.buc|org.eventb.core.contextFile#Refinement9Keys|org.eventb.core.axiom#axm3"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="initRoomKeys⊂Keys" org.eventb.core.source="/HotelManager_AllFunc/Refinement9Keys.buc|org.eventb.core.contextFile#Refinement9Keys|org.eventb.core.axiom#axm11"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="partition(Keys,{MasterKey1},{MasterKey2},CustomerKeys,initRoomKeys)" org.eventb.core.source="/HotelManager_AllFunc/Refinement9Keys.buc|org.eventb.core.contextFile#Refinement9Keys|org.eventb.core.axiom#axm4"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="Keys≠(∅ ⦂ ℙ(Keys))" org.eventb.core.source="/HotelManager_AllFunc/Refinement9Keys.buc|org.eventb.core.contextFile#Refinement9Keys|org.eventb.core.axiom#axm5"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="cleaners⊆PEOPLE ∖ customers" org.eventb.core.source="/HotelManager_AllFunc/Refinement9Keys.buc|org.eventb.core.contextFile#Refinement9Keys|org.eventb.core.axiom#axm6"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="CustomerKeys≠(∅ ⦂ ℙ(Keys))" org.eventb.core.source="/HotelManager_AllFunc/Refinement9Keys.buc|org.eventb.core.contextFile#Refinement9Keys|org.eventb.core.axiom#axm13"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="7">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="ALLHUMAN" org.eventb.core.type="ℙ(ALLHUMAN)"/>
+<org.eventb.core.poIdentifier name="ROOMS" org.eventb.core.type="ℙ(ROOMS)"/>
+<org.eventb.core.poIdentifier name="People" org.eventb.core.type="ℙ(ALLHUMAN)"/>
+<org.eventb.core.poPredicate name="ALLHUMAO" org.eventb.core.predicate="finite(ALLHUMAN)" org.eventb.core.source="/keyCard/AbstractModelContext.buc|org.eventb.core.contextFile#AbstractModelContext|org.eventb.core.axiom#)"/>
+<org.eventb.core.poPredicate name="ALLHUMAP" org.eventb.core.predicate="finite(ROOMS)" org.eventb.core.source="/keyCard/AbstractModelContext.buc|org.eventb.core.contextFile#AbstractModelContext|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="ALLHUMAQ" org.eventb.core.predicate="ROOMS≠(∅ ⦂ ℙ(ROOMS))" org.eventb.core.source="/keyCard/AbstractModelContext.buc|org.eventb.core.contextFile#AbstractModelContext|org.eventb.core.axiom#+"/>
+<org.eventb.core.poPredicate name="ALLHUMAR" org.eventb.core.predicate="People⊂ALLHUMAN" org.eventb.core.source="/keyCard/AbstractModelContext.buc|org.eventb.core.contextFile#AbstractModelContext|org.eventb.core.axiom#."/>
+<org.eventb.core.poPredicate name="ALLHUMAS" org.eventb.core.predicate="People≠(∅ ⦂ ℙ(ALLHUMAN))" org.eventb.core.source="/keyCard/AbstractModelContext.buc|org.eventb.core.contextFile#AbstractModelContext|org.eventb.core.axiom#\/"/>
+<org.eventb.core.poIdentifier name="Keys" org.eventb.core.type="ℙ(Keys)"/>
+<org.eventb.core.poIdentifier name="GuestKeys" org.eventb.core.type="ℙ(Keys)"/>
+<org.eventb.core.poIdentifier name="MasterKey" org.eventb.core.type="Keys"/>
+<org.eventb.core.poIdentifier name="initRoomKeys" org.eventb.core.type="ℙ(Keys)"/>
+<org.eventb.core.poPredicate name="initRoomKeyt" org.eventb.core.predicate="finite(Keys)" org.eventb.core.source="/keyCard/OriginalModelContext.buc|org.eventb.core.contextFile#OriginalModelContext|org.eventb.core.axiom#)"/>
+<org.eventb.core.poPredicate name="initRoomKeyu" org.eventb.core.predicate="GuestKeys⊂Keys" org.eventb.core.source="/keyCard/OriginalModelContext.buc|org.eventb.core.contextFile#OriginalModelContext|org.eventb.core.axiom#7"/>
+<org.eventb.core.poPredicate name="initRoomKeyv" org.eventb.core.predicate="initRoomKeys⊂Keys" org.eventb.core.source="/keyCard/OriginalModelContext.buc|org.eventb.core.contextFile#OriginalModelContext|org.eventb.core.axiom#:"/>
+<org.eventb.core.poPredicate name="initRoomKeyw" org.eventb.core.predicate="partition(Keys,{MasterKey},GuestKeys,initRoomKeys)" org.eventb.core.source="/keyCard/OriginalModelContext.buc|org.eventb.core.contextFile#OriginalModelContext|org.eventb.core.axiom#6"/>
+<org.eventb.core.poPredicate name="initRoomKeyx" org.eventb.core.predicate="card(initRoomKeys)=card(ROOMS)" org.eventb.core.source="/keyCard/OriginalModelContext.buc|org.eventb.core.contextFile#OriginalModelContext|org.eventb.core.axiom#;"/>
+<org.eventb.core.poPredicate name="initRoomKeyy" org.eventb.core.predicate="card(GuestKeys)&gt;card(ROOMS)" org.eventb.core.source="/keyCard/OriginalModelContext.buc|org.eventb.core.contextFile#OriginalModelContext|org.eventb.core.axiom#="/>
+<org.eventb.core.poPredicate name="initRoomKeyz" org.eventb.core.predicate="Keys≠(∅ ⦂ ℙ(Keys))" org.eventb.core.source="/keyCard/OriginalModelContext.buc|org.eventb.core.contextFile#OriginalModelContext|org.eventb.core.axiom#&gt;"/>
+<org.eventb.core.poPredicate name="initRoomKey{" org.eventb.core.predicate="card(Keys)=10" org.eventb.core.source="/keyCard/OriginalModelContext.buc|org.eventb.core.contextFile#OriginalModelContext|org.eventb.core.axiom#@"/>
+<org.eventb.core.poPredicate name="initRoomKey|" org.eventb.core.predicate="card(ROOMS)=3" org.eventb.core.source="/keyCard/OriginalModelContext.buc|org.eventb.core.contextFile#OriginalModelContext|org.eventb.core.axiom#A"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/keyCard/OriginalSystem.bpo|org.eventb.core.poFile#OriginalSystem|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="allocated" org.eventb.core.type="ℙ(ROOMS×ALLHUMAN)"/>
+<org.eventb.core.poIdentifier name="cleanliness" org.eventb.core.type="ℙ(ROOMS×BOOL)"/>
+<org.eventb.core.poIdentifier name="dontAllocKeys" org.eventb.core.type="ℙ(Keys)"/>
+<org.eventb.core.poIdentifier name="getRoomLocks" org.eventb.core.type="ℙ(ROOMS×Keys)"/>
+<org.eventb.core.poIdentifier name="guestCards" org.eventb.core.type="ℙ(ALLHUMAN×ℙ(Keys))"/>
+<org.eventb.core.poIdentifier name="guests" org.eventb.core.type="ℙ(ALLHUMAN)"/>
+<org.eventb.core.poIdentifier name="occupiedRoom" org.eventb.core.type="ℙ(ALLHUMAN×ROOMS)"/>
+<org.eventb.core.poIdentifier name="shouldChangeKeys" org.eventb.core.type="ℙ(Keys)"/>
+<org.eventb.core.poIdentifier name="usedKeys" org.eventb.core.type="ℙ(Keys)"/>
+<org.eventb.core.poPredicate name="shouldChangeKeyt" org.eventb.core.predicate="guests⊆People" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.invariant#)"/>
+<org.eventb.core.poPredicate name="shouldChangeKeyu" org.eventb.core.predicate="allocated∈ROOMS ⇸ guests" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.invariant#-"/>
+<org.eventb.core.poPredicate name="shouldChangeKeyv" org.eventb.core.predicate="occupiedRoom∈guests ⇸ ROOMS" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.invariant#0"/>
+<org.eventb.core.poPredicate name="shouldChangeKeyw" org.eventb.core.predicate="cleanliness∈ROOMS → BOOL" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.invariant#6"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTOriginalModelContexz" org.eventb.core.parentSet="/keyCard/OriginalSystem.bpo|org.eventb.core.poFile#OriginalSystem|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="7">
+<org.eventb.core.poIdentifier name="cleanliness'" org.eventb.core.type="ℙ(ROOMS×BOOL)"/>
+<org.eventb.core.poIdentifier name="room" org.eventb.core.type="ROOMS"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPOriginalModelContexz" org.eventb.core.parentSet="/keyCard/OriginalSystem.bpo|org.eventb.core.poFile#OriginalSystem|org.eventb.core.poPredicateSet#EVTIDENTOriginalModelContexz" org.eventb.core.poStamp="7">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="room∈ROOMS" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#7|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="cleanliness(room)=FALSE" org.eventb.core.source="/keyCard/AbstractModel.bum|org.eventb.core.machineFile#AbstractModel|org.eventb.core.event#7|org.eventb.core.guard#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/keyCard/OriginalSystem.bpo|org.eventb.core.poFile#OriginalSystem|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="getRoomLocks∈ROOMS → Keys ∖ {MasterKey}" org.eventb.core.source="/keyCard/OriginalSystem.bum|org.eventb.core.machineFile#OriginalSystem|org.eventb.core.invariant#&gt;"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="usedKeys⊆Keys ∖ {MasterKey}" org.eventb.core.source="/keyCard/OriginalSystem.bum|org.eventb.core.machineFile#OriginalSystem|org.eventb.core.invariant#@"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="shouldChangeKeys⊆Keys ∖ {MasterKey}" org.eventb.core.source="/keyCard/OriginalSystem.bum|org.eventb.core.machineFile#OriginalSystem|org.eventb.core.invariant#A"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="guestCards∈guests ⇸ ℙ(Keys ∖ {MasterKey})" org.eventb.core.source="/keyCard/OriginalSystem.bum|org.eventb.core.machineFile#OriginalSystem|org.eventb.core.invariant#C"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="dontAllocKeys⊆usedKeys" org.eventb.core.source="/keyCard/OriginalSystem.bum|org.eventb.core.machineFile#OriginalSystem|org.eventb.core.invariant#H"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

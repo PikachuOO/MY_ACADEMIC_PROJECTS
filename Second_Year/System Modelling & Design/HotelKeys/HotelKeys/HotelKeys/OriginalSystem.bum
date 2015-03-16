@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.comment="due to the limition of the original system" org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="AbstractModel"/>
+<org.eventb.core.seesContext name="." org.eventb.core.target="OriginalModelContext"/>
+<org.eventb.core.variable name="(" org.eventb.core.comment="all guest in hotel" org.eventb.core.identifier="guests"/>
+<org.eventb.core.variable name="," org.eventb.core.comment="partial funciton that maps room to guest" org.eventb.core.identifier="allocated"/>
+<org.eventb.core.variable name="/" org.eventb.core.comment="location mapps guest to room" org.eventb.core.identifier="occupy"/>
+<org.eventb.core.variable name="5" org.eventb.core.comment="total funciton shows scleaning status of each room" org.eventb.core.identifier="cleanliness"/>
+<org.eventb.core.event name="6" org.eventb.core.comment="" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="shouldChangeKeys ≔ initRoomKeys" org.eventb.core.comment="" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="usedKeys ≔ ∅" org.eventb.core.label="act6"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="guestCards ≔ ∅" org.eventb.core.comment="no guest have a card before they check in" org.eventb.core.label="act7"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="getRoomLocks :∣ getRoomLocks' ∈ ROOMS ⤖ initRoomKeys" org.eventb.core.comment="ininlise everyroom with a key and a master key, acieveable because card(initRoomKeys) = card(room)" org.eventb.core.label="act8"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="dontAllocKeys ≔ ∅" org.eventb.core.label="act9"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="7" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="CheckIn">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="CheckIn"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="key1 is the key used by the room when the guest checks in, key2 is the new key that will replace the old key when guest enters" org.eventb.core.label="grd7" org.eventb.core.predicate="key1 ∈ shouldChangeKeys∖dontAllocKeys ∧ key2 ∈ GuestKeys∖(shouldChangeKeys ∪ dontAllocKeys)"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="key1"/>
+<org.eventb.core.parameter name="*" org.eventb.core.comment="" org.eventb.core.identifier="key2"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="key is hte one that will unlock the room" org.eventb.core.label="grd8" org.eventb.core.predicate="getRoomLocks(room) = key1"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="usedKeys ≔ usedKeys ∪ {key1, key2}" org.eventb.core.comment="key is now in use" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="guestCards(guest) ≔ {key1, key2}" org.eventb.core.comment="allocated guest with a card" org.eventb.core.label="act3"/>
+<org.eventb.core.guard name="." org.eventb.core.comment="key 1 can't equal to key2" org.eventb.core.label="grd9" org.eventb.core.predicate="key1 ≠ key2"/>
+<org.eventb.core.guard name="/" org.eventb.core.comment="guest not check in, and doesn't has a card" org.eventb.core.label="grd10" org.eventb.core.predicate="guest ∉ dom(guestCards)"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="8" org.eventb.core.comment="" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Enter0">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Enter"/>
+<org.eventb.core.parameter name=")" org.eventb.core.comment="" org.eventb.core.identifier="key1"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="key2"/>
+<org.eventb.core.guard name="," org.eventb.core.comment="keys are not master keys" org.eventb.core.label="grd5" org.eventb.core.predicate="key1 ∈ shouldChangeKeys ∧ key2 ∈ shouldChangeKeys"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="keys belong to the card that the guest is holding" org.eventb.core.label="grd7" org.eventb.core.predicate="guest ∈ dom(guestCards)"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd8" org.eventb.core.predicate="guestCards(guest) = {key1, key2}"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="either key1 or key2 match the lock" org.eventb.core.label="grd9" org.eventb.core.predicate="getRoomLocks(room) ∈ guestCards(guest)"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="=" org.eventb.core.comment="maping room to a key that will open the lock for the room" org.eventb.core.identifier="getRoomLocks"/>
+<org.eventb.core.invariant name="&gt;" org.eventb.core.label="inv1" org.eventb.core.predicate="getRoomLocks ∈ ROOMS → Keys∖{MasterKey}"/>
+<org.eventb.core.variable name="?" org.eventb.core.comment="keys that has been given to a guest" org.eventb.core.identifier="usedKeys"/>
+<org.eventb.core.invariant name="@" org.eventb.core.label="inv2" org.eventb.core.predicate="usedKeys ⊆ Keys∖{MasterKey}"/>
+<org.eventb.core.invariant name="A" org.eventb.core.label="inv3" org.eventb.core.predicate="shouldChangeKeys ⊆ Keys∖{MasterKey}"/>
+<org.eventb.core.variable name="B" org.eventb.core.comment="mapping cards for guest" org.eventb.core.identifier="guestCards"/>
+<org.eventb.core.invariant name="C" org.eventb.core.comment="all guest has room must receive a card with keys that are inuse" org.eventb.core.label="inv4" org.eventb.core.predicate="guestCards ∈ guests ⇸ ℙ(Keys∖{MasterKey})"/>
+<org.eventb.core.variable name="D" org.eventb.core.comment="keys that indicate room should change the lock key from key1 to key2" org.eventb.core.identifier="shouldChangeKeys"/>
+<org.eventb.core.event name="F" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="changeKeyAtEnter">
+<org.eventb.core.refinesEvent name="-" org.eventb.core.target="Enter"/>
+<org.eventb.core.parameter name="internal4" org.eventb.core.identifier="key1"/>
+<org.eventb.core.parameter name="internal3" org.eventb.core.identifier="key2"/>
+<org.eventb.core.action name="internal5" org.eventb.core.assignment="getRoomLocks(room) ≔ key2" org.eventb.core.label="act3"/>
+<org.eventb.core.guard name="internal7" org.eventb.core.label="grd5" org.eventb.core.predicate="key1 ∈ shouldChangeKeys∖dontAllocKeys ∧ key1 ∈ usedKeys ∧ key2 ∈ usedKeys∖shouldChangeKeys"/>
+<org.eventb.core.guard name="internal8" org.eventb.core.label="grd6" org.eventb.core.predicate="guest ∈ dom(guestCards)"/>
+<org.eventb.core.guard name="internal9" org.eventb.core.label="grd7" org.eventb.core.predicate="guestCards(guest) = {key1, key2}"/>
+<org.eventb.core.guard name="internal:" org.eventb.core.label="grd8" org.eventb.core.predicate="getRoomLocks(room) ∈ guestCards(guest)"/>
+<org.eventb.core.guard name="internal;" org.eventb.core.label="grd9" org.eventb.core.predicate="key1 ≠ key2"/>
+<org.eventb.core.action name="internal=" org.eventb.core.assignment="dontAllocKeys ≔ dontAllocKeys∪{key1}" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="internal&gt;" org.eventb.core.assignment="shouldChangeKeys ≔ shouldChangeKeys∪{key2}" org.eventb.core.label="act5"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="9" org.eventb.core.comment="" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Exit">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Exit"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="G" org.eventb.core.comment="keys replaced from the door should not be allocated to another guest until the guest check out and return the card" org.eventb.core.identifier="dontAllocKeys"/>
+<org.eventb.core.invariant name="H" org.eventb.core.label="inv5" org.eventb.core.predicate="dontAllocKeys ⊆ usedKeys"/>
+<org.eventb.core.event name=":" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Checkout">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Checkout"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="guest checking out with a card" org.eventb.core.label="grd6" org.eventb.core.predicate="guest ∈ dom(guestCards)"/>
+<org.eventb.core.parameter name=")" org.eventb.core.comment="there should only be one key wen customer checks out, because enter will whipe off the old key" org.eventb.core.identifier="key1"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="keys are in use" org.eventb.core.label="grd7" org.eventb.core.predicate="key1 ∈ usedKeys ∧ key2 ∈ usedKeys"/>
+<org.eventb.core.guard name="0" org.eventb.core.label="grd8" org.eventb.core.predicate="getRoomLocks(room) ∈ guestCards(guest)"/>
+<org.eventb.core.parameter name="1" org.eventb.core.identifier="key2"/>
+<org.eventb.core.action name="2" org.eventb.core.assignment="dontAllocKeys ≔ dontAllocKeys ∖ {key1,key2}" org.eventb.core.comment="key1 key2 are able to use when the next guest checks in" org.eventb.core.label="act3"/>
+<org.eventb.core.guard name="3" org.eventb.core.label="grd9" org.eventb.core.predicate="{key1, key2} = guestCards(guest)"/>
+<org.eventb.core.guard name="4" org.eventb.core.label="grd10" org.eventb.core.predicate="key1 ≠ getRoomLocks(room)"/>
+<org.eventb.core.action name="5" org.eventb.core.assignment="shouldChangeKeys ≔ shouldChangeKeys∖{key1}" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="6" org.eventb.core.assignment="guestCards ≔ {guest} ⩤ guestCards" org.eventb.core.label="act5"/>
+</org.eventb.core.event>
+<org.eventb.core.event name=";" org.eventb.core.comment="this particular settings assume that the cleaner can clean the room at any time" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Clean">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Clean"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

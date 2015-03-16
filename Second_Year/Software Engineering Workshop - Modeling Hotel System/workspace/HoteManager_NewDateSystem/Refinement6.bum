@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="act1" org.eventb.core.assignment="customers ≔ ∅" org.eventb.core.comment="no customer registered at the hotel when the system start" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="act2" org.eventb.core.assignment="employees ≔ {MANAGER}" org.eventb.core.comment="hotel has a manager" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="act3" org.eventb.core.assignment="personalInfo ≔ {MANAGER ↦ MANAGERINFO}" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt1" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="AddEmployee">
+<org.eventb.core.parameter name="'" org.eventb.core.comment="" org.eventb.core.identifier="employee"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="employee must not be currently employed, and they are not a customer" org.eventb.core.label="grd1" org.eventb.core.predicate="employee ∈ PEOPLE∖(customers ∪ employees)"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="employees ≔ employees ∪ {employee}" org.eventb.core.comment="Related to PD-4.2.1&#13;&#10;Adding a new employee to the list of employees in the hotel" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="act1" org.eventb.core.assignment="personalInfo(employee) ≔ newInfo" org.eventb.core.comment="" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd2" org.eventb.core.predicate="newInfo ∈ PERSONALINFO∖ran(personalInfo)"/>
+<org.eventb.core.parameter name="grd2" org.eventb.core.identifier="newInfo"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt2" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="EmployeeQuits">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="employee"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="Employee must be currently employee and the manager can't quit" org.eventb.core.label="grd1" org.eventb.core.predicate="employee ∈ employees∖{MANAGER}"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="employees ≔ employees∖{employee}" org.eventb.core.comment="Related to PD-4.2.3&#13;&#10;Removing an employee from the list of employees in the hotel" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="personalInfo ≔ {employee} ⩤ personalInfo" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt3" org.eventb.core.comment="" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="AddCustomer">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="customer"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="customer ∈ PEOPLE∖(customers ∪ employees ∪ {MANAGER})"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="customers ≔ customers ∪ {customer}" org.eventb.core.comment="implicit requirement of PD-1.4.1&#13;&#10;A new customer is added to the list of customers in the hotel" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="hotel can't add customer when there is no employee" org.eventb.core.label="grd2" org.eventb.core.predicate="employees∖{MANAGER} ≠ ∅"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="personalInfo(customer) ≔ newInfo" org.eventb.core.comment="" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="newInfo ∈ PERSONALINFO∖ran(personalInfo)"/>
+<org.eventb.core.parameter name="-" org.eventb.core.identifier="newInfo"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="var1" org.eventb.core.comment="all customers at hotel" org.eventb.core.identifier="customers"/>
+<org.eventb.core.variable name="var2" org.eventb.core.comment="all employees at hotel" org.eventb.core.identifier="employees"/>
+<org.eventb.core.invariant name="inv1" org.eventb.core.comment="customers is a subset of PEOPLE which is excluded from MANAGER" org.eventb.core.label="inv1" org.eventb.core.predicate="customers ⊆ PEOPLE∖{MANAGER}"/>
+<org.eventb.core.invariant name="inv2" org.eventb.core.comment="employees IS A SUBSET OF PEOPLE" org.eventb.core.label="inv2" org.eventb.core.predicate="employees ⊆ PEOPLE"/>
+<org.eventb.core.invariant name="inv3" org.eventb.core.comment="An employee can't be a customer together at the same time, and vice versa" org.eventb.core.label="inv3" org.eventb.core.predicate="employees ∩ customers = ∅"/>
+<org.eventb.core.seesContext name="var4" org.eventb.core.target="BaseModel"/>
+<org.eventb.core.variable name="var5" org.eventb.core.identifier="personalInfo"/>
+<org.eventb.core.invariant name="var6" org.eventb.core.label="inv4" org.eventb.core.predicate="personalInfo ∈ employees ∪ customers → PERSONALINFO"/>
+<org.eventb.core.seesContext name="var7" org.eventb.core.target="Refinement6PersonalInfo"/>
+<org.eventb.core.event name="var8" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="UpdateInfomation">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="people"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="manager"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="people ∈ employees ∪ customers"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="manager = MANAGER"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="newInfo ∈ PERSONALINFO∖ran(personalInfo)"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="personalInfo(people) ≔ newInfo" org.eventb.core.label="act1"/>
+<org.eventb.core.parameter name="-" org.eventb.core.identifier="newInfo"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.comment="due to the different implementation from the originalsystem, guestCard function and shouldChangeKeys function are modeled differently" org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="AbstractModel"/>
+<org.eventb.core.seesContext name="." org.eventb.core.target="ProposedImprovementContext"/>
+<org.eventb.core.variable name="(" org.eventb.core.comment="all guest in hotel" org.eventb.core.identifier="guests"/>
+<org.eventb.core.variable name="," org.eventb.core.comment="partial funciton that maps room to guest" org.eventb.core.identifier="allocated"/>
+<org.eventb.core.variable name="/" org.eventb.core.comment="location mapps guest to room" org.eventb.core.identifier="occupy"/>
+<org.eventb.core.variable name="5" org.eventb.core.comment="total funciton shows scleaning status of each room" org.eventb.core.identifier="cleanliness"/>
+<org.eventb.core.event name="6" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="guestCard1 ≔ ∅" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="guestCard2 ≔ ∅" org.eventb.core.label="act6"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="getRoomLocks :∣ getRoomLocks' ∈ ROOMS ⤖ initRoomKeys" org.eventb.core.label="act7"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="changeRoomLock ≔ (λroom·room ∈ ROOMS ∣ TRUE)" org.eventb.core.label="act8"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="usedKeys ≔ initRoomKeys" org.eventb.core.label="act9"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="cleanerRescued ≔ (λroom·room∈ROOMS ∣ TRUE)" org.eventb.core.label="act10"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="7" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="CheckIn">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="CheckIn"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="key1"/>
+<org.eventb.core.parameter name=")" org.eventb.core.comment="" org.eventb.core.identifier="key2"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd7" org.eventb.core.predicate="key1∈usedKeys ∧ key2 ∈Keys∖(usedKeys ∪ {MasterKey1, MasterKey2})"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd8" org.eventb.core.predicate="getRoomLocks(room) = key1"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd9" org.eventb.core.predicate="key1 ≠ key2"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd10" org.eventb.core.predicate="guest ∉ dom(guestCard1) ∧ guest ∉ dom(guestCard2)"/>
+<org.eventb.core.action name="." org.eventb.core.assignment="usedKeys ≔ usedKeys ∪ {key1, key2}" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="/" org.eventb.core.assignment="guestCard1(guest) ≔ key1" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="0" org.eventb.core.assignment="guestCard2(guest) ≔ key2" org.eventb.core.comment="" org.eventb.core.label="act4"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="=" org.eventb.core.comment="get key1 on guest card" org.eventb.core.identifier="guestCard1"/>
+<org.eventb.core.invariant name="&gt;" org.eventb.core.comment="get key1 from guest's card" org.eventb.core.label="inv1" org.eventb.core.predicate="guestCard1 ∈ guests ⇸ Keys∖{MasterKey1, MasterKey2}"/>
+<org.eventb.core.variable name="?" org.eventb.core.comment="get key2 on guest card" org.eventb.core.identifier="guestCard2"/>
+<org.eventb.core.invariant name="@" org.eventb.core.comment="get key2 from guest's card" org.eventb.core.label="inv2" org.eventb.core.predicate="guestCard2 ∈ guests ⇸ Keys∖{MasterKey1, MasterKey2}"/>
+<org.eventb.core.variable name="A" org.eventb.core.comment="return the current lock on the room" org.eventb.core.identifier="getRoomLocks"/>
+<org.eventb.core.invariant name="B" org.eventb.core.comment="get the current lock from the guest" org.eventb.core.label="inv3" org.eventb.core.predicate="getRoomLocks ∈ ROOMS → Keys∖{MasterKey1, MasterKey2}"/>
+<org.eventb.core.variable name="C" org.eventb.core.comment="return if there is a need to change the locks in room" org.eventb.core.identifier="changeRoomLock"/>
+<org.eventb.core.invariant name="D" org.eventb.core.comment="all room keys need to be changed at the start of the system" org.eventb.core.label="inv4" org.eventb.core.predicate="changeRoomLock ∈ ROOMS → BOOL"/>
+<org.eventb.core.variable name="E" org.eventb.core.identifier="usedKeys"/>
+<org.eventb.core.invariant name="F" org.eventb.core.label="inv5" org.eventb.core.predicate="usedKeys ⊆ Keys∖{MasterKey1, MasterKey2}"/>
+<org.eventb.core.variable name="G" org.eventb.core.identifier="cleanerRescued"/>
+<org.eventb.core.invariant name="H" org.eventb.core.label="inv6" org.eventb.core.predicate="cleanerRescued ∈ ROOMS → BOOL"/>
+<org.eventb.core.event name="K" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="EnterWithoutRescue">
+<org.eventb.core.guard name="'" org.eventb.core.label="grd5" org.eventb.core.predicate="cleanerRescued(room) = FALSE"/>
+<org.eventb.core.refinesEvent name="(" org.eventb.core.target="Enter"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd6" org.eventb.core.predicate="guest ∈ dom(guestCard1) ∧ guest ∈ dom(guestCard2)"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd7" org.eventb.core.predicate="getRoomLocks(room) = guestCard2(guest)"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="8" org.eventb.core.comment="" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Enter0">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Enter"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="cleaner has rescued the room after guest checks out" org.eventb.core.label="grd5" org.eventb.core.predicate="cleanerRescued(room) = TRUE"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd7" org.eventb.core.predicate="guest ∈ dom(guestCard1) ∧ guest ∈ dom(guestCard2)"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd8" org.eventb.core.predicate="getRoomLocks(room) ∈ {guestCard1(guest), guestCard2(guest)}"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd9" org.eventb.core.predicate="changeRoomLock(room) = FALSE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="I" org.eventb.core.comment="this require cleaner's rescue" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="changeRoomKeyEnter">
+<org.eventb.core.refinesEvent name="+" org.eventb.core.target="Enter"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd5" org.eventb.core.predicate="changeRoomLock(room) = TRUE"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd7" org.eventb.core.predicate="cleanerRescued(room) = TRUE"/>
+<org.eventb.core.guard name="/" org.eventb.core.label="grd8" org.eventb.core.predicate="guest ∈ dom(guestCard1) ∧ guest ∈ dom(guestCard2)"/>
+<org.eventb.core.guard name="0" org.eventb.core.label="grd9" org.eventb.core.predicate="getRoomLocks(room) ∈ {guestCard1(guest), guestCard2(guest)}"/>
+<org.eventb.core.action name="1" org.eventb.core.assignment="getRoomLocks(room) ≔ guestCard2(guest)" org.eventb.core.label="act3"/>
+<org.eventb.core.guard name="2" org.eventb.core.label="grd10" org.eventb.core.predicate="getRoomLocks(room) = guestCard1(guest)"/>
+<org.eventb.core.action name="3" org.eventb.core.assignment="changeRoomLock(room) ≔ FALSE" org.eventb.core.label="act4"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="9" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Exit">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Exit"/>
+</org.eventb.core.event>
+<org.eventb.core.event name=":" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Checkout">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Checkout"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd6" org.eventb.core.predicate="guest ∈ dom(guestCard1) ∧ guest ∈ dom(guestCard2)"/>
+<org.eventb.core.guard name="1" org.eventb.core.label="grd9" org.eventb.core.predicate="keyNotUsing ∈ usedKeys"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd7" org.eventb.core.predicate="getRoomLocks(room) ∈ {guestCard1(guest), guestCard2(guest)}"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd8" org.eventb.core.predicate="keyNotUsing ≠ getRoomLocks(room) ∧ keyNotUsing ∈ {guestCard1(guest), guestCard2(guest)}"/>
+<org.eventb.core.parameter name="," org.eventb.core.identifier="keyNotUsing"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="guestCard1 ≔ {guest} ⩤ guestCard1" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="." org.eventb.core.assignment="guestCard2 ≔ {guest} ⩤ guestCard2" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="/" org.eventb.core.assignment="usedKeys ≔ usedKeys∖{keyNotUsing}" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="2" org.eventb.core.assignment="changeRoomLock(room) ≔ TRUE" org.eventb.core.comment="guest check out room lock need to be change next time" org.eventb.core.label="act6"/>
+<org.eventb.core.action name="3" org.eventb.core.assignment="cleanerRescued(room) ≔ FALSE" org.eventb.core.label="act7"/>
+</org.eventb.core.event>
+<org.eventb.core.event name=";" org.eventb.core.comment="this particular settings assume that the cleaner can clean the room at any time" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="RegularCleanMasterKey1">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Clean"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="" org.eventb.core.label="grd3" org.eventb.core.predicate="cleanerRescued(room) = TRUE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="L" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="RescueCleanMasterKey2">
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="room ∈ ROOMS"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="cleanerRescued(room) ≔ TRUE" org.eventb.core.label="act2"/>
+<org.eventb.core.parameter name="*" org.eventb.core.identifier="room"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="cleanerRescued(room) = FALSE"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

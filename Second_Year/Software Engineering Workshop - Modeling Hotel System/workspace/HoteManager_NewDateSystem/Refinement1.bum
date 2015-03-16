@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.core.label="Refinement1" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="BaseModelMachine"/>
+<org.eventb.core.seesContext name="*" org.eventb.core.target="Refinement1CustomerAndClean"/>
+<org.eventb.core.variable name="(" org.eventb.core.comment="all customers at hotel" org.eventb.core.identifier="customers"/>
+<org.eventb.core.variable name="+" org.eventb.core.comment="all employees at hotel" org.eventb.core.identifier="employees"/>
+<org.eventb.core.variable name="/" org.eventb.core.comment="Rooms that can be used" org.eventb.core.identifier="addedRooms"/>
+<org.eventb.core.variable name="2" org.eventb.core.comment="current available service" org.eventb.core.identifier="importedServices"/>
+<org.eventb.core.variable name="7" org.eventb.core.comment="total financial balance of the hotel" org.eventb.core.identifier="hotelFinance"/>
+<org.eventb.core.variable name="&gt;" org.eventb.core.comment="return the customer status&#10;" org.eventb.core.identifier="customerStatus"/>
+<org.eventb.core.event name="?" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="getCleaningStatus ≔ ∅" org.eventb.core.comment="no cleaniing status" org.eventb.core.label="act7"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="customerReservation ≔ ∅" org.eventb.core.comment="no reservation" org.eventb.core.label="act8"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="roomReservation ≔ ∅" org.eventb.core.comment="no reservation in any room" org.eventb.core.label="act9"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="addedReservations ≔ ∅" org.eventb.core.comment="no in use reservation" org.eventb.core.label="act10"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="reservationDate ≔ ∅" org.eventb.core.comment="no reservation date" org.eventb.core.label="act11"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="reservationStatus ≔ ∅" org.eventb.core.comment="no reservation status" org.eventb.core.label="act12"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="reservationCondition ≔ ∅" org.eventb.core.comment="no reservation condition" org.eventb.core.label="act13"/>
+<org.eventb.core.action name="." org.eventb.core.assignment="reservationTotalPayment ≔ ∅" org.eventb.core.comment="no reservation total payment" org.eventb.core.label="act14"/>
+<org.eventb.core.action name="/" org.eventb.core.assignment="reservationTotalIncome ≔ ∅" org.eventb.core.comment="no total income from any reservation" org.eventb.core.label="act15"/>
+<org.eventb.core.action name="0" org.eventb.core.assignment="today ≔ 1" org.eventb.core.label="act16"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt1" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="dayPass">
+<org.eventb.core.action name="'" org.eventb.core.assignment="today ≔ today + 1" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="getCleaningStatus ≔ (λ room · room ∈ addedRooms ∣ UNMAINTAINED)" org.eventb.core.comment="everytime day pass cleaning is not cleaned" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="" org.eventb.core.label="grd1" org.eventb.core.predicate="∀reservation · reservation ∈ addedReservations ∧ reservationCondition(reservation) = ACTIVE ⇒ &#10;(∃date · date ∈ reservationDate(reservation) ∧ date &gt; today)"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="∀room · room ∈ addedRooms ⇒ getCleaningStatus(room) = MAINTAINED"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="@" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="AddEmployee">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="AddEmployee"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="A" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="EmployeeQuits">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="EmployeeQuits"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="B" org.eventb.core.comment="ROOM THAT ARE READY TO USE" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="AddRooms">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="AddRooms"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="getCleaningStatus(room) ≔ MAINTAINED" org.eventb.core.comment="Room is MAINTAINED which allows for use." org.eventb.core.label="act2"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="room is not NULLROOM" org.eventb.core.label="grd3" org.eventb.core.predicate="room ≠ NULLROOM"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="C" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="DeleteRooms">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="DeleteRooms"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="getCleaningStatus ≔ {room} ⩤ getCleaningStatus" org.eventb.core.comment="room doesn't have cleaning status anymore" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="NO RESERVATION is currently attached to the room" org.eventb.core.label="grd3" org.eventb.core.predicate="room ∉ ran(roomReservation)"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="D" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="AddService">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="AddService"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="E" org.eventb.core.comment="used when service is not available anymore" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="RemoveService">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="RemoveService"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="F" org.eventb.core.comment="" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="AddCustomer">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="AddCustomer"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="H" org.eventb.core.comment="requirement in PD 4.1" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="AddFinance">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="AddFinance"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="I" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="RobFinance">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="RobFinance"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="J" org.eventb.core.comment="return the maintainance status of room&#10;" org.eventb.core.identifier="getCleaningStatus"/>
+<org.eventb.core.invariant name="K" org.eventb.core.comment="" org.eventb.core.label="inv1" org.eventb.core.predicate="getCleaningStatus ∈ addedRooms → CLEANINGSTATUS"/>
+<org.eventb.core.variable name="L" org.eventb.core.comment="store the reservation that a customer has" org.eventb.core.identifier="customerReservation"/>
+<org.eventb.core.invariant name="S" org.eventb.core.label="inv2" org.eventb.core.predicate="addedReservations ⊆ RESERVATION"/>
+<org.eventb.core.invariant name="M" org.eventb.core.label="inv3" org.eventb.core.predicate="customerReservation ∈ addedReservations → customers"/>
+<org.eventb.core.variable name="N" org.eventb.core.comment="STORE THE current reservation inside a room" org.eventb.core.identifier="roomReservation"/>
+<org.eventb.core.invariant name="O" org.eventb.core.comment="RoomReservation is including all the rooms that can be used under the in-used reservati" org.eventb.core.label="inv4" org.eventb.core.predicate="roomReservation ∈ addedReservations → addedRooms ∪ {NULLROOM}"/>
+<org.eventb.core.variable name="R" org.eventb.core.comment="RESERVATION THAT ARE IN USE" org.eventb.core.identifier="addedReservations"/>
+<org.eventb.core.variable name="P" org.eventb.core.comment="Reservation needs to have a date, attribute of Reservation, PD 1.2.1" org.eventb.core.identifier="reservationDate"/>
+<org.eventb.core.invariant name="Q" org.eventb.core.label="inv5" org.eventb.core.predicate="reservationDate ∈ addedReservations → ℙ1(DATETIME)"/>
+<org.eventb.core.variable name="T" org.eventb.core.comment="store the status of reservation" org.eventb.core.identifier="reservationStatus"/>
+<org.eventb.core.invariant name="U" org.eventb.core.label="inv6" org.eventb.core.predicate="reservationStatus ∈ addedReservations → RESERVATIONSTATUS"/>
+<org.eventb.core.variable name="V" org.eventb.core.comment="store the condition of reservation" org.eventb.core.identifier="reservationCondition"/>
+<org.eventb.core.invariant name="W" org.eventb.core.label="inv7" org.eventb.core.predicate="reservationCondition ∈ addedReservations → RESERVATIONCONDITION"/>
+<org.eventb.core.variable name="X" org.eventb.core.comment="Event B syntax still in discusions&#10;paymentTotal : Reservation -&gt; N&#10;paymentTotal := paymentTotal ( Reservation := newPayment ) " org.eventb.core.identifier="reservationTotalPayment"/>
+<org.eventb.core.invariant name="Y" org.eventb.core.comment="" org.eventb.core.label="inv8" org.eventb.core.predicate="reservationTotalPayment ∈ addedReservations → ℤ"/>
+<org.eventb.core.event name="Z" org.eventb.core.comment="this event is related to PD-2.1.2" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="CleanRoom">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="room"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="room ∈ addedRooms"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="room need to be a dirty one" org.eventb.core.label="grd2" org.eventb.core.predicate="room ∈ getCleaningStatus∼[{UNMAINTAINED}]"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="getCleaningStatus(room) ≔ MAINTAINED" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="employees∖{MANAGER} ≠ ∅"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt5" org.eventb.core.comment="" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="PolluteRoom">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="room"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="room ∈ addedRooms"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="getCleaningStatus(room) ≔ UNMAINTAINED" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="[" org.eventb.core.comment="this event is related to DN1.1" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="MakeReservation">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="reservation"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="customer"/>
+<org.eventb.core.parameter name=")" org.eventb.core.comment="" org.eventb.core.identifier="date"/>
+<org.eventb.core.parameter name="*" org.eventb.core.identifier="room"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="reservation is not used" org.eventb.core.label="grd1" org.eventb.core.predicate="reservation ∈ RESERVATION ∖ addedReservations"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd2" org.eventb.core.predicate="customer ∈ customers"/>
+<org.eventb.core.guard name="-" org.eventb.core.comment="date is not NULLDATE" org.eventb.core.label="grd3" org.eventb.core.predicate="date ∈ ℙ(DATETIME∖{NULLDATE})"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd4" org.eventb.core.predicate="room ∈ addedRooms"/>
+<org.eventb.core.action name="0" org.eventb.core.assignment="addedReservations ≔addedReservations ∪ {reservation}" org.eventb.core.comment="" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="1" org.eventb.core.assignment="roomReservation(reservation) ≔ room" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="2" org.eventb.core.assignment="reservationDate(reservation) ≔ date" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="3" org.eventb.core.assignment="reservationStatus(reservation) ≔ TENTATIVE" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="4" org.eventb.core.assignment="reservationCondition(reservation) ≔ ACTIVE" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="5" org.eventb.core.assignment="reservationTotalPayment(reservation) ≔ −DEPOSIT" org.eventb.core.comment="customer need to pay for deposit" org.eventb.core.label="act6"/>
+<org.eventb.core.action name="8" org.eventb.core.assignment="reservationTotalIncome(reservation) ≔ 0" org.eventb.core.label="act7"/>
+<org.eventb.core.action name="6" org.eventb.core.assignment="customerReservation(reservation) ≔ customer" org.eventb.core.label="act8"/>
+<org.eventb.core.guard name=";" org.eventb.core.label="grd5" org.eventb.core.predicate="date ≠ ∅"/>
+<org.eventb.core.guard name="7" org.eventb.core.comment="this grd is related to PD-2.1.1 &#13;&#10;date is not booked in this room, won't have a clash time in room" org.eventb.core.label="grd6" org.eventb.core.predicate="∀day, periodUsed · (day ∈ date ∧ periodUsed ∈ reservationDate[roomReservation∼[{room}]]) ⇒&#10;day ∉ periodUsed"/>
+<org.eventb.core.guard name="9" org.eventb.core.comment="THE CUSTOMER DOESN'T HAVE A EXPIRED OR ACTIVE&#10;RESERVATION ON HIM" org.eventb.core.label="grd7" org.eventb.core.predicate="EXPIRED ∉ reservationCondition[customerReservation∼[{customer}]] ∧&#10;ACTIVE ∉ reservationCondition[customerReservation∼[{customer}]]"/>
+<org.eventb.core.guard name=":" org.eventb.core.comment="this grd is related to PD-1.1.3 &#13;&#10;customer is not blacklisted" org.eventb.core.label="grd8" org.eventb.core.predicate="customer ∉ customerStatus∼[{PASSIVE}]"/>
+</org.eventb.core.event>
+<org.eventb.core.invariant name="\" org.eventb.core.label="inv9" org.eventb.core.predicate="NULLROOM ∉ addedRooms"/>
+<org.eventb.core.event name="d" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ChangeReservation">
+<org.eventb.core.parameter name="element1" org.eventb.core.identifier="reservation"/>
+<org.eventb.core.parameter name="element2" org.eventb.core.identifier="customer"/>
+<org.eventb.core.parameter name="element3" org.eventb.core.comment="" org.eventb.core.identifier="date"/>
+<org.eventb.core.parameter name="element4" org.eventb.core.identifier="room"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.comment="reservation is not used" org.eventb.core.label="grd1" org.eventb.core.predicate="reservation ∈ addedReservations"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.label="grd2" org.eventb.core.predicate="customer ∈ customers"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.comment="date is not NULLDATE" org.eventb.core.label="grd3" org.eventb.core.predicate="date ∈ ℙ(DATETIME∖{NULLDATE})"/>
+<org.eventb.core.guard name="grd4" org.eventb.core.label="grd4" org.eventb.core.predicate="room ∈ addedRooms"/>
+<org.eventb.core.guard name="grd5" org.eventb.core.label="grd5" org.eventb.core.predicate="date ≠ ∅"/>
+<org.eventb.core.guard name="grd6" org.eventb.core.comment="change can't make clash" org.eventb.core.label="grd6" org.eventb.core.predicate="∀day, periodUsed · (day ∈ date ∧ periodUsed ∈ reservationDate[(roomReservation∼[{room}]∖{reservation})]) ⇒&#10;day ∉ periodUsed"/>
+<org.eventb.core.guard name="element5" org.eventb.core.label="grd7" org.eventb.core.predicate="reservationCondition(reservation) = ACTIVE"/>
+<org.eventb.core.guard name="element6" org.eventb.core.label="grd8" org.eventb.core.predicate="reservationStatus(reservation) = CONFIRMED"/>
+<org.eventb.core.action name="act1" org.eventb.core.assignment="roomReservation(reservation) ≔ room" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="act2" org.eventb.core.assignment="reservationDate(reservation) ≔ date" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="element7" org.eventb.core.label="grd9" org.eventb.core.predicate="customerReservation(reservation) = customer"/>
+<org.eventb.core.guard name="element8" org.eventb.core.label="grd10" org.eventb.core.predicate="∀date · date ∈ reservationDate(reservation) ⇒ date &gt; today"/>
+<org.eventb.core.guard name="grd7" org.eventb.core.label="grd11" org.eventb.core.predicate="∀day · day ∈ date ⇒ day ≥ today"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="e" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="CloseReservation">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="reservation"/>
+<org.eventb.core.parameter name="element1" org.eventb.core.identifier="customer"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.comment="reservation is not used" org.eventb.core.label="grd3" org.eventb.core.predicate="reservation ∈ addedReservations"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.label="grd4" org.eventb.core.predicate="customer ∈ customers"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.label="grd5" org.eventb.core.predicate="reservation ∈ customerReservation∼[{customer}]"/>
+<org.eventb.core.guard name="grd7" org.eventb.core.comment="reservation must NOT be closed" org.eventb.core.label="grd6" org.eventb.core.predicate="reservationCondition(reservation) ∈ {ACTIVE, EXPIRED}"/>
+<org.eventb.core.guard name="grd8" org.eventb.core.label="grd7" org.eventb.core.predicate="reservation ∈ reservationStatus∼[{CONFIRMED}]"/>
+<org.eventb.core.guard name="grd9" org.eventb.core.label="grd8" org.eventb.core.predicate="reservationTotalPayment(reservation) ≥ 0"/>
+<org.eventb.core.refinesEvent name="element2" org.eventb.core.target="AddFinance"/>
+<org.eventb.core.action name="act1" org.eventb.core.assignment="reservationDate(reservation) ≔ {NULLDATE}" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="act2" org.eventb.core.assignment="roomReservation(reservation) ≔ NULLROOM" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="act3" org.eventb.core.assignment="reservationCondition(reservation) ≔ CLOSED" org.eventb.core.comment="ReservationCondition for is now closed, &#13;&#10;at the same time" org.eventb.core.label="act4"/>
+<org.eventb.core.guard name="element4" org.eventb.core.comment="add extra payment from customer" org.eventb.core.label="grd9" org.eventb.core.predicate="sales = reservationTotalIncome(reservation) + reservationTotalPayment(reservation)"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="c" org.eventb.core.comment="this event is related to partially of PD-1.2.3a" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ClearReservation">
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="customer"/>
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="reservation"/>
+<org.eventb.core.parameter name="element1" org.eventb.core.comment="payment from customer" org.eventb.core.identifier="payment"/>
+<org.eventb.core.parameter name="element2" org.eventb.core.comment="discount for loyal customer" org.eventb.core.identifier="discount"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.comment="reservation is not used" org.eventb.core.label="grd1" org.eventb.core.predicate="reservation ∈ addedReservations"/>
+<org.eventb.core.guard name="grdG" org.eventb.core.label="grd2" org.eventb.core.predicate="customer ∈ customers"/>
+<org.eventb.core.guard name="grdE" org.eventb.core.label="grd3" org.eventb.core.predicate="reservation ∈ customerReservation∼[{customer}]"/>
+<org.eventb.core.guard name="grd7" org.eventb.core.comment="" org.eventb.core.label="grd4" org.eventb.core.predicate="payment ∈ ℕ1"/>
+<org.eventb.core.guard name="grdB" org.eventb.core.label="grd5" org.eventb.core.predicate="discount ∈ ℕ"/>
+<org.eventb.core.guard name="grdC" org.eventb.core.comment="pay enough to discounts" org.eventb.core.label="grd6" org.eventb.core.predicate="discount &lt; payment"/>
+<org.eventb.core.guard name="grd6" org.eventb.core.comment="reservation must NOT be closed" org.eventb.core.label="grd7" org.eventb.core.predicate="reservationCondition(reservation) ∈ {ACTIVE, EXPIRED}"/>
+<org.eventb.core.guard name="grd@" org.eventb.core.label="grd8" org.eventb.core.predicate="reservation ∈ reservationStatus∼[{CONFIRMED}]"/>
+<org.eventb.core.guard name="grdH" org.eventb.core.label="grd9" org.eventb.core.predicate="reservationTotalPayment(reservation) &lt; 0"/>
+<org.eventb.core.guard name="grd9" org.eventb.core.comment="payment must be enouth to clear the amount due" org.eventb.core.label="grd10" org.eventb.core.predicate="reservationTotalPayment(reservation) + payment = 0"/>
+<org.eventb.core.action name="grd=" org.eventb.core.assignment="reservationTotalPayment(reservation) ≔ reservationTotalPayment(reservation) + payment" org.eventb.core.comment="payment is clear" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="grd&gt;" org.eventb.core.assignment="reservationTotalIncome(reservation) ≔ reservationTotalIncome(reservation) + payment − discount" org.eventb.core.comment="income need to take care of discount" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt2" org.eventb.core.comment="this event is related to partially of PD-1.2.3a" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ExpireReservation">
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="customer"/>
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="reservation"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.comment="reservation is not used" org.eventb.core.label="grd1" org.eventb.core.predicate="reservation ∈ addedReservations"/>
+<org.eventb.core.guard name="grdG" org.eventb.core.label="grd2" org.eventb.core.predicate="customer ∈ customers"/>
+<org.eventb.core.guard name="grdE" org.eventb.core.label="grd3" org.eventb.core.predicate="reservation ∈ customerReservation∼[{customer}]"/>
+<org.eventb.core.guard name="grd6" org.eventb.core.comment="reservation must NOT be closed" org.eventb.core.label="grd4" org.eventb.core.predicate="reservationCondition(reservation) = ACTIVE"/>
+<org.eventb.core.action name="act1" org.eventb.core.assignment="reservationDate(reservation) ≔ {NULLDATE}" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="act2" org.eventb.core.assignment="roomReservation(reservation) ≔ NULLROOM" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="grdJ" org.eventb.core.assignment="reservationCondition(reservation) ≔ EXPIRED" org.eventb.core.label="act3"/>
+<org.eventb.core.guard name="grdK" org.eventb.core.comment="only expire reservation that are expired" org.eventb.core.label="grd5" org.eventb.core.predicate="∀date · date ∈ reservationDate(reservation) ⇒ date &lt; today"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="]" org.eventb.core.comment="this event is related to PD-1.1.2 " org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ConfirmReservation">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="reservation"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="reservation ∈ addedReservations"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="reservationStatus(reservation) ≔ CONFIRMED" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="reservationTotalPayment(reservation) ≔ DEPOSIT + reservationTotalPayment(reservation)" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="reservationTotalIncome(reservation) ≔ DEPOSIT + reservationTotalIncome(reservation)" org.eventb.core.comment="" org.eventb.core.label="act3"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd2" org.eventb.core.predicate="reservation ∈ reservationStatus∼[{TENTATIVE}]"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="^" org.eventb.core.comment="this event is related to PD-1.2.2a and PD-1.5.1a " org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="CancelTentativeReservationReq">
+<org.eventb.core.parameter name="'" org.eventb.core.comment="" org.eventb.core.identifier="reservation"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd3" org.eventb.core.predicate="reservation ∈ addedReservations"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="" org.eventb.core.label="grd4" org.eventb.core.predicate="customer ∈ customers"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="reservationDate(reservation) ≔ {NULLDATE}" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="." org.eventb.core.assignment="roomReservation(reservation) ≔ NULLROOM" org.eventb.core.label="act3"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="" org.eventb.core.label="grd5" org.eventb.core.predicate="customer = customerReservation(reservation)"/>
+<org.eventb.core.guard name="/" org.eventb.core.label="grd6" org.eventb.core.predicate="reservation ∈ reservationCondition∼[{ACTIVE}]"/>
+<org.eventb.core.refinesEvent name="0" org.eventb.core.target="downgradeCustomer"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="reservationCondition(reservation) ≔ CLOSED" org.eventb.core.label="act4"/>
+<org.eventb.core.guard name="1" org.eventb.core.label="grd7" org.eventb.core.predicate="reservationStatus(reservation) = TENTATIVE"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="_" org.eventb.core.comment="TOTAL INCOME hotel get form the reservation" org.eventb.core.identifier="reservationTotalIncome"/>
+<org.eventb.core.invariant name="`" org.eventb.core.label="inv10" org.eventb.core.predicate="reservationTotalIncome ∈ addedReservations → ℕ"/>
+<org.eventb.core.event name="a" org.eventb.core.comment="this event is related to PD-1.2.1a&#10;CANCEL base on customer request, no deposit returned&#10;in this stage, the hotel sales/income function hasn't been refined&#10;therefore no update deposit to HotelFinance yet&#10;CANCEL CONFIRMED RESERVATION DOESN'T DOWNGRADE THE CUSTOMER" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="CancelConfirmedReservationReq">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="reservation"/>
+<org.eventb.core.parameter name="(" org.eventb.core.comment="" org.eventb.core.identifier="customer"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd3" org.eventb.core.predicate="reservation ∈ addedReservations"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd4" org.eventb.core.predicate="customer ∈ customers"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd5" org.eventb.core.predicate="customer = customerReservation(reservation)"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.label="grd6" org.eventb.core.predicate="reservation ∈ reservationCondition∼[{ACTIVE}]"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.label="grd7" org.eventb.core.predicate="reservationStatus(reservation) = CONFIRMED"/>
+<org.eventb.core.action name="act1" org.eventb.core.assignment="reservationDate(reservation) ≔ {NULLDATE}" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="act2" org.eventb.core.assignment="roomReservation(reservation) ≔ NULLROOM" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="act3" org.eventb.core.assignment="reservationCondition(reservation) ≔ CLOSED" org.eventb.core.label="act4"/>
+<org.eventb.core.refinesEvent name="grd4" org.eventb.core.target="AddFinance"/>
+<org.eventb.core.guard name="grd5" org.eventb.core.comment="deposit are now income of hotel" org.eventb.core.label="grd8" org.eventb.core.predicate="sales = reservationTotalIncome(reservation)"/>
+<org.eventb.core.guard name="grd6" org.eventb.core.label="grd9" org.eventb.core.predicate="reservationTotalPayment(reservation) = 0"/>
+<org.eventb.core.guard name="grd7" org.eventb.core.label="grd10" org.eventb.core.predicate="∃date · date ∈ reservationDate(reservation) ∧ date &gt; today"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="b" org.eventb.core.comment="discount is handled in clearReservation event&#10;this is also keep track of the number things customer ordered" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ChargeReservation">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="customer"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="service"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="employees∖{MANAGER} ≠ ∅"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd2" org.eventb.core.predicate="customer ∈ customers"/>
+<org.eventb.core.guard name="grd8" org.eventb.core.label="grd3" org.eventb.core.predicate="reservation ∈ addedReservations"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.label="grd4" org.eventb.core.predicate="service ∈ importedServices"/>
+<org.eventb.core.guard name="grd7" org.eventb.core.label="grd5" org.eventb.core.predicate="reservation ∈ customerReservation∼[{customer}]"/>
+<org.eventb.core.guard name="grd9" org.eventb.core.label="grd6" org.eventb.core.predicate="reservationCondition(reservation) = ACTIVE"/>
+<org.eventb.core.guard name="grd:" org.eventb.core.label="grd7" org.eventb.core.predicate="reservationStatus(reservation) = CONFIRMED"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.comment="price of the service" org.eventb.core.label="grd8" org.eventb.core.predicate="price ∈ ℕ1"/>
+<org.eventb.core.parameter name="grd4" org.eventb.core.identifier="price"/>
+<org.eventb.core.action name="act1" org.eventb.core.assignment="reservationTotalPayment(reservation) ≔ reservationTotalPayment(reservation) − price" org.eventb.core.label="act1"/>
+<org.eventb.core.parameter name="grd6" org.eventb.core.comment="" org.eventb.core.identifier="reservation"/>
+<org.eventb.core.guard name="grd;" org.eventb.core.comment="reservation is valid" org.eventb.core.label="grd9" org.eventb.core.predicate="today ∈ reservationDate(reservation)"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="evt2" org.eventb.core.comment="CURRENT DATE" org.eventb.core.identifier="today"/>
+<org.eventb.core.invariant name="evt3" org.eventb.core.label="inv11" org.eventb.core.predicate="today ∈ DATETIME"/>
+<org.eventb.core.event name="evt4" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="RestoreCustomer">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="RestoreCustomer"/>
+</org.eventb.core.event>
+<org.eventb.core.invariant name="evt6" org.eventb.core.label="inv12" org.eventb.core.predicate="∀res· res ∈ addedReservations ∧ reservationCondition(res) = ACTIVE ⇒ roomReservation(res) ≠ NULLROOM"/>
+<org.eventb.core.invariant name="evt7" org.eventb.core.label="inv13" org.eventb.core.predicate="∀res· res ∈ addedReservations ∧ reservationCondition(res) = ACTIVE ⇒ reservationDate(res) ≠ {NULLDATE}"/>
+</org.eventb.core.machineFile>

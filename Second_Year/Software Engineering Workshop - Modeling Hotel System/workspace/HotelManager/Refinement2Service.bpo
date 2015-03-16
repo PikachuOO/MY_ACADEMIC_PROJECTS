@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="CUSTOMERSTATUS" org.eventb.core.type="ℙ(CUSTOMERSTATUS)"/>
+<org.eventb.core.poIdentifier name="PEOPLE" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.poIdentifier name="ROOMS" org.eventb.core.type="ℙ(ROOMS)"/>
+<org.eventb.core.poIdentifier name="SERVICES" org.eventb.core.type="ℙ(SERVICES)"/>
+<org.eventb.core.poIdentifier name="DOWNGRADE" org.eventb.core.type="ℙ(CUSTOMERSTATUS×CUSTOMERSTATUS)"/>
+<org.eventb.core.poIdentifier name="LEASTFINANCE" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="LOYAL" org.eventb.core.type="CUSTOMERSTATUS"/>
+<org.eventb.core.poIdentifier name="MANAGER" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.poIdentifier name="NORMAL" org.eventb.core.type="CUSTOMERSTATUS"/>
+<org.eventb.core.poIdentifier name="PASSIVE" org.eventb.core.type="CUSTOMERSTATUS"/>
+<org.eventb.core.poIdentifier name="RESTOREFEE" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATUT" org.eventb.core.predicate="finite(ROOMS)" org.eventb.core.source="/HotelManager/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#("/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATUU" org.eventb.core.predicate="finite(PEOPLE)" org.eventb.core.source="/HotelManager/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATUV" org.eventb.core.predicate="finite(SERVICES)" org.eventb.core.source="/HotelManager/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#,"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATUW" org.eventb.core.predicate="finite(CUSTOMERSTATUS)" org.eventb.core.source="/HotelManager/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#@"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATUX" org.eventb.core.predicate="LEASTFINANCE∈ℕ" org.eventb.core.source="/HotelManager/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#."/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATUY" org.eventb.core.predicate="LEASTFINANCE=0" org.eventb.core.source="/HotelManager/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#1"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATUZ" org.eventb.core.predicate="partition(CUSTOMERSTATUS,{LOYAL},{NORMAL},{PASSIVE})" org.eventb.core.source="/HotelManager/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#5"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATU[" org.eventb.core.predicate="card(CUSTOMERSTATUS)=3" org.eventb.core.source="/HotelManager/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#6"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATU\" org.eventb.core.predicate="card(PEOPLE)=20" org.eventb.core.source="/HotelManager/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#7"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATU]" org.eventb.core.predicate="DOWNGRADE∈CUSTOMERSTATUS → CUSTOMERSTATUS" org.eventb.core.source="/HotelManager/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#:"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATU^" org.eventb.core.predicate="DOWNGRADE(LOYAL)=NORMAL∧DOWNGRADE(NORMAL)=PASSIVE∧DOWNGRADE(PASSIVE)=PASSIVE" org.eventb.core.source="/HotelManager/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#;"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATU_" org.eventb.core.predicate="MANAGER∈PEOPLE" org.eventb.core.source="/HotelManager/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#?"/>
+<org.eventb.core.poPredicate name="CUSTOMERSTATU`" org.eventb.core.predicate="RESTOREFEE∈ℕ1" org.eventb.core.source="/HotelManager/BaseModel.buc|org.eventb.core.contextFile#BaseModel|org.eventb.core.axiom#B"/>
+<org.eventb.core.poIdentifier name="CLEANINGSTATUS" org.eventb.core.type="ℙ(CLEANINGSTATUS)"/>
+<org.eventb.core.poIdentifier name="RESERVATION" org.eventb.core.type="ℙ(RESERVATION)"/>
+<org.eventb.core.poIdentifier name="RESERVATIONCONDITION" org.eventb.core.type="ℙ(RESERVATIONCONDITION)"/>
+<org.eventb.core.poIdentifier name="RESERVATIONSTATUS" org.eventb.core.type="ℙ(RESERVATIONSTATUS)"/>
+<org.eventb.core.poIdentifier name="ACTIVE" org.eventb.core.type="RESERVATIONCONDITION"/>
+<org.eventb.core.poIdentifier name="CLOSED" org.eventb.core.type="RESERVATIONCONDITION"/>
+<org.eventb.core.poIdentifier name="CONFIRMED" org.eventb.core.type="RESERVATIONSTATUS"/>
+<org.eventb.core.poIdentifier name="DATETIME" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.poIdentifier name="DEPOSIT" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="EXPIRED" org.eventb.core.type="RESERVATIONCONDITION"/>
+<org.eventb.core.poIdentifier name="MAINTAINED" org.eventb.core.type="CLEANINGSTATUS"/>
+<org.eventb.core.poIdentifier name="NULLDATE" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="NULLROOM" org.eventb.core.type="ROOMS"/>
+<org.eventb.core.poIdentifier name="STANDARDDISCOUNT" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="TENTATIVE" org.eventb.core.type="RESERVATIONSTATUS"/>
+<org.eventb.core.poIdentifier name="UNMAINTAINED" org.eventb.core.type="CLEANINGSTATUS"/>
+<org.eventb.core.poPredicate name="RESERVATIONCONDITIOO" org.eventb.core.predicate="DATETIME=ℕ" org.eventb.core.source="/HotelManager/Refinement1CustomerAndClean.buc|org.eventb.core.contextFile#Refinement1CustomerAndClean|org.eventb.core.axiom#8"/>
+<org.eventb.core.poPredicate name="RESERVATIONCONDITIOP" org.eventb.core.predicate="finite(RESERVATIONCONDITION)" org.eventb.core.source="/HotelManager/Refinement1CustomerAndClean.buc|org.eventb.core.contextFile#Refinement1CustomerAndClean|org.eventb.core.axiom#9"/>
+<org.eventb.core.poPredicate name="RESERVATIONCONDITIOQ" org.eventb.core.predicate="finite(RESERVATIONSTATUS)" org.eventb.core.source="/HotelManager/Refinement1CustomerAndClean.buc|org.eventb.core.contextFile#Refinement1CustomerAndClean|org.eventb.core.axiom#:"/>
+<org.eventb.core.poPredicate name="RESERVATIONCONDITIOR" org.eventb.core.predicate="finite(CLEANINGSTATUS)" org.eventb.core.source="/HotelManager/Refinement1CustomerAndClean.buc|org.eventb.core.contextFile#Refinement1CustomerAndClean|org.eventb.core.axiom#;"/>
+<org.eventb.core.poPredicate name="RESERVATIONCONDITIOS" org.eventb.core.predicate="partition(RESERVATIONSTATUS,{TENTATIVE},{CONFIRMED})" org.eventb.core.source="/HotelManager/Refinement1CustomerAndClean.buc|org.eventb.core.contextFile#Refinement1CustomerAndClean|org.eventb.core.axiom#="/>
+<org.eventb.core.poPredicate name="RESERVATIONCONDITIOT" org.eventb.core.predicate="partition(RESERVATIONCONDITION,{ACTIVE},{CLOSED},{EXPIRED})" org.eventb.core.source="/HotelManager/Refinement1CustomerAndClean.buc|org.eventb.core.contextFile#Refinement1CustomerAndClean|org.eventb.core.axiom#&gt;"/>
+<org.eventb.core.poPredicate name="RESERVATIONCONDITIOU" org.eventb.core.predicate="partition(CLEANINGSTATUS,{MAINTAINED},{UNMAINTAINED})" org.eventb.core.source="/HotelManager/Refinement1CustomerAndClean.buc|org.eventb.core.contextFile#Refinement1CustomerAndClean|org.eventb.core.axiom#?"/>
+<org.eventb.core.poPredicate name="RESERVATIONCONDITIOV" org.eventb.core.predicate="DEPOSIT∈ℕ1" org.eventb.core.source="/HotelManager/Refinement1CustomerAndClean.buc|org.eventb.core.contextFile#Refinement1CustomerAndClean|org.eventb.core.axiom#@"/>
+<org.eventb.core.poPredicate name="RESERVATIONCONDITIOW" org.eventb.core.predicate="NULLROOM∈ROOMS" org.eventb.core.source="/HotelManager/Refinement1CustomerAndClean.buc|org.eventb.core.contextFile#Refinement1CustomerAndClean|org.eventb.core.axiom#A"/>
+<org.eventb.core.poPredicate name="RESERVATIONCONDITIOX" org.eventb.core.predicate="NULLDATE∈DATETIME" org.eventb.core.source="/HotelManager/Refinement1CustomerAndClean.buc|org.eventb.core.contextFile#Refinement1CustomerAndClean|org.eventb.core.axiom#B"/>
+<org.eventb.core.poPredicate name="RESERVATIONCONDITIOY" org.eventb.core.predicate="NULLDATE=0" org.eventb.core.source="/HotelManager/Refinement1CustomerAndClean.buc|org.eventb.core.contextFile#Refinement1CustomerAndClean|org.eventb.core.axiom#G"/>
+<org.eventb.core.poPredicate name="RESERVATIONCONDITIOZ" org.eventb.core.predicate="card(RESERVATIONCONDITION)=3" org.eventb.core.source="/HotelManager/Refinement1CustomerAndClean.buc|org.eventb.core.contextFile#Refinement1CustomerAndClean|org.eventb.core.axiom#C"/>
+<org.eventb.core.poPredicate name="RESERVATIONCONDITIO[" org.eventb.core.predicate="card(RESERVATIONSTATUS)=2" org.eventb.core.source="/HotelManager/Refinement1CustomerAndClean.buc|org.eventb.core.contextFile#Refinement1CustomerAndClean|org.eventb.core.axiom#D"/>
+<org.eventb.core.poPredicate name="RESERVATIONCONDITIO\" org.eventb.core.predicate="card(CLEANINGSTATUS)=2" org.eventb.core.source="/HotelManager/Refinement1CustomerAndClean.buc|org.eventb.core.contextFile#Refinement1CustomerAndClean|org.eventb.core.axiom#E"/>
+<org.eventb.core.poPredicate name="RESERVATIONCONDITIO]" org.eventb.core.predicate="STANDARDDISCOUNT∈ℕ1" org.eventb.core.source="/HotelManager/Refinement1CustomerAndClean.buc|org.eventb.core.contextFile#Refinement1CustomerAndClean|org.eventb.core.axiom#I"/>
+<org.eventb.core.poIdentifier name="INVENTORY" org.eventb.core.type="ℙ(INVENTORY)"/>
+<org.eventb.core.poIdentifier name="NULLINVENTORY" org.eventb.core.type="INVENTORY"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="axm3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelManager/Refinement2Service.bpo|org.eventb.core.poFile#Refinement2Service|org.eventb.core.poPredicateSet#HYPRefinement1CustomerAndCleap"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(INVENTORY)" org.eventb.core.source="/HotelManager/Refinement2Service.buc|org.eventb.core.contextFile#Refinement2Service|org.eventb.core.axiom#,"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelManager/Refinement2Service.buc|org.eventb.core.contextFile#Refinement2Service|org.eventb.core.axiom#,"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/HotelManager/Refinement2Service.bpo|org.eventb.core.poFile#Refinement2Service|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/HotelManager/Refinement2Service.bpo|org.eventb.core.poFile#Refinement2Service|org.eventb.core.poPredicateSet#HYPRefinement1CustomerAndCleap"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="HYPRefinement1CustomerAndCleap" org.eventb.core.parentSet="/HotelManager/Refinement2Service.bpo|org.eventb.core.poFile#Refinement2Service|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="finite(INVENTORY)" org.eventb.core.source="/HotelManager/Refinement2Service.buc|org.eventb.core.contextFile#Refinement2Service|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="NULLINVENTORY∈INVENTORY" org.eventb.core.source="/HotelManager/Refinement2Service.buc|org.eventb.core.contextFile#Refinement2Service|org.eventb.core.axiom#+"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/HotelManager/Refinement2Service.bpo|org.eventb.core.poFile#Refinement2Service|org.eventb.core.poPredicateSet#HYPRefinement1CustomerAndCleap" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="card(INVENTORY)=10" org.eventb.core.source="/HotelManager/Refinement2Service.buc|org.eventb.core.contextFile#Refinement2Service|org.eventb.core.axiom#,"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

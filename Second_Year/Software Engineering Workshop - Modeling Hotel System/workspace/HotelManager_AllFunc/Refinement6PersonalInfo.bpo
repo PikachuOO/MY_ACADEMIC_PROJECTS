@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="PERSONALINFO" org.eventb.core.type="ℙ(PERSONALINFO)"/>
+<org.eventb.core.poIdentifier name="MANAGERINFO" org.eventb.core.type="PERSONALINFO"/>
+<org.eventb.core.poIdentifier name="OTHERS" org.eventb.core.type="ℙ(PERSONALINFO)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/HotelManager_AllFunc/Refinement6PersonalInfo.bpo|org.eventb.core.poFile#Refinement6PersonalInfo|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="OTHERS⊂PERSONALINFO" org.eventb.core.source="/HotelManager_AllFunc/Refinement6PersonalInfo.buc|org.eventb.core.contextFile#Refinement6PersonalInfo|org.eventb.core.axiom#+"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="MANAGERINFO∈PERSONALINFO" org.eventb.core.source="/HotelManager_AllFunc/Refinement6PersonalInfo.buc|org.eventb.core.contextFile#Refinement6PersonalInfo|org.eventb.core.axiom#-"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="partition(PERSONALINFO,{MANAGERINFO},OTHERS)" org.eventb.core.source="/HotelManager_AllFunc/Refinement6PersonalInfo.buc|org.eventb.core.contextFile#Refinement6PersonalInfo|org.eventb.core.axiom#)"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

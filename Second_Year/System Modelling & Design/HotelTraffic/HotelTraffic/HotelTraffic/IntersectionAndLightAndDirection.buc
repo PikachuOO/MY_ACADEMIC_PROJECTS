@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+<org.eventb.core.carrierSet name="'" org.eventb.core.identifier="COLOR"/>
+<org.eventb.core.constant name="(" org.eventb.core.identifier="RED"/>
+<org.eventb.core.constant name=")" org.eventb.core.identifier="AMBER"/>
+<org.eventb.core.constant name="*" org.eventb.core.identifier="GREEN"/>
+<org.eventb.core.axiom name="+" org.eventb.core.label="axm1" org.eventb.core.predicate="partition(COLOR, {RED}, {AMBER}, {GREEN})"/>
+<org.eventb.core.carrierSet name="," org.eventb.core.identifier="DIRECTION"/>
+<org.eventb.core.constant name="-" org.eventb.core.identifier="NORTHSOUTH"/>
+<org.eventb.core.constant name="." org.eventb.core.identifier="EASTWEST"/>
+<org.eventb.core.axiom name="/" org.eventb.core.label="axm2" org.eventb.core.predicate="partition(DIRECTION, {NORTHSOUTH}, {EASTWEST})"/>
+<org.eventb.core.axiom name="7" org.eventb.core.label="axm3" org.eventb.core.predicate="partition(INTERSECTION, {NW}, {SW}, {NE}, {SE}, {PARK})"/>
+<org.eventb.core.carrierSet name="1" org.eventb.core.identifier="INTERSECTION"/>
+<org.eventb.core.constant name="2" org.eventb.core.identifier="NW"/>
+<org.eventb.core.constant name="3" org.eventb.core.identifier="SW"/>
+<org.eventb.core.constant name="4" org.eventb.core.identifier="NE"/>
+<org.eventb.core.constant name="5" org.eventb.core.identifier="SE"/>
+<org.eventb.core.constant name="6" org.eventb.core.identifier="PARK"/>
+</org.eventb.core.contextFile>

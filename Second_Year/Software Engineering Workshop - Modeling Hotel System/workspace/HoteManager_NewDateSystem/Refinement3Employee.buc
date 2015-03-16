@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+<org.eventb.core.extendsContext name="'" org.eventb.core.target="Refinement2Service"/>
+<org.eventb.core.carrierSet name="(" org.eventb.core.identifier="JOBPOSITION"/>
+<org.eventb.core.carrierSet name=")" org.eventb.core.identifier="LOGINDETAIL"/>
+<org.eventb.core.constant name="*" org.eventb.core.identifier="CLEANER"/>
+<org.eventb.core.constant name="+" org.eventb.core.identifier="RECEPTION"/>
+<org.eventb.core.constant name="," org.eventb.core.identifier="FINANCE"/>
+<org.eventb.core.constant name="-" org.eventb.core.comment="POSITION FOR MANAGER" org.eventb.core.identifier="ADMINMANAGE"/>
+<org.eventb.core.constant name="." org.eventb.core.comment="LOGINDETAIL FOR MANAGER" org.eventb.core.identifier="ADMINLOGIN"/>
+<org.eventb.core.constant name="/" org.eventb.core.identifier="SERVICE"/>
+<org.eventb.core.axiom name="0" org.eventb.core.label="axm1" org.eventb.core.predicate="finite(JOBPOSITION)"/>
+<org.eventb.core.axiom name="1" org.eventb.core.label="axm2" org.eventb.core.predicate="finite(LOGINDETAIL)"/>
+<org.eventb.core.axiom name="2" org.eventb.core.label="axm3" org.eventb.core.predicate="partition(JOBPOSITION, {CLEANER}, {RECEPTION}, {FINANCE}, {ADMINMANAGE}, {SERVICE})"/>
+<org.eventb.core.axiom name="3" org.eventb.core.label="axm4" org.eventb.core.predicate="ADMINLOGIN ∈ LOGINDETAIL"/>
+<org.eventb.core.axiom name="4" org.eventb.core.label="axm5" org.eventb.core.predicate="card(JOBPOSITION) = 5"/>
+<org.eventb.core.axiom name="5" org.eventb.core.label="axm6" org.eventb.core.predicate="card(LOGINDETAIL) = 21"/>
+</org.eventb.core.contextFile>
